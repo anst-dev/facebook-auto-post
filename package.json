@@ -10,7 +10,12 @@
     "setup": "node src/setup.js",
     "upload": "node src/content-manager.js",
     "list": "node src/content-manager.js list",
-    "today": "node src/content-manager.js today"
+    "today": "node src/content-manager.js today",
+    "auto:status": "node src/auto-scheduler.js status",
+    "auto:verify": "node src/auto-scheduler.js verify",
+    "auto:post": "node src/auto-scheduler.js post",
+    "auto:schedule": "node src/auto-scheduler.js schedule",
+    "auto:reset": "node src/auto-scheduler.js reset"
   },
   "dependencies": {
     "axios": "^1.7.9",

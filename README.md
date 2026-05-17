@@ -262,6 +262,26 @@ Tìm kiếm sử dụng 2 nguồn dự phòng:
 
 ---
 
+## Tải Tài Liệu Từ NotebookLM
+
+Dự án hỗ trợ tải tự động các tài liệu (ảnh, slide, báo cáo) được sinh ra từ Google NotebookLM.
+
+### 1. Đăng nhập & Xác Thực
+Để tránh lỗi **403 Forbidden** hoặc **CookieMismatch**, bạn cần đăng nhập chuẩn bằng trình duyệt qua CLI:
+```bash
+notebooklm login
+```
+Lệnh này mở trình duyệt để bạn đăng nhập Google. Sau khi đăng nhập xong, quay lại Terminal nhấn Enter.
+
+### 2. Tự Động Tải Hàng Loạt
+Dùng script tải hàng loạt các media bị thiếu:
+```bash
+python scripts/download-missing.py
+```
+*Lưu ý:* Script tự động tải các file và lưu dưới dạng `artifact.<ext>` thay vì tên gốc để tránh lỗi `WinError 183` trên hệ điều hành Windows.
+
+---
+
 ## Xử Lý Lỗi Thường Gặp
 
 ### Token không hợp lệ

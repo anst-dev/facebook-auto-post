@@ -1,0 +1,10 @@
+2026-05-17 16:00:02 [d1p04] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-17 16:00:02 [d1p05] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-17 16:00:03 [d1p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-17 16:00:04 [d1p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
