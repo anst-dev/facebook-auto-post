@@ -35,18 +35,25 @@
       <div class="stat-card glass-panel purple-glow">
         <div class="stat-icon"><i class="fa-solid fa-list-check"></i></div>
         <div class="stat-info">
-          <h3>Tổng bài đăng</h3>
+          <h3>Tổng bài</h3>
           <p class="stat-value" id="stat-total">0</p>
         </div>
       </div>
       <div class="stat-card glass-panel green-glow">
         <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
         <div class="stat-info">
-          <h3>Đã lên lịch</h3>
-          <p class="stat-value" id="stat-completed">0</p>
+          <h3>Đã đăng</h3>
+          <p class="stat-value" id="stat-published">0</p>
         </div>
       </div>
       <div class="stat-card glass-panel blue-glow">
+        <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+        <div class="stat-info">
+          <h3>Đã lên lịch</h3>
+          <p class="stat-value" id="stat-scheduled">0</p>
+        </div>
+      </div>
+      <div class="stat-card glass-panel yellow-glow">
         <div class="stat-icon"><i class="fa-solid fa-hourglass-half"></i></div>
         <div class="stat-info">
           <h3>Đang chờ</h3>
@@ -141,7 +148,8 @@
           <div class="filters">
             <span class="filter-badge active" onclick="filterPosts('all')">Tất cả</span>
             <span class="filter-badge" onclick="filterPosts('pending')">Đang chờ</span>
-            <span class="filter-badge" onclick="filterPosts('completed')">Đã đăng</span>
+            <span class="filter-badge" onclick="filterPosts('scheduled')">Đã lên lịch</span>
+            <span class="filter-badge" onclick="filterPosts('published')">Đã đăng</span>
             <span class="filter-badge" onclick="filterPosts('failed')">Lỗi</span>
           </div>
           

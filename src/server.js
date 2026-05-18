@@ -64,6 +64,11 @@ app.get('/api/status', async (req, res) => {
     const fblogs = fs.existsSync(logFile) ? JSON.parse(fs.readFileSync(logFile, 'utf8')) : [];
 
     // Detail of posts
+    let countPublished = 0;
+    let countScheduled = 0;
+    let countFailed = 0;
+    let countPending = 0;
+
     const postDetails = posts.map(p => {
       let caption = '';
       if (fs.existsSync(p.captionFile)) {
@@ -71,6 +76,45 @@ app.get('/api/status', async (req, res) => {
       }
       
       const logEntry = fblogs.find(l => l.contentId === p.id && l.action === 'schedule' && l.status === 'success');
+      
+      const isCompleted = progress.completed.includes(p.id);
+      const isFailed = progress.failed.includes(p.id);
+      
+      let status = 'pending';
+      if (isFailed) {
+        status = 'failed';
+        countFailed++;
+      } else if (isCompleted) {
+        if (logEntry && logEntry.scheduledFor) {
+          // Phân tích xem thời gian lên lịch đã trôi qua chưa (GMT+7)
+          const parts = logEntry.scheduledFor.split(' ');
+          if (parts.length === 2) {
+            const [timeStr, dateStr] = parts;
+            const [hour, minute] = timeStr.split(':');
+            const [year, month, day] = dateStr.split('-');
+            
+            const scheduledDate = new Date(year, month - 1, day, hour, minute, 0);
+            const now = new Date();
+            
+            if (scheduledDate > now) {
+              status = 'scheduled'; // Đã lên lịch (ở tương lai)
+              countScheduled++;
+            } else {
+              status = 'published'; // Đã đăng (ở quá khứ)
+              countPublished++;
+            }
+          } else {
+            status = 'published';
+            countPublished++;
+          }
+        } else {
+          status = 'published';
+          countPublished++;
+        }
+      } else {
+        status = 'pending';
+        countPending++;
+      }
       
       return {
         id: p.id,
@@ -83,7 +127,7 @@ app.get('/api/status', async (req, res) => {
         captionFull: caption,
         hasImage: !!p.imageFile,
         imagePath: p.imageFile ? path.relative(path.join(__dirname, '..'), p.imageFile) : null,
-        status: progress.completed.includes(p.id) ? 'completed' : (progress.failed.includes(p.id) ? 'failed' : 'pending'),
+        status,
         scheduledFor: logEntry ? logEntry.scheduledFor : null
       };
     });
@@ -97,9 +141,10 @@ app.get('/api/status', async (req, res) => {
       fbStatus,
       progress: {
         total: posts.length,
-        completed: progress.completed.length,
-        failed: progress.failed.length,
-        pending: posts.length - progress.completed.length - progress.failed.length
+        published: countPublished,
+        scheduled: countScheduled,
+        failed: countFailed,
+        pending: countPending
       },
       posts: postDetails,
       isRunning: !!activeProcess,

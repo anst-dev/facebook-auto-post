@@ -515,19 +515,28 @@ body {
   text-transform: uppercase;
 }
 
-.status-badge.completed {
+.status-badge.published {
   background: rgba(32, 191, 107, 0.15);
   color: #20bf6b;
+  border: 1px solid rgba(32, 191, 107, 0.3);
+}
+
+.status-badge.scheduled {
+  background: rgba(15, 188, 249, 0.15);
+  color: #0fbcf9;
+  border: 1px solid rgba(15, 188, 249, 0.3);
 }
 
 .status-badge.pending {
-  background: rgba(15, 188, 249, 0.15);
-  color: #0fbcf9;
+  background: rgba(255, 255, 255, 0.05);
+  color: #a0a8c0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .status-badge.failed {
   background: rgba(255, 63, 52, 0.15);
   color: #ff3f34;
+  border: 1px solid rgba(255, 63, 52, 0.3);
 }
 
 .post-card-body h4 {

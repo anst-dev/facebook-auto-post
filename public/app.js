@@ -26,7 +26,8 @@ async function fetchStatus() {
 
     // Update Stats
     document.getElementById('stat-total').innerText = data.progress.total;
-    document.getElementById('stat-completed').innerText = data.progress.completed;
+    document.getElementById('stat-published').innerText = data.progress.published;
+    document.getElementById('stat-scheduled').innerText = data.progress.scheduled;
     document.getElementById('stat-pending').innerText = data.progress.pending;
     document.getElementById('stat-failed').innerText = data.progress.failed;
 
@@ -134,7 +135,8 @@ function renderPosts() {
   };
 
   const statusLabels = {
-    'completed': 'Đã đăng/lịch',
+    'published': 'Đã đăng',
+    'scheduled': 'Đã lên lịch',
     'failed': 'Lỗi',
     'pending': 'Đang chờ'
   };
@@ -263,8 +265,10 @@ function filterPosts(status) {
   badges.forEach(b => b.classList.remove('active'));
   
   // Find correct badge to active
-  const idxMap = { 'all': 0, 'pending': 1, 'completed': 2, 'failed': 3 };
-  badges[idxMap[status]].classList.add('active');
+  const idxMap = { 'all': 0, 'pending': 1, 'scheduled': 2, 'published': 3, 'failed': 4 };
+  if (idxMap[status] !== undefined) {
+    badges[idxMap[status]].classList.add('active');
+  }
 
   renderPosts();
 }
