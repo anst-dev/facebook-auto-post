@@ -228,7 +228,7 @@ async function saveConfig(e) {
     if (data.success) {
       alert(data.message);
       document.getElementById('config-access-token').value = ''; // clear token input, it will reload mask
-      fetchStatus();
+      window.location.reload(); // Reload page to apply new Page ID and Token
     } else {
       alert(`Lỗi: ${data.error}`);
     }
