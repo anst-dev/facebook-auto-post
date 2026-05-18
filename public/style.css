@@ -657,3 +657,22 @@ body {
 
 .w-full { width: 100%; }
 .mt-4 { margin-top: 16px; }
+
+/* New styling for Single Scheduling and Timetags */
+.btn-success {
+  background: var(--green-glow);
+  color: #fff;
+}
+.btn-glow-green:hover {
+  box-shadow: 0 4px 15px rgba(32, 191, 107, 0.4);
+  transform: translateY(-2px);
+}
+.time-tag {
+  background: rgba(32, 191, 107, 0.1);
+  border: 1px solid rgba(32, 191, 107, 0.2);
+  color: #20bf6b;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  font-weight: 600;
+}

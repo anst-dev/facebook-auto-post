@@ -8,7 +8,15 @@ const dotenv = require('dotenv');
 const dotenvPath = path.join(__dirname, '..', '.env');
 dotenv.config({ path: dotenvPath });
 
-const { scanContent, loadProgress } = require('./auto-scheduler');
+const { 
+  scanContent, 
+  loadProgress, 
+  saveProgress, 
+  scheduleWithImage, 
+  scheduleTextPost, 
+  appendLog: appendToFBlog 
+} = require('./auto-scheduler');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -51,23 +59,32 @@ app.get('/api/status', async (req, res) => {
       }
     }
 
+    // Read post logs to get actual scheduled time
+    const logFile = path.join(__dirname, '..', 'post-log.json');
+    const fblogs = fs.existsSync(logFile) ? JSON.parse(fs.readFileSync(logFile, 'utf8')) : [];
+
     // Detail of posts
     const postDetails = posts.map(p => {
       let caption = '';
       if (fs.existsSync(p.captionFile)) {
         caption = fs.readFileSync(p.captionFile, 'utf8');
       }
+      
+      const logEntry = fblogs.find(l => l.contentId === p.id && l.action === 'schedule' && l.status === 'success');
+      
       return {
         id: p.id,
         date: p.date,
         theme: p.theme,
+        topic: p.topic,
         type: p.type,
         captionFile: p.captionFile,
         captionSnippet: caption.substring(0, 100) + (caption.length > 100 ? '...' : ''),
         captionFull: caption,
         hasImage: !!p.imageFile,
         imagePath: p.imageFile ? path.relative(path.join(__dirname, '..'), p.imageFile) : null,
-        status: progress.completed.includes(p.id) ? 'completed' : (progress.failed.includes(p.id) ? 'failed' : 'pending')
+        status: progress.completed.includes(p.id) ? 'completed' : (progress.failed.includes(p.id) ? 'failed' : 'pending'),
+        scheduledFor: logEntry ? logEntry.scheduledFor : null
       };
     });
 
@@ -238,6 +255,97 @@ app.post('/api/action/delete-scheduled', (req, res) => {
     res.json({ success: true, message: 'Đang bắt đầu dọn dẹp các bài lên lịch trên Facebook...' });
   } else {
     res.status(400).json({ success: false, error: result.error });
+  }
+});
+
+// 8. Action: Schedule Single Post manually
+app.post('/api/action/schedule-single', async (req, res) => {
+  const { id, caption, scheduledTime } = req.body;
+  if (!id || !scheduledTime) {
+    return res.status(400).json({ success: false, error: 'Thiếu id hoặc thời gian lên lịch đăng bài' });
+  }
+
+  try {
+    const posts = scanContent();
+    const post = posts.find(p => p.id === id);
+    if (!post) {
+      return res.status(404).json({ success: false, error: 'Không tìm thấy bài viết trong thư mục' });
+    }
+
+    // 1. Save new Caption first
+    if (caption !== undefined) {
+      fs.writeFileSync(post.captionFile, caption, 'utf8');
+      appendLog(`Đã cập nhật caption cho bài viết ${id} trước khi lên lịch`);
+    }
+
+    // 2. Convert scheduledTime (from client datetime-local picker) to Unix timestamp (seconds)
+    const dateObj = new Date(scheduledTime);
+    const timestamp = Math.floor(dateObj.getTime() / 1000);
+    const now = Math.floor(Date.now() / 1000);
+
+    // Facebook API requires scheduled posts to be at least 10 minutes in the future
+    if (timestamp <= now + 600) {
+      return res.status(400).json({ 
+        success: false, 
+        error: 'Thời gian đăng bài phải cách thời điểm hiện tại ít nhất 10 phút!' 
+      });
+    }
+
+    // 3. Post to Facebook API
+    appendLog(`[Thủ công] Đang lên lịch đăng bài ${id} lúc ${scheduledTime}...`);
+    let result;
+    if (post.imageFile) {
+      result = await scheduleWithImage(post.imageFile, caption || post.caption, timestamp);
+    } else {
+      result = await scheduleTextPost(caption || post.caption, timestamp);
+    }
+
+    // Format schedule display label (GMT+7 timezone)
+    const labelDate = new Date((timestamp + 7 * 3600) * 1000);
+    const timeStr = `${labelDate.getUTCHours().toString().padStart(2, '0')}:${labelDate.getUTCMinutes().toString().padStart(2, '0')}`;
+    const schedLabel = `${timeStr} ${post.date}`;
+
+    if (result.success) {
+      // Update local progress log
+      const progress = loadProgress();
+      if (!progress.completed.includes(id)) {
+        progress.completed.push(id);
+        saveProgress(progress);
+      }
+      
+      // Append to Facebook schedule log
+      appendToFBlog({ 
+        postId: result.postId, 
+        contentId: id, 
+        action: 'schedule', 
+        scheduledFor: schedLabel, 
+        status: 'success' 
+      });
+
+      appendLog(`[Thành công] Đã lên lịch đăng bài ${id} -> ${schedLabel}. Post ID: ${result.postId}`);
+      res.json({ success: true, message: `Đã lên lịch bài viết đăng lúc ${schedLabel} thành công!` });
+    } else {
+      // Update failed status
+      const progress = loadProgress();
+      if (!progress.failed.includes(id)) {
+        progress.failed.push(id);
+        saveProgress(progress);
+      }
+      
+      appendToFBlog({ 
+        contentId: id, 
+        action: 'schedule', 
+        status: 'failed', 
+        error: result.error 
+      });
+
+      appendLog(`[LỖI] Lên lịch bài ${id} thất bại: ${JSON.stringify(result.error)}`);
+      res.status(500).json({ success: false, error: result.error });
+    }
+
+  } catch (err) {
+    appendLog(`[LỖI] Lỗi hệ thống khi lên lịch đơn lẻ bài ${id}: ${err.message}`);
+    res.status(500).json({ success: false, error: err.message });
   }
 });
 

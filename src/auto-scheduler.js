@@ -438,5 +438,8 @@ module.exports = {
   scanContent,
   resetProgress,
   FacebookAPI,
-  scheduleAll
+  scheduleAll,
+  scheduleWithImage,
+  scheduleTextPost,
+  appendLog
 };

@@ -137,10 +137,17 @@ function renderPosts() {
     };
 
     const statusLabels = {
-      'completed': 'Đã đăng',
+      'completed': 'Đã đăng/lịch',
       'failed': 'Lỗi',
       'pending': 'Đang chờ'
     };
+
+    let timeLabel = '';
+    if (p.scheduledFor) {
+      const parts = p.scheduledFor.split(' ');
+      const justTime = parts[0]; // "11:46"
+      timeLabel = `<span class="time-tag"><i class="fa-solid fa-clock"></i> Lịch: ${justTime}</span>`;
+    }
 
     card.innerHTML = `
       <div class="post-card-header">
@@ -152,7 +159,7 @@ function renderPosts() {
         <p>${p.captionSnippet || 'Chưa có nội dung...'}</p>
       </div>
       <div class="post-card-footer">
-        <span><i class="fa-solid fa-calendar-day"></i> ${p.date}</span>
+        <span><i class="fa-solid fa-calendar-day"></i> ${p.date} ${timeLabel}</span>
         <span>${p.hasImage ? '<i class="fa-solid fa-image" style="color: #20bf6b;"></i> Có ảnh' : '<i class="fa-solid fa-font"></i> Chữ'}</span>
       </div>
     `;
@@ -181,6 +188,26 @@ function openModal(post) {
   document.getElementById('modal-post-date').innerHTML = `<i class="fa-solid fa-calendar-days"></i> ${post.date}`;
   document.getElementById('modal-post-type').innerHTML = `<i class="fa-solid fa-hashtag"></i> ${post.type.toUpperCase()}`;
   document.getElementById('modal-post-caption').value = post.captionFull;
+
+  // Autofill scheduledTime
+  if (post.scheduledFor) {
+    // format "11:46 2026-05-18" -> "2026-05-18T11:46"
+    const parts = post.scheduledFor.split(' ');
+    if (parts.length === 2) {
+      const [time, date] = parts;
+      document.getElementById('modal-post-time').value = `${date}T${time}`;
+    }
+  } else {
+    // Suggest current time + 30 minutes for new schedule
+    const now = new Date();
+    now.setMinutes(now.getMinutes() + 30);
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const dd = String(now.getDate()).padStart(2, '0');
+    const hh = String(now.getHours()).padStart(2, '0');
+    const min = String(now.getMinutes()).padStart(2, '0');
+    document.getElementById('modal-post-time').value = `${yyyy}-${mm}-${dd}T${hh}:${min}`;
+  }
 
   document.getElementById('caption-modal').classList.add('open');
 }
@@ -212,7 +239,42 @@ async function saveCaption() {
   }
 }
 
-// 5. Config Save
+// 5. Manual schedule single post
+async function scheduleSinglePost() {
+  const id = document.getElementById('modal-post-id').value;
+  const caption = document.getElementById('modal-post-caption').value;
+  const scheduledTime = document.getElementById('modal-post-time').value;
+
+  if (!scheduledTime) {
+    alert('Vui lòng chọn ngày và giờ muốn lên lịch đăng bài!');
+    return;
+  }
+
+  const cleanTime = scheduledTime.replace('T', ' ');
+  if (!confirm(`Bạn có chắc chắn muốn LÊN LỊCH ĐƠN LẺ bài đăng ${id} lúc ${cleanTime}?`)) {
+    return;
+  }
+
+  try {
+    const res = await fetch('/api/action/schedule-single', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, caption, scheduledTime })
+    });
+    const data = await res.json();
+    if (data.success) {
+      alert(data.message);
+      closeModal();
+      fetchStatus();
+    } else {
+      alert(`Lỗi từ Facebook: ${JSON.stringify(data.error) || 'Không rõ nguyên nhân'}`);
+    }
+  } catch (err) {
+    alert(`Lỗi kết nối máy chủ: ${err.message}`);
+  }
+}
+
+// 6. Config Save
 async function saveConfig(e) {
   e.preventDefault();
   const pageId = document.getElementById('config-page-id').value;
@@ -237,7 +299,7 @@ async function saveConfig(e) {
   }
 }
 
-// 6. Action triggering helper
+// 7. Action triggering helper
 async function runAction(action) {
   let confirmMsg = '';
   if (action === 'reset') confirmMsg = 'Bạn có chắc chắn muốn RESET hàng chờ về 0? Tất cả bài viết sẽ được xếp lịch lại từ đầu!';

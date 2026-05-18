@@ -73,10 +73,10 @@
           <h2><i class="fa-solid fa-sliders"></i> Bảng điều khiển</h2>
           <div class="control-actions">
             <button id="btn-schedule" class="btn btn-primary btn-glow-purple">
-              <i class="fa-solid fa-paper-plane"></i> Kích hoạt Lên lịch (18/05)
+              <i class="fa-solid fa-paper-plane"></i> Lên lịch tự động hàng loạt
             </button>
             <button id="btn-stop" class="btn btn-danger" disabled>
-              <i class="fa-solid fa-hand"></i> Dừng tiến trình
+              <i class="fa-solid fa-hand"></i> Dừng tiến trình chạy ngầm
             </button>
             <button id="btn-delete" class="btn btn-warning">
               <i class="fa-solid fa-trash-can"></i> Dọn sạch lịch Facebook
@@ -158,20 +158,29 @@
         <h2 id="modal-post-title">Chi tiết Bài viết</h2>
         <button class="btn-close" onclick="closeModal()">&times;</button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="max-height: 70vh; overflow-y: auto; padding-right: 8px;">
         <input type="hidden" id="modal-post-id">
         <div class="post-meta-details">
           <span class="meta-tag" id="modal-post-date"><i class="fa-solid fa-calendar-days"></i> 2026-05-18</span>
           <span class="meta-tag" id="modal-post-type"><i class="fa-solid fa-hashtag"></i> INFOGRAPHIC</span>
         </div>
+        
         <div class="form-group mt-4">
           <label for="modal-post-caption" class="caption-label">Caption Nội dung kể chuyện (Không chứa ký tự Markdown rác):</label>
-          <textarea id="modal-post-caption" rows="12" placeholder="Nhập nội dung bài đăng..."></textarea>
+          <textarea id="modal-post-caption" rows="10" placeholder="Nhập nội dung bài đăng..."></textarea>
+        </div>
+
+        <div class="form-group mt-3" style="display: flex; flex-direction: column; gap: 6px;">
+          <label for="modal-post-time" class="caption-label">
+            <i class="fa-solid fa-clock" style="color: #20bf6b;"></i> Đặt lịch đăng thủ công (Facebook bắt buộc sau hiện tại ít nhất 10 phút):
+          </label>
+          <input type="datetime-local" id="modal-post-time" style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: var(--text-primary); font-family: inherit; font-size: 14px;">
         </div>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" style="gap: 10px;">
         <button class="btn btn-secondary" onclick="closeModal()"><i class="fa-solid fa-xmark"></i> Hủy</button>
-        <button class="btn btn-primary btn-glow-purple" onclick="saveCaption()"><i class="fa-solid fa-floppy-disk"></i> Lưu caption bài viết</button>
+        <button class="btn btn-primary btn-glow-purple" onclick="saveCaption()"><i class="fa-solid fa-floppy-disk"></i> Chỉ lưu Caption</button>
+        <button class="btn btn-success btn-glow-green" onclick="scheduleSinglePost()"><i class="fa-solid fa-paper-plane"></i> Lưu & Lên lịch bằng tay</button>
       </div>
     </div>
   </div>
