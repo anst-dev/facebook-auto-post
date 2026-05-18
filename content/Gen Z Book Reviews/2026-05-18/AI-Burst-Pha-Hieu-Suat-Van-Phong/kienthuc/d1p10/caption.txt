@@ -1,0 +1,21 @@
+🎴 FLASHCARD
+Flashcard: 15 thuật ngữ AI cần biết cho người đi làm
+📌 Chủ đề: AI Bứt Phá Hiệu Suất Văn Phòng
+──────────────────────────────
+Chào anh chị em, hồi mới tập tành dùng AI tôi hay bị tẩu hỏa nhập ma vì mấy cái
+từ lóng công nghệ. Nào là GenAI, prompt engineering, rồi lại còn hallucination 
+với cả framework PCTPR. Đi làm văn phòng bận bù đầu mà suốt ngày nghe sếp với 
+đồng nghiệp chêm mấy từ này vào lúc họp làm tôi cứ lóng ngóng chả hiểu gì, lúc 
+nhờ chatbot làm việc thì toàn gõ lệnh sai bét. Nhưng từ đợt đi học khóa bứt phá
+hiệu suất xong, tôi cất công gom nhặt lại đúng 15 thuật ngữ cốt lõi nhất mà dân
+văn phòng nào cũng phải biết rồi làm thành một bộ thẻ flashcard để tự ôn luyện 
+cho dễ nhớ.
+Thay vì học vẹt mấy định nghĩa máy móc, bộ thẻ flashcard này giải thích rành 
+rọt bằng ngôn ngữ bình dân xem System Prompt đóng vai trò như bản mô tả công 
+việc ra sao, hay mấy cái trợ lý Gemini Gems và ChatGPT GPTs khác nhau ở điểm 
+nào. Mỗi ngày tôi cứ lật mấy cái thẻ này ra xem một chút, thế mà giờ tôi hiểu 
+cặn kẽ bản chất của tụi AI rồi, lại còn biết cách giao việc cho chúng nó chuẩn 
+xác. Bác nào muốn hiểu sâu để tự tay thiết kế đội trợ lý ảo làm việc phụ mình 
+mà lười đọc tài liệu dài thì lấy bộ flashcard này về lướt thử nhé, đảm bảo 
+nhanh nhớ mà áp dụng vào công việc được ngay.
+#AI #TríTuệNhânTạo #NăngSuất #VănPhòng #CôngNghệ #AITips #ChatGPT #Claude #Gemini #GenZ

@@ -1,0 +1,152 @@
+{
+  "mind_map": {
+    "name": "H\u1ec7 sinh th\u00e1i Cline",
+    "children": [
+      {
+        "name": "T\u1ed5ng quan & Ki\u1ebfn tr\u00fac",
+        "children": [
+          {
+            "name": "T\u00e1c nh\u00e2n t\u1ef1 tr\u1ecb (Agentic)"
+          },
+          {
+            "name": "M\u00e3 ngu\u1ed3n m\u1edf (Apache 2.0)"
+          },
+          {
+            "name": "T\u00edch h\u1ee3p IDE (VS Code, JetBrains)"
+          },
+          {
+            "name": "M\u00f4 h\u00ecnh BYOK (Mang theo kh\u00f3a API)"
+          }
+        ]
+      },
+      {
+        "name": "T\u00ednh n\u0103ng c\u1ed1t l\u00f5i",
+        "children": [
+          {
+            "name": "Ch\u1ebf \u0111\u1ed9 Plan & Act",
+            "children": [
+              {
+                "name": "Plan: \u0110\u1ecdc v\u00e0 l\u1eadp k\u1ebf ho\u1ea1ch"
+              },
+              {
+                "name": "Act: Th\u1ef1c thi v\u00e0 ch\u1ec9nh s\u1eeda"
+              }
+            ]
+          },
+          {
+            "name": "Th\u1ef1c thi Terminal t\u1ef1 tr\u1ecb"
+          },
+          {
+            "name": "\u0110\u1ecdc/Ghi t\u1ec7p tin tr\u1ef1c ti\u1ebfp"
+          },
+          {
+            "name": "Duy\u1ec7t web (Puppeteer/Computer Use)"
+          },
+          {
+            "name": "H\u1ec7 th\u1ed1ng Checkpoint & Rollback"
+          }
+        ]
+      },
+      {
+        "name": "M\u00f4 h\u00ecnh & Nh\u00e0 cung c\u1ea5p",
+        "children": [
+          {
+            "name": "Anthropic (Claude 3.5 Sonnet/Opus)"
+          },
+          {
+            "name": "OpenRouter (C\u1ed5ng k\u1ebft n\u1ed1i \u0111a m\u00f4 h\u00ecnh)"
+          },
+          {
+            "name": "M\u00f4 h\u00ecnh c\u1ee5c b\u1ed9 (Ollama, LM Studio)"
+          },
+          {
+            "name": "Cloud (AWS Bedrock, Azure OpenAI, Gemini)"
+          }
+        ]
+      },
+      {
+        "name": "Giao th\u1ee9c b\u1ed1i c\u1ea3nh m\u00f4 h\u00ecnh (MCP)",
+        "children": [
+          {
+            "name": "MCP Marketplace (C\u00e0i \u0111\u1eb7t ti\u1ec7n \u00edch)"
+          },
+          {
+            "name": "K\u1ebft n\u1ed1i d\u1eef li\u1ec7u (Database, API, Docs)"
+          },
+          {
+            "name": "C\u00f4ng c\u1ee5 t\u00f9y ch\u1ec9nh (Linear, GitHub, Slack)"
+          }
+        ]
+      },
+      {
+        "name": "Cline Kanban",
+        "children": [
+          {
+            "name": "\u0110i\u1ec1u ph\u1ed1i \u0111a t\u00e1c nh\u00e2n song song"
+          },
+          {
+            "name": "Git Worktrees c\u00f4 l\u1eadp"
+          },
+          {
+            "name": "B\u1ea3ng qu\u1ea3n l\u00fd nhi\u1ec7m v\u1ee5 tr\u1ef1c quan"
+          },
+          {
+            "name": "Chu\u1ed7i ph\u1ee5 thu\u1ed9c t\u1ef1 \u0111\u1ed9ng (Task Linking)"
+          }
+        ]
+      },
+      {
+        "name": "T\u00f9y ch\u1ec9nh & Quy t\u1eafc",
+        "children": [
+          {
+            "name": "Cline Rules (.clinerules)"
+          },
+          {
+            "name": "Quy t\u1eafc c\u00f3 \u0111i\u1ec1u ki\u1ec7n (YAML Frontmatter)"
+          },
+          {
+            "name": "Memory Bank (Duy tr\u00ec b\u1ed1i c\u1ea3nh d\u1ef1 \u00e1n)"
+          },
+          {
+            "name": "Auto-approve (T\u1ef1 \u0111\u1ed9ng ph\u00ea duy\u1ec7t)"
+          }
+        ]
+      },
+      {
+        "name": "Qu\u1ea3n l\u00fd chi ph\u00ed & Hi\u1ec7u su\u1ea5t",
+        "children": [
+          {
+            "name": "Prompt Caching (Ti\u1ebft ki\u1ec7m 90%)"
+          },
+          {
+            "name": "Response Caching (OpenRouter)"
+          },
+          {
+            "name": "Gi\u1edbi h\u1ea1n chi ti\u00eau (Spend Limits)"
+          },
+          {
+            "name": "T\u1ed1i \u01b0u h\u00f3a Token (Context Truncation)"
+          }
+        ]
+      },
+      {
+        "name": "B\u1ea3o m\u1eadt & Doanh nghi\u1ec7p",
+        "children": [
+          {
+            "name": "D\u1eef li\u1ec7u l\u01b0u t\u1ea1i m\u00e1y kh\u00e1ch (Client-side)"
+          },
+          {
+            "name": "H\u1ed7 tr\u1ee3 m\u00f4i tr\u01b0\u1eddng Air-gapped"
+          },
+          {
+            "name": "Ki\u1ec3m so\u00e1t con ng\u01b0\u1eddi (Human-in-the-loop)"
+          },
+          {
+            "name": "SSO & Nh\u1eadt k\u00fd ki\u1ec3m tra (Enterprise)"
+          }
+        ]
+      }
+    ]
+  },
+  "note_id": "b0c55b15-c91a-49ef-b2da-97479d0a1787"
+}

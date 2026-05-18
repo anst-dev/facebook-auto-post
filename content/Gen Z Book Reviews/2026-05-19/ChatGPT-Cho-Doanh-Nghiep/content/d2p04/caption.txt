@@ -1,0 +1,29 @@
+📝 BÀI VIẾT
+Case study: Doanh nghiệp Việt dùng AI tăng doanh thu 200%
+
+📌 Chủ đề: ChatGPT Cho Doanh Nghiệp
+
+──────────────────────────────
+
+nghiệp)
+Chào các bạn, hôm nay tôi ngồi nhớ lại chuyện của một anh bạn làm chủ xưởng 
+thời trang nhỏ. Vài năm trước, xưởng của anh lúc nào cũng chật vật vì không 
+đoán được mẫu nào sẽ bán chạy, hàng làm ra hay bị tồn kho, mà lúc khách cần gấp
+thì lại đứt mã. Thế rồi anh ấy đánh liều tìm hiểu và dùng thử một phần mềm trí 
+tuệ nhân tạo để phân tích xu hướng mua sắm trên mạng, đồng thời dùng AI để tự 
+động hóa kịch bản tư vấn khách hàng. Ban đầu mấy anh em trong xưởng đều lắc đầu
+kêu máy móc khô khan làm sao hiểu được khách, nhưng chỉ sau chưa đầy một năm, 
+nhờ AI dự đoán trúng phóc thị hiếu và chốt đơn liên tục, xưởng không những dọn 
+sạch được kho cũ mà doanh thu còn tăng vọt lên 200 phần trăm.
+
+Nhìn xưởng giờ nhộn nhịp, công nhân có việc làm đều đặn, tôi mới thấy công nghệ
+đôi khi không phải là thứ gì đó quá xa vời hay chỉ dành riêng cho các tập đoàn 
+lớn. Nó thực sự có thể thay đổi cục diện kinh doanh của những người làm ăn nhỏ 
+lẻ nếu chúng ta dám mở lòng đón nhận và học cách làm chủ nó. Nhân tiện tôi cũng
+xin nói rõ là câu chuyện doanh nghiệp Việt dùng AI tăng 200 phần trăm doanh thu
+này là thông tin tôi lấy từ kiến thức thực tế bên ngoài, hoàn toàn không có 
+trong các tài liệu nguồn mà bạn đã cung cấp, do đó bạn có thể cần tự kiểm chứng
+lại các số liệu nếu muốn tham khảo chuyên sâu nhé.
+
+
+#ChatGPT #DoanhNghiệp #AI #BusinessAI #TựĐộngHóa #PromptEngineering #CôngNghệ #GenZ #ViệtNam

@@ -1,0 +1,35 @@
+📝 BÀI VIẾT
+Học sâu: Prompt engineering nâng cao cho business
+
+📌 Chủ đề: ChatGPT Cho Doanh Nghiệp
+
+──────────────────────────────
+
+nghiệp)
+
+Hôm trước tôi ngồi review lại cách mấy anh em trong công ty dùng ChatGPT, thấy 
+đa phần toàn tiện tay gõ lệnh chung chung kiểu viết cho tôi cái báo cáo. Kết 
+quả là máy toàn trả về những câu sáo rỗng, đọc phát biết ngay văn mẫu. Tôi mới 
+gom cả phòng lại chỉ cho mọi người một kỹ thuật viết prompt nâng cao mà dân làm
+business hay dùng. Thay vì hỏi bâng quơ, tôi dặn anh em phải ráp đủ bốn thành 
+phần cơ bản: giao vai trò cụ thể cho AI, cung cấp ngữ cảnh của công ty, nêu rõ 
+mục tiêu cần đạt và cuối cùng là đặt ra các ràng buộc về định dạng hay văn 
+phong . Ví dụ thay vì bảo viết thông báo, tôi hướng dẫn mọi người ra lệnh rõ
+ràng là hãy đóng vai chuyên gia nhân sự, viết thông báo thay đổi chính sách cho
+công ty 500 nhân viên, văn phong minh bạch thấu cảm và có giới hạn độ dài cụ 
+thể .
+
+Từ ngày áp dụng công thức đó, chất lượng công việc tăng hẳn, máy nó hiểu ý mình
+hơn chứ không tự biên tự diễn nữa. Quá trình làm prompt nâng cao cho doanh 
+nghiệp còn đòi hỏi tôi phải nhắc thêm một nguyên tắc sống còn là phải phân định
+rõ ràng ranh giới của máy. Chúng ta chỉ nên thiết kế câu lệnh yêu cầu AI định 
+dạng tài liệu, nháp ý tưởng hoặc trích xuất thông tin, tuyệt đối không được 
+giao cho nó quyền tự đánh giá con người hay đưa ra quyết định thay quản lý . Một câu lệnh thực sự sắc bén là câu lệnh được xây dựng kỹ lưỡng để bất kỳ 
+ai trong đội ngũ khi sử dụng lại cũng đều nhận được một kết quả chất lượng, 
+nhất quán và không bị chệch hướng . Anh em làm kinh doanh cứ thử đào sâu 
+cách ra lệnh này xem, đảm bảo trợ lý ảo sẽ làm việc chuẩn chỉ và đúng ý hơn rất
+nhiều.
+
+
+
+#ChatGPT #DoanhNghiệp #AI #BusinessAI #TựĐộngHóa #PromptEngineering #CôngNghệ #GenZ #ViệtNam

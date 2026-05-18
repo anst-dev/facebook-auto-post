@@ -1,0 +1,33 @@
+🗺️ SƠ ĐỒ TƯ DUY
+Sơ đồ tư duy: Hệ sinh thái Claude Code và các extension
+
+📌 Chủ đề: Claude Code - Lập Trình Với AI
+
+──────────────────────────────
+
+
+Hôm qua ngồi nhâm nhi ly cà phê, tôi chợt nhận ra nhiều anh em mới dùng Claude 
+Code hay bị ngợp bởi mớ lý thuyết bòng bong nào là sub-agents, skills rồi giao 
+thức MCP. Thế là tôi cặm cụi lôi tờ giấy ra vẽ một cái sơ đồ tư duy mộc mạc về 
+hệ sinh thái và các tiện ích mở rộng của công cụ này cho dễ hiểu. Phải vẽ ra 
+mới thấy mọi thứ được sắp xếp cực kỳ logic. Trung tâm của sơ đồ chính là môi 
+trường làm việc như VS Code hay Antigravity, nơi Claude Code được cài đặt trực 
+tiếp như một tiện ích mở rộng cốt lõi [1-3]. Từ bộ não trung tâm này, hệ sinh 
+thái tỏa ra nhánh quan trọng nhất là thư mục ẩn chứa dữ liệu dự án, bao gồm các
+tệp luật lệ, thư mục kỹ năng cá nhân hóa và các đặc vụ phụ trợ giúp mình chia 
+nhỏ và tự động hóa công việc . 
+
+Nhánh thú vị tiếp theo trên sơ đồ chính là những công cụ giúp AI kết nối ra thế
+giới bên ngoài. Tôi ghi chú rất kỹ phần giao thức kết nối MCP, thứ đóng vai trò
+như tay và mắt để Claude có thể tự mở trình duyệt Chrome, lướt web hay thậm chí
+tự động đọc và dán nhãn hàng trăm email cho tôi [6-8]. Phía bên cạnh là một góc
+nhỏ dành cho các plugin tải từ chợ ứng dụng, chẳng hạn như tiện ích giúp AI tóm
+tắt các tài liệu lập trình phức tạp mà lại cực kỳ tiết kiệm bộ nhớ xử lý . Từ lúc gom tất cả mớ kiến thức lộn xộn này thành một cái bản đồ tư duy đơn
+giản, tôi làm việc nhàn hẳn và không còn bị rối mỗi khi muốn tự động hóa một 
+quy trình mới. Bạn nào đang tập tành dùng công cụ này thì cứ thử hệ thống lại 
+bằng sơ đồ như tôi đi, đảm bảo mọi thứ sẽ sáng sủa và dễ kiểm soát hơn rất 
+nhiều.
+
+
+
+#ClaudeCode #AI #LậpTrình #Coding #AICoding #CôngNghệ #GenZ #Developer #Programming

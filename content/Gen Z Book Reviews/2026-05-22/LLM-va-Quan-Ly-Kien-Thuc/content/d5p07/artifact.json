@@ -1,0 +1,150 @@
+{
+  "mind_map": {
+    "name": "M\u00f4 h\u00ecnh LLM Wiki (Andrej Karpathy)",
+    "children": [
+      {
+        "name": "Kh\u00e1i ni\u1ec7m c\u1ed1t l\u00f5i",
+        "children": [
+          {
+            "name": "Bi\u00ean d\u1ecbch ki\u1ebfn th\u1ee9c (Compilation)"
+          },
+          {
+            "name": "T\u00edch l\u0169y & H\u1ee3p nh\u1ea5t (Compounding)"
+          },
+          {
+            "name": "Thay th\u1ebf RAG truy\u1ec1n th\u1ed1ng (Beyond RAG)"
+          },
+          {
+            "name": "S\u1eed d\u1ee5ng Markdown l\u00e0m substrate cho suy lu\u1eadn"
+          }
+        ]
+      },
+      {
+        "name": "Ki\u1ebfn tr\u00fac 3 l\u1edbp",
+        "children": [
+          {
+            "name": "D\u1eef li\u1ec7u th\u00f4 (raw/)",
+            "children": [
+              {
+                "name": "T\u00e0i li\u1ec7u g\u1ed1c b\u1ea5t bi\u1ebfn"
+              },
+              {
+                "name": "PDF, Web, Code, YouTube Transcripts"
+              }
+            ]
+          },
+          {
+            "name": "Wiki (wiki/)",
+            "children": [
+              {
+                "name": "T\u1eadp h\u1ee3p file .md c\u1ea5u tr\u00fac"
+              },
+              {
+                "name": "T\u00f3m t\u1eaft, th\u1ef1c th\u1ec3, kh\u00e1i ni\u1ec7m"
+              },
+              {
+                "name": "Li\u00ean k\u1ebft ng\u01b0\u1ee3c (Backlinks)"
+              }
+            ]
+          },
+          {
+            "name": "S\u01a1 \u0111\u1ed3 h\u01b0\u1edbng d\u1eabn (SCHEMA.md)",
+            "children": [
+              {
+                "name": "Quy \u01b0\u1edbc \u0111\u1eb7t t\u00ean"
+              },
+              {
+                "name": "Ti\u00eau chu\u1ea9n Metadata"
+              },
+              {
+                "name": "Quy tr\u00ecnh l\u00e0m vi\u1ec7c c\u1ee7a Agent"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Quy tr\u00ecnh v\u1eadn h\u00e0nh",
+        "children": [
+          {
+            "name": "Ingest: Thu th\u1eadp v\u00e0 l\u01b0u tr\u1eef ngu\u1ed3n"
+          },
+          {
+            "name": "Compile: LLM \u0111\u1ecdc raw/ \u0111\u1ec3 x\u00e2y d\u1ef1ng wiki"
+          },
+          {
+            "name": "Query: H\u1ecfi \u0111\u00e1p d\u1ef1a tr\u00ean ng\u1eef c\u1ea3nh wiki"
+          },
+          {
+            "name": "Lint: Ki\u1ec3m tra l\u1ed7i, m\u00e2u thu\u1eabn v\u00e0 c\u1eadp nh\u1eadt"
+          }
+        ]
+      },
+      {
+        "name": "C\u00f4ng c\u1ee5 & H\u1ec7 sinh th\u00e1i",
+        "children": [
+          {
+            "name": "Ph\u1ea7n m\u1ec1m",
+            "children": [
+              {
+                "name": "Obsidian (Frontend/IDE)"
+              },
+              {
+                "name": "Ollama (Ch\u1ea1y m\u00f4 h\u00ecnh c\u1ee5c b\u1ed9)"
+              },
+              {
+                "name": "Claude Code (Agent bi\u00ean d\u1ecbch)"
+              }
+            ]
+          },
+          {
+            "name": "D\u1ef1 \u00e1n tri\u1ec3n khai",
+            "children": [
+              {
+                "name": "SwarmVault (Local-first toolchain)"
+              },
+              {
+                "name": "LLM Wiki Compiler (Open source)"
+              },
+              {
+                "name": "Epsilla (Enterprise Semantic Graph)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "\u01afu \u0111i\u1ec3m so v\u1edbi RAG",
+        "children": [
+          {
+            "name": "Tr\u00e1nh m\u1ea5t ng\u1eef c\u1ea3nh do c\u1eaft nh\u1ecf (Chunking)"
+          },
+          {
+            "name": "T\u00ednh minh b\u1ea1ch v\u00e0 c\u00f3 th\u1ec3 ki\u1ec3m ch\u1ee9ng"
+          },
+          {
+            "name": "Kh\u1ea3 n\u0103ng t\u1ef1 ch\u1eefa l\u00e0nh (Self-healing)"
+          },
+          {
+            "name": "Quy\u1ec1n ri\u00eang t\u01b0 tuy\u1ec7t \u0111\u1ed1i (Local-first)"
+          }
+        ]
+      },
+      {
+        "name": "Th\u00e1ch th\u1ee9c Doanh nghi\u1ec7p",
+        "children": [
+          {
+            "name": "Ki\u1ec3m so\u00e1t truy c\u1eadp (RBAC)"
+          },
+          {
+            "name": "Kh\u1ea3 n\u0103ng m\u1edf r\u1ed9ng quy m\u00f4 l\u1edbn"
+          },
+          {
+            "name": "Qu\u1ea3n tr\u1ecb v\u00e0 tu\u00e2n th\u1ee7 d\u1eef li\u1ec7u"
+          }
+        ]
+      }
+    ]
+  },
+  "note_id": "57498139-c799-4707-b2d7-5fe60936bbfc"
+}

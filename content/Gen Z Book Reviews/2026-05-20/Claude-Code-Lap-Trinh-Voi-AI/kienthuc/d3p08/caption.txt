@@ -1,0 +1,30 @@
+🧠 QUIZ
+Quiz: Kiểm tra kiến thức AI coding của bạn - 10 câu hỏi
+
+📌 Chủ đề: Claude Code - Lập Trình Với AI
+
+──────────────────────────────
+
+
+Dạo này anh em bàn tán rôm rả vụ dùng AI để lập trình, nhưng tôi thấy nhiều 
+người vẫn còn lấn cấn giữa hàng tá khái niệm mới. Thế là cuối tuần rảnh rỗi, 
+tôi ngồi đúc kết lại những kinh nghiệm vọc vạch Claude Code rồi soạn ra một bài
+trắc nghiệm mộc mạc gồm 10 câu hỏi để mọi người tự kiểm tra kiến thức thực 
+chiến của mình. Quanh đi quẩn lại bài quiz cũng toàn mấy tình huống hay gặp 
+hàng ngày thôi, kiểu như khi nào thì nên bật chế độ lên kế hoạch để tiết kiệm 
+tiền token thay vì cắm đầu vào bắt AI code ngay , hay làm sao để phân 
+biệt được việc nhờ đám lính đánh thuê phụ việc với các công cụ kết nối rắc rối 
+[3-5]. 
+
+Làm xong bài kiểm tra nhỏ này đảm bảo anh em sẽ vỡ ra được khối thứ hay ho để 
+điều khiển công cụ này trơn tru hơn. Không đao to búa lớn đâu, bài trắc nghiệm 
+chỉ xoay quanh những mẹo nhỏ như cách viết luật để nắn nót tư duy cho dự án 
+ngay từ đầu , hay cách dọn dẹp bộ nhớ sao cho AI không bị lú lẫn quên 
+trước quên sau trong lúc làm việc . Tôi cứ để bộ 10 câu hỏi ở đây cho anh
+em tự đánh giá thử xem mình đang ở mức độ nào nhé, ráng làm thử khéo lại nhặt 
+được vài chiêu hay giúp tự động hóa công việc nhàn tênh mà không cần nhức đầu 
+sửa lỗi nữa.
+
+
+
+#ClaudeCode #AI #LậpTrình #Coding #AICoding #CôngNghệ #GenZ #Developer #Programming

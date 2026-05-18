@@ -68,7 +68,7 @@ THEME_NAMES = {
 
 DAYS = [
     {
-        "date": "2026-05-17", "theme": "AI-Burst-Pha-Hieu-Suat-Van-Phong", "notebook": "223526eb",
+        "date": "2026-05-18", "theme": "AI-Burst-Pha-Hieu-Suat-Van-Phong", "notebook": "223526eb",
         "posts": [
             {"id": "d1p01", "type": "infographic", "desc": "5 công cụ AI miễn phí giúp tăng năng suất văn phòng gấp đôi"},
             {"id": "d1p02", "type": "infographic", "desc": "So sánh ChatGPT vs Claude vs Gemini cho công việc văn phòng"},
@@ -83,7 +83,7 @@ DAYS = [
         ]
     },
     {
-        "date": "2026-05-18", "theme": "ChatGPT-Cho-Doanh-Nghiep", "notebook": "399e43bc",
+        "date": "2026-05-19", "theme": "ChatGPT-Cho-Doanh-Nghiep", "notebook": "399e43bc",
         "posts": [
             {"id": "d2p01", "type": "infographic", "desc": "10 cách doanh nghiệp Việt Nam dùng ChatGPT tiết kiệm 50% thời gian"},
             {"id": "d2p02", "type": "infographic", "desc": "Ma trận so sánh: ChatGPT dùng cho bộ phận nào trong công ty"},
@@ -98,7 +98,7 @@ DAYS = [
         ]
     },
     {
-        "date": "2026-05-19", "theme": "Claude-Code-Lap-Trinh-Voi-AI", "notebook": "6cf1e4aa",
+        "date": "2026-05-20", "theme": "Claude-Code-Lap-Trinh-Voi-AI", "notebook": "6cf1e4aa",
         "posts": [
             {"id": "d3p01", "type": "infographic", "desc": "Claude Code vs Copilot vs Cursor: So sánh 3 AI coding tool hàng đầu"},
             {"id": "d3p02", "type": "infographic", "desc": "5 dự án bạn có thể build trong 1 ngày với Claude Code"},
@@ -113,7 +113,7 @@ DAYS = [
         ]
     },
     {
-        "date": "2026-05-20", "theme": "Cline-AI-Coding-Agent", "notebook": "74302f18",
+        "date": "2026-05-21", "theme": "Cline-AI-Coding-Agent", "notebook": "74302f18",
         "posts": [
             {"id": "d4p01", "type": "infographic", "desc": "Cline AI: Trợ lý lập trình tự chủ trong VS Code - 7 tính năng standout"},
             {"id": "d4p02", "type": "infographic", "desc": "So sánh Cline vs GitHub Copilot vs Cursor: Đâu là best AI coder?"},
@@ -128,7 +128,7 @@ DAYS = [
         ]
     },
     {
-        "date": "2026-05-21", "theme": "LLM-va-Quan-Ly-Kien-Thuc", "notebook": "6bd18d92",
+        "date": "2026-05-22", "theme": "LLM-va-Quan-Ly-Kien-Thuc", "notebook": "6bd18d92",
         "posts": [
             {"id": "d5p01", "type": "infographic", "desc": "LLM hoạt động như thế nào? Giải thích đơn giản cho người mới"},
             {"id": "d5p02", "type": "infographic", "desc": "7 kỹ thuật prompt engineering hiệu quả nhất theo Andrej Karpathy"},
@@ -143,7 +143,7 @@ DAYS = [
         ]
     },
     {
-        "date": "2026-05-22", "theme": "Ung-Dung-Thuc-Te-Large-Language-Models", "notebook": "285e5484",
+        "date": "2026-05-23", "theme": "Ung-Dung-Thuc-Te-Large-Language-Models", "notebook": "285e5484",
         "posts": [
             {"id": "d6p01", "type": "infographic", "desc": "15 ứng dụng thực tế của LLM mà bạn chưa biết"},
             {"id": "d6p02", "type": "infographic", "desc": "LLM trong y tế, giáo dục, tài chính - Đâu là lĩnh vực tiềm năng nhất?"},
@@ -158,7 +158,7 @@ DAYS = [
         ]
     },
     {
-        "date": "2026-05-23", "theme": "Agentic-AI-va-Tuong-Lai", "notebook": "01ba7178",
+        "date": "2026-05-24", "theme": "Agentic-AI-va-Tuong-Lai", "notebook": "01ba7178",
         "posts": [
             {"id": "d7p01", "type": "infographic", "desc": "Agentic AI là gì? Tương lai của tự động hóa thông minh"},
             {"id": "d7p02", "type": "infographic", "desc": "AI Agent vs AI Chatbot: Sự khác biệt và khi nào nên dùng"},
@@ -188,85 +188,7 @@ def process_single_post(args):
 
     log_prefix = f"[{post_id}]"
 
-    # Build generate command
-    if ptype == "infographic":
-        cmd = f'notebooklm generate infographic "{desc}" -n {notebook} --language vi --wait --retry 3 --json'
-    elif ptype == "slide-deck":
-        cmd = f'notebooklm generate slide-deck "{desc}" -n {notebook} --language vi --wait --retry 3 --json'
-    elif ptype == "mind-map":
-        cmd = f'notebooklm generate mind-map --instructions "{desc}" -n {notebook} --language vi --retry 3 --json'
-    elif ptype == "quiz":
-        cmd = f'notebooklm generate quiz --instructions "{desc}" -n {notebook} --language vi --retry 3 --json'
-    elif ptype == "flashcards":
-        cmd = f'notebooklm generate flashcards --instructions "{desc}" -n {notebook} --language vi --retry 3 --json'
-    elif ptype == "data-table":
-        cmd = f'notebooklm generate data-table --instructions "{desc}" -n {notebook} --language vi --retry 3 --json'
-    elif ptype == "report":
-        fmt = post.get("format", "blog-post")
-        cmd = f'notebooklm generate report --format {fmt} "{desc}" -n {notebook} --language vi --wait --retry 3 --json'
-    else:
-        cmd = f'notebooklm generate report "{desc}" -n {notebook} --language vi --wait --retry 3 --json'
-
-    print(f"{log_prefix} Generating ({ptype})...")
-    stdout, stderr, rc = run(cmd, timeout=600)
-
-    artifact_id = None
-    if rc == 0 and stdout:
-        try:
-            data = json.loads(stdout)
-            artifact_id = data.get("id") or data.get("artifact_id")
-        except:
-            match = re.search(r'"id":\s*"([^"]+)"', stdout)
-            if match:
-                artifact_id = match.group(1)
-    
-    if not artifact_id:
-        raise Exception(f"Failed to generate artifact. RC={rc}. Stderr: {stderr[:200]}")
-
-    # Download if we got an artifact
-    has_media = False
-    if artifact_id:
-        # Wait for artifact to be ready
-        print(f"{log_prefix} Waiting for artifact to be ready...")
-        run(f'notebooklm artifact wait {artifact_id} --timeout 120', timeout=180)
-
-        ext_map = {
-            "infographic": ".png",
-            "slide-deck": ".pdf",
-            "mind-map": ".json",
-            "quiz": ".md",
-            "flashcards": ".md",
-            "data-table": ".csv",
-            "report": ".md",
-        }
-        ext = ext_map.get(ptype, ".md")
-        out_file = os.path.join(folder, f"artifact{ext}")
-        
-        dl_cmds = {
-            "infographic": f'notebooklm download infographic -a {artifact_id} -n {notebook} --force "{out_file}"',
-            "slide-deck": f'notebooklm download slide-deck -a {artifact_id} -n {notebook} --force "{out_file}"',
-            "mind-map": f'notebooklm download mind-map -a {artifact_id} -n {notebook} --force "{out_file}"',
-            "quiz": f'notebooklm download quiz -a {artifact_id} -n {notebook} --force "{out_file}"',
-            "flashcards": f'notebooklm download flashcards -a {artifact_id} -n {notebook} --force "{out_file}"',
-            "data-table": f'notebooklm download data-table -a {artifact_id} -n {notebook} --force "{out_file}"',
-            "report": f'notebooklm download report -a {artifact_id} -n {notebook} --force "{out_file}"',
-        }
-        dl_cmd = dl_cmds.get(ptype)
-        if dl_cmd:
-            print(f"{log_prefix} Downloading...")
-            dl_out, dl_err, dl_rc = run(dl_cmd, timeout=300)
-            if dl_rc != 0:
-                print(f"{log_prefix} Download error: {dl_err[:200]}")
-            time.sleep(2)
-
-        # Check for media files
-        for f in os.listdir(folder):
-            if any(f.endswith(ext) for ext in ('.png', '.jpg', '.jpeg', '.gif', '.webp', '.pdf', '.mp3', '.mp4')):
-                has_media = True
-                print(f"{log_prefix} Media found: {f}")
-                break
-
-    # Create caption
+    # --- TẠO CAPTION TRƯỚC TIÊN ĐỂ ĐẢM BẢO LUÔN CÓ CAPTION ---
     day_num = int(post_id[1:2])
     day_key = f"d{day_num}"
     hashtags = HASHTAGS_MAP.get(day_key, "#AI #CôngNghệ #GenZ")
@@ -282,16 +204,21 @@ def process_single_post(args):
     }
     label = type_labels.get(ptype, "📌 NỘI DUNG")
 
-    # Try to read downloaded report content
-    extra_content = ""
-    for f in os.listdir(folder):
-        if f.endswith('.md'):
-            try:
-                with open(os.path.join(folder, f), 'r', encoding='utf-8') as rf:
-                    extra_content = rf.read().strip()[:3000]
-            except:
-                pass
-            break
+    # Generate storytelling caption using ask
+    print(f"{log_prefix} Generating storytelling caption...")
+    # Use post['desc'] without FONT_INSTRUCTION to avoid <div> tags in prompt
+    clean_desc = post['desc']
+    ask_cmd = f'notebooklm ask "Viết một status Facebook xưng tôi, chia sẻ ngắn gọn 1-2 đoạn kể chuyện mộc mạc không dùng markdown về chủ đề: {clean_desc}" -n {notebook}'
+    story_out, _, ask_rc = run(ask_cmd, timeout=120)
+    
+    if ask_rc == 0 and story_out:
+        # Clean footnotes like [1], [1, 2] and matched info
+        story_out = re.sub(r'\[[\d,\s]+\]', '', story_out)
+        story_out = re.sub(r'(?m)^(Matched:|Continuing conversation|Answer:|Resumed conversation:).*?\n', '', story_out + '\n').strip()
+        # Clean rogue div tags
+        story_out = re.sub(r'</?div[^>]*>', '', story_out).strip()
+    else:
+        story_out = ""
 
     theme_display = THEME_NAMES.get(day_data['theme'], day_data['theme'].replace('-', ' '))
 
@@ -300,12 +227,108 @@ def process_single_post(args):
 
 📌 Chủ đề: {theme_display}
 """
-    if extra_content:
-        caption += f"\n{'─' * 30}\n\n{extra_content}\n"
-    caption += f"\n{hashtags}"
+    if story_out:
+        caption += f"\n{'─' * 30}\n\n{story_out}\n"
+        
+    caption += f"\n{hashtags}\n"
 
     with open(os.path.join(folder, "caption.txt"), 'w', encoding='utf-8') as f:
         f.write(caption)
+
+    # Build generate command
+    if ptype == "infographic":
+        cmd = f'notebooklm generate infographic "{desc}" -n {notebook} --language vi --wait --retry 3 --json'
+    elif ptype == "slide-deck":
+        cmd = f'notebooklm generate slide-deck "{desc}" -n {notebook} --language vi --wait --retry 3 --json'
+    elif ptype == "mind-map":
+        cmd = f'notebooklm generate mind-map -n {notebook} --json'
+    elif ptype == "quiz":
+        cmd = f'notebooklm generate quiz "{desc}" -n {notebook} --json'
+    elif ptype == "flashcards":
+        cmd = f'notebooklm generate flashcards "{desc}" -n {notebook} --json'
+    elif ptype == "data-table":
+        cmd = f'notebooklm generate data-table "{desc}" -n {notebook} --json'
+    elif ptype == "report":
+        fmt = post.get("format", "blog-post")
+        cmd = f'notebooklm generate report --format {fmt} "{desc}" -n {notebook} --language vi --wait --retry 3 --json'
+    else:
+        cmd = f'notebooklm generate report "{desc}" -n {notebook} --language vi --wait --retry 3 --json'
+
+    print(f"{log_prefix} Generating ({ptype})...")
+    stdout, stderr, rc = run(cmd, timeout=600)
+
+    artifact_id = None
+    direct_content = None
+    if rc == 0 and stdout:
+        try:
+            # find json array or object in stdout
+            match_json = re.search(r'(\{.*\}|\[.*\])', stdout, re.DOTALL)
+            if match_json:
+                data = json.loads(match_json.group(1))
+                artifact_id = data.get("id") or data.get("artifact_id") or data.get("task_id")
+                if not artifact_id:
+                    direct_content = match_json.group(1)
+        except:
+            pass
+        
+        if not artifact_id and not direct_content:
+            match = re.search(r'"(?:id|artifact_id|task_id)":\s*"([^"]+)"', stdout)
+            if match:
+                artifact_id = match.group(1)
+    
+    if not artifact_id and not direct_content:
+        raise Exception(f"Failed to generate artifact. RC={rc}. Stderr: {stderr[:200]} Stdout: {stdout[:200]}")
+
+    # Build output path
+    ext_map = {
+        "infographic": ".png",
+        "slide-deck": ".pdf",
+        "mind-map": ".json",
+        "quiz": ".md",
+        "flashcards": ".md",
+        "data-table": ".csv",
+        "report": ".md",
+    }
+    ext = ext_map.get(ptype, ".md")
+    out_file = os.path.join(folder, f"artifact{ext}")
+
+    # Download if we got an artifact
+    has_media = False
+    if direct_content:
+        with open(out_file, "w", encoding="utf-8") as f:
+            f.write(direct_content)
+        print(f"{log_prefix} Saved direct content to {out_file}")
+    elif artifact_id:
+        # Wait for artifact to be ready
+        print(f"{log_prefix} Waiting for artifact to be ready...")
+        run(f'notebooklm artifact wait {artifact_id} --timeout 120', timeout=180)
+
+        fmt_opt = "--format markdown" if ext == ".md" else ""
+        if ext == ".csv": fmt_opt = "--format csv"
+
+        dl_cmds = {
+            "infographic": f'notebooklm download infographic -a {artifact_id} -n {notebook} "{out_file}"',
+            "slide-deck": f'notebooklm download slide-deck -a {artifact_id} -n {notebook} "{out_file}"',
+            "mind-map": f'notebooklm download mind-map -a {artifact_id} -n {notebook} "{out_file}"',
+            "quiz": f'notebooklm download quiz -a {artifact_id} -n {notebook} {fmt_opt} "{out_file}"',
+            "flashcards": f'notebooklm download flashcards -a {artifact_id} -n {notebook} {fmt_opt} "{out_file}"',
+            "data-table": f'notebooklm download data-table -a {artifact_id} -n {notebook} {fmt_opt} "{out_file}"',
+            "report": f'notebooklm download report -a {artifact_id} -n {notebook} {fmt_opt} "{out_file}"',
+        }
+        dl_cmd = dl_cmds.get(ptype)
+        if dl_cmd:
+            print(f"{log_prefix} Downloading...")
+            dl_out, dl_err, dl_rc = run(dl_cmd, timeout=300)
+            if dl_rc != 0:
+                print(f"{log_prefix} Download error: {dl_err[:200]}")
+            time.sleep(2)
+
+        # Check for media files
+        for f in os.listdir(folder):
+            if any(f.endswith(ext) for ext in ('.png', '.jpg', '.jpeg', '.gif', '.webp', '.pdf', '.mp3', '.mp4')):
+                has_media = True
+                print(f"{log_prefix} Media found: {f}")
+                break
 
     status = "DONE" if has_media else ("DONE (text)" if artifact_id else "TEXT_ONLY")
     log_msg = f"{time.strftime('%Y-%m-%d %H:%M:%S')} {log_prefix} {status} - Format: {ptype} - Saved to: {folder}"

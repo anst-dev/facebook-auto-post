@@ -1,0 +1,29 @@
+📸 INFOGRAPHIC
+So sánh ChatGPT vs Claude vs Gemini cho công việc văn phòng
+
+📌 Chủ đề: AI Bứt Phá Hiệu Suất Văn Phòng
+
+──────────────────────────────
+
+Chào anh chị em, dạo này đi học lớp bứt phá hiệu suất xong tôi mới rành rọt mấy
+vụ dùng AI văn phòng, không còn bị ngợp giữa một rừng công cụ nữa. Nhiều người 
+hay hỏi tôi đi làm thì nên dùng ChatGPT, Claude hay Gemini cho tiện . Theo 
+những gì tôi được học thì mỗi công cụ có một thế mạnh riêng biệt để mình giao 
+đúng người đúng việc. Trợ lý Gemini của Google thì cực kỳ hợp để viết email, 
+tóm tắt nội dung hay làm mấy việc cần tiếng Việt vì nó hỗ trợ ngôn ngữ của mình
+rất tốt , . Đã thế chức năng tạo trợ lý ảo của nó còn miễn phí và gắn 
+liền với hệ sinh thái Google mà dân văn phòng tụi mình hay xài . Tuy nhiên, 
+nếu đụng tới mấy ca nặng đô như tải file tài liệu tham khảo lên để đọc, tạo 
+hình ảnh hay chạy code để phân tích dữ liệu thì tôi lại giao cho ChatGPT xử lý 
+vì đây là điểm mạnh của nó , . Điểm trừ nho nhỏ là để dùng ChatGPT bản 
+xịn với các tính năng này thì phải trả phí 20 đô mỗi tháng và khả năng tiếng 
+Việt của nó thì hơi kém hơn Gemini một chút . 
+
+Bên cạnh đó thì Claude cũng là một mô hình nổi bật thuộc hàng top trong hệ sinh
+thái AI năm 2026 để anh chị em có thể linh hoạt sử dụng , . Bí quyết của 
+tôi bây giờ là cứ việc nhẹ nhàng viết lách bằng tiếng Việt thì nhờ Gemini, còn 
+phân tích file nặng và dữ liệu phức tạp thì vứt cho ChatGPT làm . Việc chia 
+đúng việc cho từng nền tảng như vậy giúp tôi nhàn đi bao nhiêu, mọi người cũng 
+áp dụng thử cách phân công này xem sao nhé.
+
+#AI #TríTuệNhânTạo #NăngSuất #VănPhòng #CôngNghệ #AITips #ChatGPT #Claude #Gemini #GenZ

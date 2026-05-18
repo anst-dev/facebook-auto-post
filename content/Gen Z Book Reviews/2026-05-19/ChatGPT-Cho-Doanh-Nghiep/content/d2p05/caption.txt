@@ -1,0 +1,29 @@
+📝 BÀI VIẾT
+Hướng dẫn tạo Custom GPT cho nghiệp vụ cụ thể của công ty
+
+📌 Chủ đề: ChatGPT Cho Doanh Nghiệp
+
+──────────────────────────────
+
+nghiệp)
+
+Hôm nay tôi muốn kể cho các bạn nghe chuyện công ty tôi tự tạo trợ lý AI riêng.
+Hồi đầu, mấy anh em trong công ty cứ dùng bản ChatGPT chung chung nên kết quả 
+trả về hay bị rập khuôn và không sát với thực tế công việc. Sau đó tôi mới tìm 
+hiểu và phát hiện ra mình hoàn toàn có thể tạo ra các GPTs cá nhân hóa hay 
+Custom GPT để làm một người trợ lý chuyên biệt cho đúng nghiệp vụ của mình .
+Cách làm rất thực tế, tôi bắt đầu bằng việc kết nối AI với các tài liệu nội bộ 
+của công ty và tinh chỉnh lại để hệ thống hiểu rõ cách thức làm việc đặc thù 
+của chúng tôi .
+
+Tuy nhiên để an toàn, tôi luôn dặn mọi người không bao giờ đưa dữ liệu mật lên 
+các bản miễn phí. Thay vào đó, tôi chọn sử dụng phiên bản ChatGPT dành cho 
+doanh nghiệp hoặc tích hợp qua cổng API để đảm bảo dữ liệu nội bộ không bị đem 
+đi huấn luyện ngược lại cho mô hình công cộng . Từ ngày có Custom GPT riêng,
+công việc của mọi người nhẹ nhàng và trôi chảy hẳn. Nếu công ty bạn cũng đang 
+loay hoay tìm cách tăng năng suất, hãy thử xây dựng một hệ thống ChatGPT nội bộ
+bảo mật tuyệt đối cho riêng mình giống như cách tôi đã làm nhé .
+
+
+
+#ChatGPT #DoanhNghiệp #AI #BusinessAI #TựĐộngHóa #PromptEngineering #CôngNghệ #GenZ #ViệtNam

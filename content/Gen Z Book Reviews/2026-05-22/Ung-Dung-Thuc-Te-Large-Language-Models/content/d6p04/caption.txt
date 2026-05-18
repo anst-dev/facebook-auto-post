@@ -1,6 +1,0 @@
-📝 BÀI VIẾT
-Xây dựng chatbot khách hàng thông minh với LLM - Hướng dẫn A-Z
-
-📌 Chủ đề: Ứng Dụng Thực Tế Large Language Models
-
-#LLM #AI #ỨngDụngAI #CôngNghệ #ThựcTiễn #GenZ #ViệtNam #TựĐộngHóa

@@ -15,12 +15,14 @@
     "auto:verify": "node src/auto-scheduler.js verify",
     "auto:post": "node src/auto-scheduler.js post",
     "auto:schedule": "node src/auto-scheduler.js schedule",
-    "auto:reset": "node src/auto-scheduler.js reset"
+    "auto:reset": "node src/auto-scheduler.js reset",
+    "dashboard": "node src/server.js"
   },
   "dependencies": {
     "axios": "^1.7.9",
     "cheerio": "^1.0.0",
     "dotenv": "^16.4.7",
+    "express": "^5.2.1",
     "form-data": "^4.0.5"
   }
 }

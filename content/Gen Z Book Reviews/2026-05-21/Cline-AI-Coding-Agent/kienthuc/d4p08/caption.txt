@@ -1,0 +1,26 @@
+🧠 QUIZ
+Quiz: Bạn hiểu bao nhiêu về AI coding agents?
+
+📌 Chủ đề: Cline AI Coding Agent
+
+──────────────────────────────
+
+Chào anh em, dạo gần đây đi đâu tôi cũng nghe bàn tán rôm rả về sự dịch chuyển 
+từ các công cụ gợi ý mã nguồn sang các đại lý lập trình AI tự chủ như Cline hay
+Claude Code . Nhớ lại ngày xưa dùng tool tự động hoàn thành mã đã thấy xịn 
+lắm rồi, thế mà giờ các đại lý AI này còn biết tự lên kế hoạch, tự động đọc 
+hiểu toàn bộ dự án, chạy lệnh terminal rồi tự gỡ lỗi luôn mới nể chứ . 
+Xài thì sướng tay thật đấy, nhưng đôi lúc tôi tự hỏi liệu mình và anh em có 
+thực sự hiểu rõ cách chúng vận hành, sự khác biệt giữa việc gọi mô hình trực 
+tiếp và giao việc cho đại lý, hay cơ chế an toàn của chúng nó ra sao không .
+
+Thế là tôi rảnh rỗi lôi mớ kiến thức dạo này tìm hiểu được ra, làm ngay một bài
+trắc nghiệm nho nhỏ để thử thách mọi người. Bài quiz này sẽ kiểm tra xem bạn 
+hiểu bao nhiêu về thế giới AI coding agents, từ cách phân biệt cấp độ tự chủ 
+cho đến cách chúng dùng giao thức MCP để kết nối với cơ sở dữ liệu hay các công
+cụ bên ngoài . Anh em vào làm thử xem mình am hiểu đến đâu rồi bình luận 
+khoe kết quả bên dưới nhé, để xem ai mới thực sự là bậc thầy điều khiển AI 
+trong nhóm mình.
+
+
+#Cline #AI #LậpTrình #VSCoder #AIAgent #Coding #CôngNghệ #Developer #GenZ

@@ -8,3 +8,1150 @@ Error: No such option: --retry
 Try 'notebooklm generate quiz --help' for help.
 
 Error: No such option: --instructions
+2026-05-17 16:01:15 [d1p09] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-17 16:01:15 [d1p10] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate flashcards [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate flashcards --help' for help.
+
+Error: No such option: --instructions
+2026-05-17 16:05:09 [d1p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 16:05:46 [d1p03] FAILED: Failed to generate artifact. RC=1. Stderr: 15:58:43 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.581s
+15:59:44 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.484s
+16:01:45 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-17 16:05:46 [d1p01] FAILED: Failed to generate artifact. RC=1. Stderr: 15:58:43 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.614s
+15:59:44 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.537s
+16:01:45 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-17 16:05:47 [d1p02] FAILED: Failed to generate artifact. RC=1. Stderr: 15:58:43 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.530s
+15:59:44 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.572s
+16:01:45 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-17 16:07:14 [d2p05] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-17 16:07:24 [d2p04] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-17 16:07:24 [d2p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-17 16:07:25 [d2p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
+2026-05-17 16:07:52 [d2p09] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-17 16:07:52 [d2p10] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate data-table [OPTIONS] DESCRIPTION
+Try 'notebooklm generate data-table --help' for help.
+
+Error: No such option: --instructions
+2026-05-17 16:08:22 [d2p01] FAILED: Failed to generate artifact. RC=1. Stderr: 16:01:19 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.538s
+16:02:20 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.503s
+16:04:21 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-17 17:53:35 [d2p06] FAILED: Failed to generate artifact. RC=1. Stderr: Timeout
+2026-05-17 17:53:44 [d2p02] FAILED: Failed to generate artifact. RC=1. Stderr: Timeout
+2026-05-17 17:53:49 [d3p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:53:50 [d3p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:53:52 [d3p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:53:52 [d3p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:53:53 [d3p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-17 17:53:53 [d3p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
+2026-05-17 17:53:55 [d3p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:53:55 [d3p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:53:58 [d4p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:53:58 [d4p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:00 [d4p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:00 [d4p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:03 [d4p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:03 [d4p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:05 [d4p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-17 17:54:05 [d4p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
+2026-05-17 17:54:12 [d4p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:12 [d4p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:14 [d5p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:15 [d5p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:17 [d5p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:17 [d5p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:18 [d2p03] FAILED: Failed to generate artifact. RC=1. Stderr: Timeout
+2026-05-17 17:54:19 [d5p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:19 [d5p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:19 [d5p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-17 17:54:20 [d5p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
+2026-05-17 17:54:20 [d5p10] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate data-table [OPTIONS] DESCRIPTION
+Try 'notebooklm generate data-table --help' for help.
+
+Error: No such option: --instructions
+2026-05-17 17:54:22 [d5p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:23 [d6p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:23 [d6p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:24 [d6p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:25 [d6p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:25 [d6p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:26 [d6p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-17 17:54:26 [d6p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
+2026-05-17 17:54:27 [d6p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:28 [d6p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:28 [d6p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:29 [d7p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:31 [d7p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:31 [d7p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:32 [d7p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:30 [d7p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-17 17:54:31 [d7p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
+2026-05-17 17:54:32 [d7p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:32 [d7p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:37 [d7p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:54:40 [d7p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-17 17:56:23 [d3p01] FAILED: Failed to generate artifact. RC=1. Stderr: Timeout
+2026-05-17 17:56:52 [d3p02] FAILED: Failed to generate artifact. RC=1. Stderr: Timeout
+2026-05-18 08:43:06 [d1p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:06 [d1p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:06 [d1p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:06 [d1p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:06 [d1p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:07 [d1p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-18 08:43:07 [d1p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
+2026-05-18 08:43:07 [d1p10] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate flashcards [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate flashcards --help' for help.
+
+Error: No such option: --instructions
+2026-05-18 08:43:09 [d1p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:09 [d1p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:10 [d2p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:10 [d2p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:10 [d2p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:12 [d2p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-18 08:43:12 [d2p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
+2026-05-18 08:43:12 [d2p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:12 [d2p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:13 [d2p10] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate data-table [OPTIONS] DESCRIPTION
+Try 'notebooklm generate data-table --help' for help.
+
+Error: No such option: --instructions
+2026-05-18 08:43:13 [d2p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:15 [d2p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:15 [d3p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:16 [d3p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:16 [d3p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:17 [d3p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-18 08:43:17 [d3p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
+2026-05-18 08:43:17 [d3p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:18 [d3p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:20 [d3p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:20 [d3p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:20 [d3p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:20 [d4p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:20 [d4p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:22 [d4p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-18 08:43:23 [d4p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
+2026-05-18 08:43:23 [d4p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:23 [d4p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:23 [d4p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:23 [d4p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:26 [d4p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:26 [d4p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:26 [d5p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:26 [d5p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:26 [d5p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:28 [d5p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-18 08:43:28 [d5p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
+2026-05-18 08:43:29 [d5p10] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate data-table [OPTIONS] DESCRIPTION
+Try 'notebooklm generate data-table --help' for help.
+
+Error: No such option: --instructions
+2026-05-18 08:43:29 [d5p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:29 [d5p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:29 [d5p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:30 [d5p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:32 [d6p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:33 [d6p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:33 [d6p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:33 [d6p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:34 [d6p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:34 [d6p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-18 08:43:34 [d6p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
+2026-05-18 08:43:35 [d6p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:36 [d6p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:38 [d6p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:38 [d7p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:38 [d7p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:39 [d7p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:40 [d7p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --retry
+2026-05-18 08:43:41 [d7p08] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate quiz [OPTIONS] [DESCRIPTION]
+Try 'notebooklm generate quiz --help' for help.
+
+Error: No such option: --instructions
+2026-05-18 08:43:41 [d7p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:42 [d7p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:42 [d7p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:47 [d7p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:43:48 [d7p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:25 [d1p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:25 [d1p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:25 [d1p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:25 [d1p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:25 [d1p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:26 [d1p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --wait
+2026-05-18 08:44:28 [d1p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:28 [d1p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:28 [d1p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:28 [d1p08] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:29 [d2p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:31 [d2p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:31 [d2p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:31 [d2p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:31 [d2p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:31 [d2p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:32 [d2p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --wait
+2026-05-18 08:44:33 [d2p08] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:33 [d2p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:34 [d2p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:34 [d3p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:34 [d3p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:35 [d3p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --wait
+2026-05-18 08:44:36 [d3p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:36 [d3p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:38 [d3p08] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:38 [d3p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:39 [d3p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:39 [d3p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:40 [d3p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:40 [d4p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:41 [d4p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:42 [d4p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --wait
+2026-05-18 08:44:42 [d4p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:42 [d4p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:43 [d4p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:43 [d4p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:45 [d4p08] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:45 [d4p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:45 [d4p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:46 [d5p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:46 [d5p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:47 [d5p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --wait
+2026-05-18 08:44:47 [d5p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:48 [d5p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:48 [d5p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:48 [d5p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:49 [d5p08] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:50 [d5p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:50 [d5p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:50 [d6p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:51 [d6p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:52 [d6p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --wait
+2026-05-18 08:44:52 [d6p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:52 [d6p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:53 [d6p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:53 [d6p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:54 [d6p08] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:54 [d6p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:55 [d6p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:56 [d7p01] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:57 [d7p02] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:57 [d7p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: No such option: --wait
+2026-05-18 08:44:57 [d7p04] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:57 [d7p03] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:58 [d7p05] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:44:59 [d7p06] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:45:00 [d7p10] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:45:00 [d7p09] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:45:00 [d7p08] FAILED: Failed to generate artifact. RC=1. Stderr: 
+2026-05-18 08:50:41 [d1p04] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 08:50:54 [d1p05] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 08:50:55 [d1p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: Got unexpected extra argument (Sơ đồ tư duy: Hệ sinh thái AI cho dân văn phòng IMPORTANT: Use 
+2026-05-18 08:50:59 [d1p08] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 08:52:11 [d1p09] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 08:52:17 [d1p10] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 08:53:45 [d1p05] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\content\d1p05
+2026-05-18 08:53:56 [d1p04] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\content\d1p04
+2026-05-18 08:53:57 [d1p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: Got unexpected extra argument (Sơ đồ tư duy: Hệ sinh thái AI cho dân văn phòng IMPORTANT: Use  Stdout: 
+2026-05-18 08:54:05 [d1p08] DONE (text) - Format: quiz - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\kienthuc\d1p08
+2026-05-18 08:55:27 [d1p09] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\content\d1p09
+2026-05-18 08:55:36 [d1p10] DONE (text) - Format: flashcards - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\kienthuc\d1p10
+2026-05-18 08:56:36 [d1p01] FAILED: Failed to generate artifact. RC=1. Stderr: 08:49:33 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.423s
+08:50:34 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.521s
+08:52:35 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 08:56:36 [d1p03] FAILED: Failed to generate artifact. RC=1. Stderr: 08:49:33 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.542s
+08:50:34 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.416s
+08:52:35 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 08:56:37 [d1p02] FAILED: Failed to generate artifact. RC=1. Stderr: 08:49:33 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.585s
+08:50:34 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.576s
+08:52:35 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 08:57:48 [d1p06] FAILED: Failed to generate artifact. RC=1. Stderr: 08:50:45 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.472s
+08:51:46 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.470s
+08:53:47 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 08:58:06 [d2p04] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 08:59:14 [d2p05] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 08:59:15 [d2p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: Got unexpected extra argument (Sơ đồ tư duy: Chiến lược AI toàn diện cho doanh nghiệp IMPORTAN
+2026-05-18 08:59:22 [d2p08] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 08:59:24 [d2p01] FAILED: Failed to generate artifact. RC=1. Stderr: 08:52:21 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.547s
+08:53:22 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.511s
+08:55:23 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 08:59:27 [d1p01] FAILED: Failed to generate artifact. RC=1. Stderr: 08:52:24 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.477s
+08:53:25 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.490s
+08:55:26 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 08:59:27 [d1p02] FAILED: Failed to generate artifact. RC=1. Stderr: 08:52:24 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.545s
+08:53:25 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.467s
+08:55:26 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 08:59:29 [d2p10] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 08:59:29 [d1p03] FAILED: Failed to generate artifact. RC=1. Stderr: 08:52:26 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.470s
+08:53:27 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.506s
+08:55:28 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 08:59:49 [d2p09] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:02:40 [d2p04] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-18\ChatGPT-Cho-Doanh-Nghiep\content\d2p04
+2026-05-18 09:02:47 [d1p06] FAILED: Failed to generate artifact. RC=1. Stderr: 08:53:49 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.521s
+08:54:50 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.480s
+08:56:51 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Slide Deck generation rate limited by Google"
+}
+2026-05-18 09:04:18 [d2p05] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-18\ChatGPT-Cho-Doanh-Nghiep\content\d2p05
+2026-05-18 09:04:19 [d2p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: Got unexpected extra argument (Sơ đồ tư duy: Chiến lược AI toàn diện cho doanh nghiệp IMPORTAN Stdout: 
+2026-05-18 09:04:28 [d2p08] DONE (text) - Format: quiz - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-18\ChatGPT-Cho-Doanh-Nghiep\kienthuc\d2p08
+2026-05-18 09:04:37 [d2p01] FAILED: Failed to generate artifact. RC=1. Stderr: 08:55:40 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.610s
+08:56:41 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.488s
+08:58:42 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 399e43bc-272... (Ứng dụng ChatGPT trong Thiết kế và Vận hành Doanh 
+nghiệp)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:04:50 [d2p10] DONE (text) - Format: data-table - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-18\ChatGPT-Cho-Doanh-Nghiep\content\d2p10
+2026-05-18 09:05:12 [d1p07] FAILED: Failed to generate artifact. RC=0. Stderr:  Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "mind_map": {
+    "name": "OFC101: B\u1ee9t Ph\u00e1 Hi\u1ec7u Su\u1ea5t V\u1edbi AI",
+    "children": [
+      {
+        "nam
+2026-05-18 09:05:39 [d2p02] FAILED: Failed to generate artifact. RC=1. Stderr: 08:56:41 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.569s
+08:57:43 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.705s
+08:59:44 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:05:39 [d2p03] FAILED: Failed to generate artifact. RC=1. Stderr: 08:56:41 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.492s
+08:57:43 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.783s
+08:59:44 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:07:07 [d2p06] FAILED: Failed to generate artifact. RC=1. Stderr: 08:58:09 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.482s
+08:59:11 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.532s
+09:03:06 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:07:13 [d3p04] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:08:30 [d3p01] FAILED: Failed to generate artifact. RC=1. Stderr: 08:59:32 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.488s
+09:02:28 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.626s
+09:04:29 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:08:30 [d3p05] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:08:30 [d3p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: Got unexpected extra argument (Sơ đồ tư duy: Hệ sinh thái Claude Code và các extension IMPORTA
+2026-05-18 09:08:36 [d3p08] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:08:50 [d3p02] FAILED: Failed to generate artifact. RC=1. Stderr: 08:59:53 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.551s
+09:02:48 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.514s
+09:04:49 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:09:12 [d3p10] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:10:04 [d3p09] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:12:08 [d1p01] FAILED: Failed to generate artifact. RC=1. Stderr: 09:05:05 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.506s
+09:06:06 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.473s
+09:08:07 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:12:09 [d1p03] FAILED: Failed to generate artifact. RC=1. Stderr: 09:05:05 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.439s
+09:06:06 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.434s
+09:08:08 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:12:09 [d1p02] FAILED: Failed to generate artifact. RC=1. Stderr: 09:05:05 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.453s
+09:06:06 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.476s
+09:08:07 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:12:09 [d1p06] FAILED: Failed to generate artifact. RC=1. Stderr: 09:05:05 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.500s
+09:06:06 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.481s
+09:08:07 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Slide Deck generation rate limited by Google"
+}
+2026-05-18 09:12:19 [d2p01] FAILED: Failed to generate artifact. RC=1. Stderr: 09:05:15 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.540s
+09:06:16 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.533s
+09:08:18 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 399e43bc-272... (Ứng dụng ChatGPT trong Thiết kế và Vận hành Doanh 
+nghiệp)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:12:22 [d2p07] FAILED: Failed to generate artifact. RC=0. Stderr:  Stdout: Matched: 399e43bc-272... (Ứng dụng ChatGPT trong Thiết kế và Vận hành Doanh 
+nghiệp)
+{
+  "mind_map": {
+    "name": "S\u1eed d\u1ee5ng AI trong Nh\u00e2n s\u1ef1 (HR) v\u00e0 Thi\u1ebft k\u1ebf",
+    "
+2026-05-18 09:12:46 [d3p03] FAILED: Failed to generate artifact. RC=1. Stderr: 09:05:42 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.464s
+09:06:43 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.485s
+09:08:44 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:12:55 [d2p09] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-18\ChatGPT-Cho-Doanh-Nghiep\content\d2p09
+2026-05-18 09:14:09 [d4p04] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:14:19 [d3p06] FAILED: Failed to generate artifact. RC=1. Stderr: 09:07:16 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.521s
+09:08:17 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.446s
+09:10:18 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:15:33 [d4p05] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:15:33 [d4p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: Got unexpected extra argument (Sơ đồ tư duy: Kiến trúc Cline AI và cách hoạt động IMPORTANT: U
+2026-05-18 09:15:40 [d4p08] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:15:57 [d4p01] FAILED: Failed to generate artifact. RC=1. Stderr: 09:08:54 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.618s
+09:09:55 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.514s
+09:11:56 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:16:19 [d4p02] FAILED: Failed to generate artifact. RC=1. Stderr: 09:09:15 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.510s
+09:10:16 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.514s
+09:12:17 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:16:35 [d4p10] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:17:11 [d4p03] FAILED: Failed to generate artifact. RC=1. Stderr: 09:10:07 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.498s
+09:11:09 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.510s
+09:13:10 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:17:14 [d4p09] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:18:35 [d5p04] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:19:16 [d2p06] FAILED: Failed to generate artifact. RC=1. Stderr: 09:12:12 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.491s
+09:13:13 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.520s
+09:15:15 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 399e43bc-272... (Ứng dụng ChatGPT trong Thiết kế và Vận hành Doanh 
+nghiệp)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Slide Deck generation rate limited by Google"
+}
+2026-05-18 09:19:16 [d2p02] FAILED: Failed to generate artifact. RC=1. Stderr: 09:12:12 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.532s
+09:13:13 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.563s
+09:15:15 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 399e43bc-272... (Ứng dụng ChatGPT trong Thiết kế và Vận hành Doanh 
+nghiệp)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:19:16 [d2p03] FAILED: Failed to generate artifact. RC=1. Stderr: 09:12:12 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.514s
+09:13:13 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.552s
+09:15:15 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 399e43bc-272... (Ứng dụng ChatGPT trong Thiết kế và Vận hành Doanh 
+nghiệp)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:19:29 [d3p01] FAILED: Failed to generate artifact. RC=1. Stderr: 09:12:25 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.428s
+09:13:27 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.604s
+09:15:28 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 6cf1e4aa-ff0... (Claude Code Full Course: Build and Sell (2026))
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:19:56 [d5p05] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:20:02 [d3p02] FAILED: Failed to generate artifact. RC=1. Stderr: 09:12:58 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.509s
+09:14:00 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.499s
+09:16:01 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 6cf1e4aa-ff0... (Claude Code Full Course: Build and Sell (2026))
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:20:11 [d3p07] FAILED: Failed to generate artifact. RC=0. Stderr:  Stdout: Matched: 6cf1e4aa-ff0... (Claude Code Full Course: Build and Sell (2026))
+{
+  "mind_map": {
+    "name": "Kh\u00f3a h\u1ecdc Claude Code To\u00e0n di\u1ec7n",
+    "children": [
+      {
+        "name": 
+2026-05-18 09:20:20 [d3p08] DONE (text) - Format: quiz - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-19\Claude-Code-Lap-Trinh-Voi-AI\kienthuc\d3p08
+2026-05-18 09:20:46 [d3p05] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-19\Claude-Code-Lap-Trinh-Voi-AI\content\d3p05
+2026-05-18 09:20:46 [d3p04] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-19\Claude-Code-Lap-Trinh-Voi-AI\content\d3p04
+2026-05-18 09:21:27 [d4p06] FAILED: Failed to generate artifact. RC=1. Stderr: 09:14:23 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.485s
+09:15:25 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.663s
+09:17:26 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:21:28 [d5p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: Got unexpected extra argument (Sơ đồ tư duy: Kiến trúc Transformer và cách LLM xử lý ngôn ngữ 
+2026-05-18 09:21:30 [d3p10] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-19\Claude-Code-Lap-Trinh-Voi-AI\content\d3p10
+2026-05-18 09:21:34 [d5p08] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:21:51 [d3p09] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-19\Claude-Code-Lap-Trinh-Voi-AI\content\d3p09
+2026-05-18 09:22:54 [d5p09] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:22:59 [d5p10] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:23:28 [d5p01] FAILED: Failed to generate artifact. RC=1. Stderr: 09:16:22 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.662s
+09:17:23 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.607s
+09:19:25 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:23:42 [d5p02] FAILED: Failed to generate artifact. RC=1. Stderr: 09:16:39 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.547s
+09:17:40 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.471s
+09:19:41 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:24:03 [d6p01] FAILED: Failed to generate artifact. RC=1. Stderr: 09:23:02 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.510s
+09:24:03 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.056s: HTTP 502
+2026-05-18 09:24:18 [d5p03] FAILED: Failed to generate artifact. RC=1. Stderr: 09:17:14 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.536s
+09:18:15 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.542s
+09:20:16 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:27:17 [d6p04] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:27:21 [d6p05] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:27:22 [d6p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: Got unexpected extra argument (Sơ đồ tư duy: Bản đồ ứng dụng LLM trên mọi ngành nghề IMPORTANT
+2026-05-18 09:27:27 [d6p08] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:28:01 [d6p09] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:28:42 [d3p03] FAILED: Failed to generate artifact. RC=1. Stderr: 09:19:19 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.699s
+09:20:20 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.513s
+09:22:21 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 6cf1e4aa-ff0... (Claude Code Full Course: Build and Sell (2026))
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:28:55 [d3p06] FAILED: Failed to generate artifact. RC=1. Stderr: 09:19:32 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.471s
+09:20:34 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.425s
+09:22:35 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 6cf1e4aa-ff0... (Claude Code Full Course: Build and Sell (2026))
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Slide Deck generation rate limited by Google"
+}
+2026-05-18 09:29:19 [d6p10] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:29:22 [d5p06] FAILED: Failed to generate artifact. RC=1. Stderr: 09:19:59 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.505s
+09:21:00 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.655s
+09:23:01 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:31:09 [d1p04] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\content\d1p04
+2026-05-18 09:31:10 [d1p05] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\content\d1p05
+2026-05-18 09:31:21 [d1p07] TEXT_ONLY - Format: mind-map - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\content\d1p07
+2026-05-18 09:31:35 [d1p08] DONE (text) - Format: quiz - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\kienthuc\d1p08
+2026-05-18 09:32:53 [d1p09] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\content\d1p09
+2026-05-18 09:32:54 [d6p02] FAILED: Failed to generate artifact. RC=1. Stderr: 09:23:32 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.507s
+09:24:33 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.496s
+09:28:53 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:33:09 [d1p10] DONE (text) - Format: flashcards - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\kienthuc\d1p10
+2026-05-18 09:33:09 [d6p03] FAILED: Failed to generate artifact. RC=1. Stderr: 09:23:46 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 1.437s
+09:24:47 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.559s
+09:29:08 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:34:25 [d6p06] FAILED: Failed to generate artifact. RC=1. Stderr: 09:27:21 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.512s
+09:28:22 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.534s
+09:30:23 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:34:39 [d7p04] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:35:54 [d7p05] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:35:55 [d7p07] FAILED: Failed to generate artifact. RC=2. Stderr: Usage: notebooklm generate mind-map [OPTIONS]
+Try 'notebooklm generate mind-map --help' for help.
+
+Error: Got unexpected extra argument (Sơ đồ tư duy: Hệ sinh thái Agentic AI và các use case IMPORTANT
+2026-05-18 09:36:01 [d7p08] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:36:27 [d7p01] FAILED: Failed to generate artifact. RC=1. Stderr: 09:29:23 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.626s
+09:30:24 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.526s
+09:32:26 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:36:28 [d7p02] FAILED: Failed to generate artifact. RC=1. Stderr: 09:29:25 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.496s
+09:30:26 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.555s
+09:32:27 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:37:01 [d7p10] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:37:20 [d1p05] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\content\d1p05
+2026-05-18 09:37:23 [d1p04] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\content\d1p04
+2026-05-18 09:37:31 [d7p09] FAILED: Failed to generate artifact. RC=0. Stderr: 
+2026-05-18 09:37:56 [d1p07] TEXT_ONLY - Format: mind-map - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\content\d1p07
+2026-05-18 09:38:36 [d1p08] DONE (text) - Format: quiz - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\kienthuc\d1p08
+2026-05-18 09:40:02 [d7p03] FAILED: Failed to generate artifact. RC=1. Stderr: 09:32:58 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.534s
+09:33:59 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.533s
+09:36:01 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:40:18 [d1p09] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\content\d1p09
+2026-05-18 09:41:00 [d1p10] DONE (text) - Format: flashcards - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-17\AI-Burst-Pha-Hieu-Suat-Van-Phong\kienthuc\d1p10
+2026-05-18 09:41:47 [d7p06] FAILED: Failed to generate artifact. RC=1. Stderr: 09:34:43 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.521s
+09:35:44 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.578s
+09:37:45 ERROR [notebooklm._core] RPC CREATE_ARTIFAC
+2026-05-18 09:42:31 [d1p03] FAILED: Failed to generate artifact. RC=1. Stderr: 09:35:27 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.485s
+09:36:28 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.483s
+09:38:29 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:42:31 [d1p02] FAILED: Failed to generate artifact. RC=1. Stderr: 09:35:27 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.489s
+09:36:28 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.472s
+09:38:29 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:42:33 [d1p01] FAILED: Failed to generate artifact. RC=1. Stderr: 09:35:29 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.714s
+09:36:30 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.604s
+09:38:32 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:44:27 [d1p06] FAILED: Failed to generate artifact. RC=1. Stderr: 09:37:23 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.534s
+09:38:25 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.467s
+09:40:26 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Slide Deck generation rate limited by Google"
+}
+2026-05-18 09:44:47 [d2p04] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-18\ChatGPT-Cho-Doanh-Nghiep\content\d2p04
+2026-05-18 09:47:03 [d2p05] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-18\ChatGPT-Cho-Doanh-Nghiep\content\d2p05
+2026-05-18 09:47:51 [d2p07] TEXT_ONLY - Format: mind-map - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-18\ChatGPT-Cho-Doanh-Nghiep\content\d2p07
+2026-05-18 09:48:07 [d2p01] FAILED: Failed to generate artifact. RC=1. Stderr: 09:41:03 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.524s
+09:42:04 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.513s
+09:44:05 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 399e43bc-272... (Ứng dụng ChatGPT trong Thiết kế và Vận hành Doanh 
+nghiệp)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:48:41 [d2p08] DONE (text) - Format: quiz - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-18\ChatGPT-Cho-Doanh-Nghiep\kienthuc\d2p08
+2026-05-18 09:49:16 [d2p09] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-18\ChatGPT-Cho-Doanh-Nghiep\content\d2p09
+2026-05-18 09:49:24 [d2p10] DONE (text) - Format: data-table - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-18\ChatGPT-Cho-Doanh-Nghiep\content\d2p10
+2026-05-18 09:49:38 [d2p02] FAILED: Failed to generate artifact. RC=1. Stderr: 09:42:34 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.536s
+09:43:36 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.542s
+09:45:37 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 399e43bc-272... (Ứng dụng ChatGPT trong Thiết kế và Vận hành Doanh 
+nghiệp)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:49:38 [d2p03] FAILED: Failed to generate artifact. RC=1. Stderr: 09:42:34 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.492s
+09:43:35 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.454s
+09:45:37 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 399e43bc-272... (Ứng dụng ChatGPT trong Thiết kế và Vận hành Doanh 
+nghiệp)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:51:33 [d3p04] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-19\Claude-Code-Lap-Trinh-Voi-AI\content\d3p04
+2026-05-18 09:51:54 [d2p06] FAILED: Failed to generate artifact. RC=1. Stderr: 09:44:50 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.468s
+09:45:52 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.543s
+09:47:53 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 399e43bc-272... (Ứng dụng ChatGPT trong Thiết kế và Vận hành Doanh 
+nghiệp)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Slide Deck generation rate limited by Google"
+}
+2026-05-18 09:53:28 [d3p05] DONE (text) - Format: report - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-19\Claude-Code-Lap-Trinh-Voi-AI\content\d3p05
+2026-05-18 09:54:12 [d3p07] TEXT_ONLY - Format: mind-map - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-19\Claude-Code-Lap-Trinh-Voi-AI\content\d3p07
+2026-05-18 09:55:02 [d3p08] DONE (text) - Format: quiz - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-19\Claude-Code-Lap-Trinh-Voi-AI\kienthuc\d3p08
+2026-05-18 09:56:23 [d3p01] FAILED: Failed to generate artifact. RC=1. Stderr: 09:49:20 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.474s
+09:50:21 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.475s
+09:52:22 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 6cf1e4aa-ff0... (Claude Code Full Course: Build and Sell (2026))
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:56:31 [d3p02] FAILED: Failed to generate artifact. RC=1. Stderr: 09:49:27 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.467s
+09:50:28 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.492s
+09:52:30 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 6cf1e4aa-ff0... (Claude Code Full Course: Build and Sell (2026))
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:56:47 [d3p03] FAILED: Failed to generate artifact. RC=1. Stderr: 09:49:41 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.493s
+09:50:42 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.474s
+09:52:46 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 6cf1e4aa-ff0... (Claude Code Full Course: Build and Sell (2026))
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 09:59:01 [d3p06] FAILED: Failed to generate artifact. RC=1. Stderr: 09:51:58 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.507s
+09:52:59 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.449s
+09:55:00 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 6cf1e4aa-ff0... (Claude Code Full Course: Build and Sell (2026))
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Slide Deck generation rate limited by Google"
+}
+2026-05-18 10:02:09 [d3p09] FAILED: Failed to generate artifact. RC=1. Stderr: 09:55:05 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.522s
+09:56:06 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.533s
+09:58:07 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 6cf1e4aa-ff0... (Claude Code Full Course: Build and Sell (2026))
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Custom Report generation rate limited by Google"
+}
+2026-05-18 10:03:30 [d3p10] FAILED: Failed to generate artifact. RC=1. Stderr: 09:56:27 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.502s
+09:57:28 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.474s
+09:59:29 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 6cf1e4aa-ff0... (Claude Code Full Course: Build and Sell (2026))
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Study Guide generation rate limited by Google"
+}
+2026-05-18 10:03:38 [d4p01] FAILED: Failed to generate artifact. RC=1. Stderr: 09:56:34 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.478s
+09:57:35 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.569s
+09:59:37 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 74302f18-930... (Cline: Đại Lý Lập Trình Tự Chủ Cho VS Code)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:03:54 [d4p02] FAILED: Failed to generate artifact. RC=1. Stderr: 09:56:50 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.634s
+09:57:52 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.497s
+09:59:53 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 74302f18-930... (Cline: Đại Lý Lập Trình Tự Chủ Cho VS Code)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:04:49 [d4p07] TEXT_ONLY - Format: mind-map - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-20\Cline-AI-Coding-Agent\content\d4p07
+2026-05-18 10:05:54 [d4p08] DONE (text) - Format: quiz - Saved to: C:\Users\Administrator\Downloads\boostraps\facebook-auto-poster\scripts\..\content\Gen Z Book Reviews\2026-05-20\Cline-AI-Coding-Agent\kienthuc\d4p08
+2026-05-18 10:06:09 [d4p03] FAILED: Failed to generate artifact. RC=1. Stderr: 09:59:05 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.531s
+10:00:06 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.482s
+10:02:07 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 74302f18-930... (Cline: Đại Lý Lập Trình Tự Chủ Cho VS Code)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:09:17 [d4p04] FAILED: Failed to generate artifact. RC=1. Stderr: 10:02:12 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.613s
+10:03:14 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 1.061s
+10:05:15 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 74302f18-930... (Cline: Đại Lý Lập Trình Tự Chủ Cho VS Code)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Blog Post generation rate limited by Google"
+}
+2026-05-18 10:10:37 [d4p05] FAILED: Failed to generate artifact. RC=1. Stderr: 10:03:34 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.501s
+10:04:35 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.475s
+10:06:36 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 74302f18-930... (Cline: Đại Lý Lập Trình Tự Chủ Cho VS Code)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Blog Post generation rate limited by Google"
+}
+2026-05-18 10:10:45 [d4p06] FAILED: Failed to generate artifact. RC=1. Stderr: 10:03:41 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.468s
+10:04:43 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.673s
+10:06:44 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 74302f18-930... (Cline: Đại Lý Lập Trình Tự Chủ Cho VS Code)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Slide Deck generation rate limited by Google"
+}
+2026-05-18 10:13:02 [d4p09] FAILED: Failed to generate artifact. RC=1. Stderr: 10:05:58 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.483s
+10:06:59 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.500s
+10:09:00 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 74302f18-930... (Cline: Đại Lý Lập Trình Tự Chủ Cho VS Code)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Custom Report generation rate limited by Google"
+}
+2026-05-18 10:13:15 [d4p10] FAILED: Failed to generate artifact. RC=1. Stderr: 10:06:12 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.500s
+10:07:13 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.538s
+10:09:14 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 74302f18-930... (Cline: Đại Lý Lập Trình Tự Chủ Cho VS Code)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Study Guide generation rate limited by Google"
+}
+2026-05-18 10:16:25 [d5p01] FAILED: Failed to generate artifact. RC=1. Stderr: 10:09:21 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.504s
+10:10:22 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.471s
+10:12:23 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 6bd18d92-91d... (Mô Hình LLM Wiki: Quản Lý Kiến Thức Theo Andrej 
+Karpathy)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:17:45 [d5p02] FAILED: Failed to generate artifact. RC=1. Stderr: 10:10:41 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.504s
+10:11:42 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.509s
+10:13:43 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 6bd18d92-91d... (Mô Hình LLM Wiki: Quản Lý Kiến Thức Theo Andrej 
+Karpathy)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:17:52 [d5p03] FAILED: Failed to generate artifact. RC=1. Stderr: 10:10:49 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.542s
+10:11:50 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.526s
+10:13:51 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 6bd18d92-91d... (Mô Hình LLM Wiki: Quản Lý Kiến Thức Theo Andrej 
+Karpathy)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:25:45 [d1p03] FAILED: Failed to generate artifact. RC=1. Stderr: 10:18:41 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.445s
+10:19:42 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.522s
+10:21:44 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:25:45 [d1p01] FAILED: Failed to generate artifact. RC=1. Stderr: 10:18:41 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.465s
+10:19:42 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.444s
+10:21:44 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:25:45 [d1p02] FAILED: Failed to generate artifact. RC=1. Stderr: 10:18:41 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.480s
+10:19:42 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.578s
+10:21:44 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:25:45 [d1p06] FAILED: Failed to generate artifact. RC=1. Stderr: 10:18:41 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.490s
+10:19:42 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.467s
+10:21:44 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Slide Deck generation rate limited by Google"
+}
+2026-05-18 10:25:46 [d2p01] FAILED: Failed to generate artifact. RC=1. Stderr: 10:18:42 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.555s
+10:19:44 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.524s
+10:21:45 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 399e43bc-272... (Ứng dụng ChatGPT trong Thiết kế và Vận hành Doanh 
+nghiệp)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:33:47 [d1p03] FAILED: Failed to generate artifact. RC=1. Stderr: 10:26:44 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.538s
+10:27:45 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.458s
+10:29:46 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:33:51 [d1p06] FAILED: Failed to generate artifact. RC=1. Stderr: 10:26:47 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.486s
+10:27:49 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.488s
+10:29:50 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Slide Deck generation rate limited by Google"
+}
+2026-05-18 10:33:53 [d1p01] FAILED: Failed to generate artifact. RC=1. Stderr: 10:26:49 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 1.309s
+10:27:50 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.490s
+10:29:51 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:33:53 [d1p02] FAILED: Failed to generate artifact. RC=1. Stderr: 10:26:49 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.524s
+10:27:50 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.480s
+10:29:52 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 223526eb-ee9... (OFC101: Bứt Phá Hiệu Suất Văn Phòng Cùng AI)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:33:59 [d2p01] FAILED: Failed to generate artifact. RC=1. Stderr: 10:26:56 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.508s
+10:27:57 ERROR [notebooklm._core] RPC CREATE_ARTIFACT failed after 0.526s
+10:29:58 ERROR [notebooklm._core] RPC CREATE_ARTIFAC Stdout: Matched: 399e43bc-272... (Ứng dụng ChatGPT trong Thiết kế và Vận hành Doanh 
+nghiệp)
+{
+  "error": true,
+  "code": "RATE_LIMITED",
+  "message": "Infographic generation rate limited by Google"
+}
+2026-05-18 10:55:58 [d2p03] FAILED: Failed to generate artifact. RC=1. Stderr: Timeout Stdout: 
+2026-05-18 10:55:59 [d2p02] FAILED: Failed to generate artifact. RC=1. Stderr: Timeout Stdout: 
+2026-05-18 10:56:01 [d3p01] FAILED: Failed to generate artifact. RC=1. Stderr: Timeout Stdout: 
+2026-05-18 10:56:03 [d3p03] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:04 [d3p06] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:04 [d3p02] FAILED: Failed to generate artifact. RC=1. Stderr: Timeout Stdout: 
+2026-05-18 10:56:06 [d3p09] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:07 [d3p10] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:08 [d4p01] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:09 [d4p02] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:11 [d4p03] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:11 [d2p06] FAILED: Failed to generate artifact. RC=1. Stderr: Timeout Stdout: 
+2026-05-18 10:56:12 [d4p04] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:14 [d4p05] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:14 [d4p06] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:16 [d4p09] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:17 [d4p10] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:17 [d5p01] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:19 [d5p02] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:21 [d5p04] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:22 [d5p05] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:22 [d5p06] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:23 [d5p07] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:27 [d5p08] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:27 [d5p09] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:27 [d5p10] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:27 [d5p03] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:28 [d6p01] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:32 [d6p02] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:32 [d6p05] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:32 [d6p03] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:32 [d6p04] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:33 [d6p06] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:37 [d6p07] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:38 [d6p09] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:38 [d6p10] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:38 [d6p08] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:38 [d7p01] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:41 [d7p02] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:42 [d7p03] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:43 [d7p05] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:43 [d7p06] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:43 [d7p04] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:45 [d7p07] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:51 [d7p10] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:51 [d7p08] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo
+2026-05-18 10:56:51 [d7p09] FAILED: Failed to generate artifact. RC=1. Stderr:  Stdout: {
+  "error": true,
+  "code": "ERROR",
+  "message": "Authentication expired or invalid. Redirected to: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fnotebooklm.google.com%2Flo

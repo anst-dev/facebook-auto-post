@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Auto-Scheduler Dashboard</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Style Sheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="glass-bg"></div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="main-header">
+      <div class="logo">
+        <i class="fa-brands fa-square-facebook neon-icon"></i>
+        <span>FB AutoPost <span class="badge-premium">PRO</span></span>
+      </div>
+      <div class="api-status" id="fb-connection-card">
+        <span class="status-indicator yellow" id="status-dot"></span>
+        <span class="status-text" id="status-page-name">Đang kiểm tra kết nối...</span>
+      </div>
+    </header>
+
+    <!-- Top Stats -->
+    <section class="stats-grid">
+      <div class="stat-card glass-panel purple-glow">
+        <div class="stat-icon"><i class="fa-solid fa-list-check"></i></div>
+        <div class="stat-info">
+          <h3>Tổng bài đăng</h3>
+          <p class="stat-value" id="stat-total">0</p>
+        </div>
+      </div>
+      <div class="stat-card glass-panel green-glow">
+        <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="stat-info">
+          <h3>Đã lên lịch</h3>
+          <p class="stat-value" id="stat-completed">0</p>
+        </div>
+      </div>
+      <div class="stat-card glass-panel blue-glow">
+        <div class="stat-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+        <div class="stat-info">
+          <h3>Đang chờ</h3>
+          <p class="stat-value" id="stat-pending">0</p>
+        </div>
+      </div>
+      <div class="stat-card glass-panel red-glow">
+        <div class="stat-icon"><i class="fa-solid fa-circle-xmark"></i></div>
+        <div class="stat-info">
+          <h3>Thất bại</h3>
+          <p class="stat-value" id="stat-failed">0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Workspace -->
+    <div class="workspace-grid">
+      
+      <!-- Left Column: Controls & Config -->
+      <aside class="left-sidebar">
+        
+        <!-- Controls Panel -->
+        <div class="glass-panel panel-controls">
+          <h2><i class="fa-solid fa-sliders"></i> Bảng điều khiển</h2>
+          <div class="control-actions">
+            <button id="btn-schedule" class="btn btn-primary btn-glow-purple">
+              <i class="fa-solid fa-paper-plane"></i> Kích hoạt Lên lịch (18/05)
+            </button>
+            <button id="btn-stop" class="btn btn-danger" disabled>
+              <i class="fa-solid fa-hand"></i> Dừng tiến trình
+            </button>
+            <button id="btn-delete" class="btn btn-warning">
+              <i class="fa-solid fa-trash-can"></i> Dọn sạch lịch Facebook
+            </button>
+            <button id="btn-reset" class="btn btn-secondary">
+              <i class="fa-solid fa-rotate-left"></i> Reset hàng chờ về 0
+            </button>
+          </div>
+        </div>
+
+        <!-- Config Panel -->
+        <div class="glass-panel panel-config">
+          <h2><i class="fa-solid fa-gears"></i> Cấu hình hệ thống</h2>
+          <form id="config-form">
+            <div class="form-group">
+              <label for="config-page-id">Facebook Page ID</label>
+              <input type="text" id="config-page-id" placeholder="Nhập Page ID..." required>
+            </div>
+            <div class="form-group">
+              <label for="config-access-token">Page Access Token</label>
+              <div class="token-input-wrapper">
+                <input type="password" id="config-access-token" placeholder="Nhập Token..." required>
+                <button type="button" class="btn-toggle-password" onclick="togglePasswordVisibility()"><i class="fa-solid fa-eye" id="password-eye-icon"></i></button>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-secondary w-full" id="btn-save-config">
+              <i class="fa-solid fa-floppy-disk"></i> Lưu cấu hình (.env)
+            </button>
+          </form>
+        </div>
+
+      </aside>
+
+      <!-- Right Column: Terminal Logs & Active Monitor -->
+      <main class="main-content">
+        
+        <!-- Interactive Terminal Console -->
+        <div class="glass-panel panel-terminal">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="terminal-title"><i class="fa-solid fa-terminal"></i> Terminal Output Console</span>
+            <div class="terminal-status" id="process-badge">Inactive</div>
+          </div>
+          <div class="terminal-body" id="terminal-logs">
+            <div class="log-line system">[Hệ thống] Dashboard đã sẵn sàng. Đang tải dữ liệu...</div>
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+
+    <!-- Bottom Workspace: Post Management Grid -->
+    <section class="posts-section glass-panel">
+      <div class="posts-section-header">
+        <h2><i class="fa-solid fa-newspaper"></i> Quản lý nội dung bài đăng</h2>
+        <div class="filters">
+          <span class="filter-badge active" onclick="filterPosts('all')">Tất cả</span>
+          <span class="filter-badge" onclick="filterPosts('pending')">Đang chờ</span>
+          <span class="filter-badge" onclick="filterPosts('completed')">Đã đăng</span>
+          <span class="filter-badge" onclick="filterPosts('failed')">Lỗi</span>
+        </div>
+      </div>
+
+      <div class="posts-grid" id="posts-container">
+        <!-- Dynanmic injection -->
+      </div>
+    </section>
+  </div>
+
+  <!-- Detail & Edit Modal -->
+  <div class="modal" id="caption-modal">
+    <div class="modal-content glass-panel">
+      <div class="modal-header">
+        <h2 id="modal-post-title">Chi tiết Bài viết</h2>
+        <button class="btn-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="modal-post-id">
+        <div class="post-meta-details">
+          <span class="meta-tag" id="modal-post-date"><i class="fa-solid fa-calendar-days"></i> 2026-05-18</span>
+          <span class="meta-tag" id="modal-post-type"><i class="fa-solid fa-hashtag"></i> INFOGRAPHIC</span>
+        </div>
+        <div class="form-group mt-4">
+          <label for="modal-post-caption" class="caption-label">Caption Nội dung kể chuyện (Không chứa ký tự Markdown rác):</label>
+          <textarea id="modal-post-caption" rows="12" placeholder="Nhập nội dung bài đăng..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal()"><i class="fa-solid fa-xmark"></i> Hủy</button>
+        <button class="btn btn-primary btn-glow-purple" onclick="saveCaption()"><i class="fa-solid fa-floppy-disk"></i> Lưu caption bài viết</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

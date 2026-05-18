@@ -1,0 +1,36 @@
+🗺️ SƠ ĐỒ TƯ DUY
+Sơ đồ tư duy: Kiến trúc Cline AI và cách hoạt động
+
+📌 Chủ đề: Cline AI Coding Agent
+
+──────────────────────────────
+
+Chào mọi người, hôm nay rảnh rỗi tôi ngồi hí hoáy vẽ lại cái sơ đồ tư duy về 
+kiến trúc của Cline AI, một trợ lý lập trình mà tôi đang dùng dạo gần đây. Ban 
+đầu cứ nghĩ nó phức tạp lắm, nhưng vẽ ra mới thấy cách nó hoạt động lại cực kỳ 
+logic và gần gũi. Nó nằm gọn ngay trong môi trường VS Code quen thuộc của chúng
+ta, hoạt động tự chủ như một người đồng nghiệp chứ không chỉ là công cụ gợi ý 
+code . Trái tim của hệ thống này là khả năng kết nối linh hoạt với đủ loại 
+mô hình AI như Claude, OpenAI hay cả các mô hình chạy ngoại tuyến trên máy tính
+cá nhân . Tôi rẽ hai nhánh lớn trên sơ đồ cho cách nó làm việc: chế độ lập 
+kế hoạch để nó thong thả đọc mã nguồn rồi vạch ra hướng đi, và chế độ hành động
+để nó trực tiếp gõ code, chạy lệnh terminal hay mở trình duyệt lên kiểm tra dự 
+án . Điểm tôi ưng nhất trên sơ đồ này là một cái chốt chặn an toàn, nơi hệ 
+thống luôn phải dừng lại hỏi ý kiến tôi trước khi thực hiện các thay đổi, giúp 
+tôi hoàn toàn an tâm làm chủ mã nguồn của mình .
+
+Nhìn sang nhánh bên kia của bức vẽ, tôi nhận ra bí quyết giúp Cline làm việc ăn
+ý với con người chính là cách nó tổ chức bộ nhớ và quy tắc. Tôi phác thảo ra 
+một khu vực chứa các tệp quy tắc để nó học theo đúng tiêu chuẩn viết code của 
+nhóm, cùng một hệ thống tạo điểm kiểm tra ngầm giúp khôi phục lại trạng thái dự
+án ngay lập tức nếu lỡ nó có làm sai bước nào đó . Đặc biệt hơn, tôi còn vẽ 
+thêm một cổng kết nối gọi là giao thức MCP, hoạt động giống hệt như những chiếc
+phích cắm đa năng giúp AI vươn ra thế giới bên ngoài để truy cập cơ sở dữ liệu 
+hay tương tác với các công cụ khác một cách liền mạch . Vẽ xong cái sơ đồ 
+này, tôi thấy kiến trúc của Cline thực sự biến nó thành một dây chuyền làm việc
+tự chủ nhưng luôn có sự đồng hành và kiểm soát của con người. Có anh em nào 
+cũng đang dùng và mê mẩn công cụ này giống tôi không, cùng để lại bình luận 
+giao lưu nhé.
+
+
+#Cline #AI #LậpTrình #VSCoder #AIAgent #Coding #CôngNghệ #Developer #GenZ

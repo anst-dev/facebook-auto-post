@@ -1,0 +1,27 @@
+📸 INFOGRAPHIC
+Ma trận so sánh: ChatGPT dùng cho bộ phận nào trong công ty
+
+📌 Chủ đề: ChatGPT Cho Doanh Nghiệp
+
+──────────────────────────────
+
+nghiệp)
+
+Hôm nay tôi vừa ngồi hệ thống lại một cái bảng ma trận phân chia rõ ràng xem 
+ChatGPT nên được áp dụng thế nào cho từng phòng ban trong công ty. Trước đây 
+anh em cứ thấy công nghệ mới là lao vào dùng thử, nhưng toàn hỏi mấy câu chung 
+chung nên không thấy hiệu quả, hoặc mơ hồ không biết tác vụ nào được phép dùng 
+và tài liệu nào bị cấm tuyệt đối . Từ khi tôi lập ra cái bảng này, phòng nào
+việc nấy rõ ràng và đi vào quy củ hẳn ra.
+
+Ví dụ như bên phòng Nhân sự, tôi hướng dẫn các bạn ấy dùng AI để soạn nhanh mô 
+tả công việc giúp tiết kiệm đến 90 phần trăm thời gian, hoặc dùng để thiết kế 
+bài trình chiếu và tóm tắt báo cáo . Đội Marketing và kinh doanh thì được 
+giao dùng AI để soạn thảo email, tìm kiếm ý tưởng truyền thông hoặc tóm tắt các
+nội dung họp không nhạy cảm . Trong khi đó, tôi cũng quy định rất rõ trong 
+ma trận là cấm tuyệt đối việc nạp mã nguồn, danh sách khách hàng hay báo cáo 
+tài chính chi tiết lên hệ thống để tránh rò rỉ dữ liệu bảo mật . Từ ngày áp 
+dụng cái ma trận phân quyền này, anh em công ty tôi làm việc trơn tru, năng 
+suất tăng vọt mà mọi người cũng an tâm tuyệt đối khi làm bạn với AI.
+
+#ChatGPT #DoanhNghiệp #AI #BusinessAI #TựĐộngHóa #PromptEngineering #CôngNghệ #GenZ #ViệtNam

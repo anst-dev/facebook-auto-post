@@ -1,0 +1,36 @@
+📝 BÀI VIẾT
+10 kỹ thuật prompt hiệu quả nhất cho lập trình với Claude
+
+📌 Chủ đề: Claude Code - Lập Trình Với AI
+
+──────────────────────────────
+
+
+Dạo này ngồi mò mẫm code với Claude AI, ban đầu tôi cũng trầy trật lắm vì toàn 
+vứt cho nó một đống lệnh lộn xộn rồi ngóng nó tự hiểu. Sau một thời gian vọc 
+vạch, tôi gom lại được 10 bí kíp nằm lòng để ép con AI này làm việc hiệu quả 
+nhất. Thứ nhất là luôn dùng lệnh khởi tạo để nó tự đọc hiểu toàn bộ dự án ngay 
+từ đầu thay vì bắt nó nhai lại từng file [1-3]. Thứ hai là viết yêu cầu thật 
+súc tích bằng các gạch đầu dòng ngắn gọn . Thứ ba là phải đẩy những luật 
+quan trọng nhất lên tận cùng phía trên vì AI có xu hướng nhớ phần đầu và cuối 
+nhưng rất hay quên khúc giữa . Thứ tư là nhớ dọn dẹp file hướng dẫn 
+thường xuyên y như dọn rác kỹ thuật vậy . Thứ năm là tuyệt đối không nhồi
+nhét cả bộ tài liệu API dài thò lò vào bắt nó đọc, hãy chắt lọc lấy phần cần 
+thiết thôi . Thứ sáu là đừng bao giờ dặn mấy câu chung chung vô nghĩa 
+kiểu hãy code thông minh lên hay đừng mắc lỗi nhé, nó không hiểu đâu . 
+Thứ bảy là ráng giữ các file hướng dẫn ngắn gọn dưới 500 dòng . Thứ tám là 
+nếu thấy nó sai đi sai lại một lỗi thì phải cập nhật luật mới ngay để nắn nó 
+lại cho lần sau . Thứ chín là ra lệnh sửa một tính năng cực kỳ cụ thể 
+thay vì bảo nó cải thiện toàn bộ hệ thống . Và thứ mười là luôn bắt nó lập 
+kế hoạch phân tích trước rồi mới cho phép cắm đầu vào viết code để tránh cảnh 
+đập đi xây lại giữa chừng .
+
+Chỉ cần áp dụng mấy chiêu mộc mạc này thôi mà tiến độ làm việc của tôi nhàn hẳn
+ra, phần mềm thành hình nhanh chóng mà lại còn tiết kiệm được bộn tiền mua 
+token do không bắt AI đọc đi đọc lại những thứ vô bổ [15-17]. Bạn nào đang tập 
+tành dùng Claude để làm dự án hay tự động hóa thì cứ mang về áp dụng thử nhé, 
+đảm bảo đỡ đau đầu đi mò mẫm sửa lỗi như tôi hồi xưa.
+
+
+
+#ClaudeCode #AI #LậpTrình #Coding #AICoding #CôngNghệ #GenZ #Developer #Programming

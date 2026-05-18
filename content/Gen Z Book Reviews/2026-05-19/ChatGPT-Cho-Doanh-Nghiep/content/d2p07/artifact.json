@@ -1,0 +1,163 @@
+{
+  "mind_map": {
+    "name": "S\u1eed d\u1ee5ng AI trong Nh\u00e2n s\u1ef1 (HR) & Thi\u1ebft k\u1ebf slide",
+    "children": [
+      {
+        "name": "Nguy\u00ean t\u1eafc thi\u1ebft k\u1ebf slide chuy\u00ean nghi\u1ec7p",
+        "children": [
+          {
+            "name": "5 Nguy\u00ean t\u1eafc c\u1ed1t l\u00f5i",
+            "children": [
+              {
+                "name": "C\u0103n l\u1ec1 (Alignment): S\u1eed d\u1ee5ng l\u01b0\u1edbi v\u00f4 h\u00ecnh"
+              },
+              {
+                "name": "T\u01b0\u01a1ng ph\u1ea3n (Contrast): Ch\u1eef t\u1ed1i tr\u00ean n\u1ec1n s\u00e1ng"
+              },
+              {
+                "name": "Kho\u1ea3ng tr\u1eafng (Whitespace): \u0110\u1ec3 tr\u1ed1ng 15-20%"
+              },
+              {
+                "name": "Nh\u1ea5t qu\u00e1n (Consistency): Font v\u00e0 m\u00e0u \u0111\u1ed3ng b\u1ed9"
+              },
+              {
+                "name": "Ph\u00e2n c\u1ea5p th\u1ecb gi\u00e1c (Hierarchy): Ti\u00eau \u0111\u1ec1 n\u1ed5i b\u1eadt"
+              }
+            ]
+          },
+          {
+            "name": "Y\u1ebfu t\u1ed1 k\u1ef9 thu\u1eadt",
+            "children": [
+              {
+                "name": "K\u00edch th\u01b0\u1edbc: \u01afu ti\u00ean 16:9 cho m\u00e0n h\u00ecnh hi\u1ec7n \u0111\u1ea1i"
+              },
+              {
+                "name": "Typography: Font Sans-serif, t\u1ed1i thi\u1ec3u 18pt"
+              },
+              {
+                "name": "M\u00e0u s\u1eafc: Quy t\u1eafc 3 m\u00e0u (Ch\u00ednh, Ph\u1ee5, Nh\u1ea5n)"
+              },
+              {
+                "name": "Hi\u1ec7u \u1ee9ng: D\u00f9ng ti\u1ebft ch\u1ebf (Fade, Appear)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "\u1ee8ng d\u1ee5ng ChatGPT trong HR",
+        "children": [
+          {
+            "name": "Tuy\u1ec3n d\u1ee5ng",
+            "children": [
+              {
+                "name": "Vi\u1ebft m\u00f4 t\u1ea3 c\u00f4ng vi\u1ec7c (JD)"
+              },
+              {
+                "name": "So\u1ea1n c\u00e2u h\u1ecfi ph\u1ecfng v\u1ea5n h\u00e0nh vi"
+              },
+              {
+                "name": "Vi\u1ebft email t\u1eeb ch\u1ed1i/m\u1eddi nh\u1eadn vi\u1ec7c"
+              }
+            ]
+          },
+          {
+            "name": "Onboarding & \u0110\u00e0o t\u1ea1o",
+            "children": [
+              {
+                "name": "L\u1eadp k\u1ebf ho\u1ea1ch 30-60-90 ng\u00e0y"
+              },
+              {
+                "name": "Thi\u1ebft k\u1ebf checklist cho qu\u1ea3n l\u00fd"
+              },
+              {
+                "name": "T\u1ea1o l\u1ed9 tr\u00ecnh \u0111\u00e0o t\u1ea1o k\u1ef9 n\u0103ng"
+              }
+            ]
+          },
+          {
+            "name": "Qu\u1ea3n l\u00fd hi\u1ec7u su\u1ea5t",
+            "children": [
+              {
+                "name": "So\u1ea1n th\u1ea3o khung \u0111\u00e1nh gi\u00e1 n\u0103ng l\u1ef1c"
+              },
+              {
+                "name": "Vi\u1ebft k\u1ebf ho\u1ea1ch c\u1ea3i thi\u1ec7n hi\u1ec7u su\u1ea5t (PIP)"
+              },
+              {
+                "name": "G\u1ee3i \u00fd \u0111i\u1ec3m th\u1ea3o lu\u1eadn ph\u1ea3n h\u1ed3i"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "C\u00f4ng c\u1ee5 AI h\u1ed7 tr\u1ee3",
+        "children": [
+          {
+            "name": "Thi\u1ebft k\u1ebf Slide",
+            "children": [
+              {
+                "name": "Canva Magic Design: T\u1ea1o slide t\u1eeb c\u00e2u l\u1ec7nh"
+              },
+              {
+                "name": "Plugin Canva trong ChatGPT"
+              },
+              {
+                "name": "Deckary: T\u1ef1 \u0111\u1ed9ng h\u00f3a \u0111\u1ecbnh d\u1ea1ng chuy\u00ean gia"
+              }
+            ]
+          },
+          {
+            "name": "D\u1ecbch thu\u1eadt & T\u00e0i li\u1ec7u",
+            "children": [
+              {
+                "name": "DocTranslator: D\u1ecbch file gi\u1eef nguy\u00ean \u0111\u1ecbnh d\u1ea1ng"
+              },
+              {
+                "name": "DeepL: \u0110\u1ed9 ch\u00ednh x\u00e1c cao cho v\u0103n b\u1ea3n chuy\u00ean nghi\u1ec7p"
+              },
+              {
+                "name": "PDFEquips: X\u1eed l\u00fd v\u00e0 d\u1ecbch file PDF"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "L\u01b0u \u00fd & An to\u00e0n d\u1eef li\u1ec7u",
+        "children": [
+          {
+            "name": "Sai l\u1ea7m c\u1ea7n tr\u00e1nh",
+            "children": [
+              {
+                "name": "C\u00e2u l\u1ec7nh (Prompt) qu\u00e1 m\u01a1 h\u1ed3"
+              },
+              {
+                "name": "Tin t\u01b0\u1edfng tuy\u1ec7t \u0111\u1ed1i (Hallucination)"
+              },
+              {
+                "name": "N\u1ea1p d\u1eef li\u1ec7u b\u1ea3o m\u1eadt l\u00ean AI c\u00f4ng c\u1ed9ng"
+              }
+            ]
+          },
+          {
+            "name": "T\u00edch h\u1ee3p an to\u00e0n",
+            "children": [
+              {
+                "name": "Thi\u1ebft l\u1eadp ch\u00ednh s\u00e1ch AI (AI Policy)"
+              },
+              {
+                "name": "S\u1eed d\u1ee5ng b\u1ea3n Enterprise/Team b\u1ea3o m\u1eadt"
+              },
+              {
+                "name": "Quy tr\u00ecnh Ki\u1ec3m so\u00e1t b\u1edfi con ng\u01b0\u1eddi"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "note_id": "c90c85f8-c72c-417c-a08a-e484d3d11558"
+}

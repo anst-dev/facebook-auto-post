@@ -1,0 +1,33 @@
+📸 INFOGRAPHIC
+5 dự án bạn có thể build trong 1 ngày với Claude Code
+
+📌 Chủ đề: Claude Code - Lập Trình Với AI
+
+──────────────────────────────
+
+Hôm nay ngồi ngẫm lại mới thấy tốc độ làm việc với Claude Code bây giờ thật sự 
+đáng sợ. Hồi xưa để làm ra một phần mềm đàng hoàng chắc phải tốn hàng tuần hoặc
+hàng tháng, nhưng giờ đây tôi có thể hoàn thiện 5 dự án thực tế chỉ trong đúng 
+một ngày ngắn ngủi. Đầu tiên là việc tạo ra một trang web giao diện siêu mượt, 
+tôi chỉ việc ném cho con AI một bức ảnh chụp màn hình thiết kế mà tôi ưng ý và 
+nó tự động viết code bắt chước y hệt với tỷ lệ chính xác gần như tuyệt đối 
+[1-3]. Dự án thứ hai tốn sức hơn một chút là một ứng dụng web hoàn chỉnh dùng 
+để tự động tạo báo giá cho khách hàng, có cả chức năng đăng nhập tài khoản, cơ 
+sở dữ liệu và tích hợp luôn cổng thanh toán để nhận tiền ngay lập tức [4-6]. Kế
+tiếp, dự án thứ ba là một công cụ cào dữ liệu khách hàng tiềm năng, nó tự động 
+lên mạng tìm kiếm thông tin doanh nghiệp, xác thực email và đẩy toàn bộ dữ liệu
+thẳng vào Google Sheet cho tôi xài chỉ trong vòng chưa đầy hai phút [7-9].
+
+Chưa dừng lại ở đó, dự án thứ tư tôi dọn dẹp cuộc sống của mình bằng một hệ 
+thống phân loại email tự động, nó đọc hiểu và tự động gắn thẻ hàng trăm email 
+trong hộp thư nháp chỉ mất chưa tới một phút để tôi không bao giờ lỡ mất thông 
+tin quan trọng . Cuối cùng, dự án thứ năm là tự tạo ra các cổng kết nối
+API đưa lên mạng internet cực nhanh để tự động hóa quy trình làm việc hoặc kiểm
+tra dữ liệu theo ý muốn . Điểm ăn tiền nhất của cả quá trình này là tôi
+chẳng cần phải là dân lập trình phần mềm chuyên sâu gì cả, chỉ cần biết cách 
+nói ra ý tưởng bằng ngôn ngữ bình thường là AI sẽ tự động phân tích và viết mã 
+từ đầu đến cuối [14-16]. Anh em nào đang ấp ủ làm sản phẩm riêng mà ngại vụ kỹ 
+thuật thì cứ tải về vọc thử ngay đi, đảm bảo là vừa nhàn vừa hiệu quả đến bất 
+ngờ.
+
+#ClaudeCode #AI #LậpTrình #Coding #AICoding #CôngNghệ #GenZ #Developer #Programming

@@ -1,0 +1,22 @@
+🗺️ SƠ ĐỒ TƯ DUY
+Sơ đồ tư duy: Hệ sinh thái AI cho dân văn phòng
+📌 Chủ đề: AI Bứt Phá Hiệu Suất Văn Phòng
+──────────────────────────────
+Chào mọi người, trước đây cứ nghe đến AI là tôi lùng bùng lỗ tai vì quá nhiều 
+công cụ. Nhưng từ khi đi học, tôi đã tự vẽ ra được một sơ đồ tư duy hệ sinh 
+thái AI siêu dễ hiểu cho dân văn phòng tụi mình. Nhìn vào bức tranh toàn cảnh 
+năm 2026, tôi phân loại rõ các công cụ chính gồm Gemini của Google, ChatGPT của
+OpenAI, Claude và Copilot . Tùy vào nhóm công việc văn phòng như soạn email,
+viết báo cáo, tóm tắt tài liệu hay phân tích dữ liệu mà tôi sẽ chọn nhánh công 
+cụ phù hợp để dùng .
+Cái hay nhất trong sơ đồ này là việc phân bổ hệ sinh thái trợ lý ảo cá nhân hóa
+. Tôi chia bản đồ thành hai nhánh công cụ làm việc chính. Một nhánh là 
+Gemini Gems xài miễn phí, tích hợp cực êm với các ứng dụng của Google và hiểu 
+tiếng Việt rất tốt, chuyên để tôi giao việc xử lý email hay nội dung văn bản 
+. Nhánh kia là ChatGPT GPTs thì tôi phân công cho mấy việc nặng đô hơn như 
+phân tích các file tài liệu lớn hay chạy code phức tạp , . Từ ngày hệ 
+thống hóa được sơ đồ này, tôi không còn lóng ngóng đi hỏi chatbot lung tung nữa
+mà tự tin xây dựng hẳn một đội ngũ nhân sự số rành rọt từng đầu việc , . 
+Anh chị em cứ thử vẽ riêng cho mình một sơ đồ công cụ như vậy xem, đảm bảo việc
+làm hằng ngày nhàn đi một nửa.
+#AI #TríTuệNhânTạo #NăngSuất #VănPhòng #CôngNghệ #AITips #ChatGPT #Claude #Gemini #GenZ

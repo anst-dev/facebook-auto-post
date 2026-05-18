@@ -15,9 +15,9 @@ const BASE_URL = `https://graph.facebook.com/${GRAPH_API_VERSION}`;
 
 // Schedule times for posts each day (Vietnam time)
 const DAILY_SCHEDULE = [
-  '07:00', '08:30', '10:00', '11:30',
-  '13:00', '14:30', '16:00', '17:30',
-  '19:00', '20:30'
+  '04:00', '06:00', '08:00', '10:00',
+  '12:00', '14:00', '16:00', '18:00',
+  '20:00', '22:00'
 ];
 
 const DELAY_BETWEEN_POSTS_MS = 5000; // 5s between posts when posting immediately
@@ -394,38 +394,49 @@ function resetProgress() {
 
 // === CLI ===
 
-const args = process.argv.slice(2);
-const command = args[0];
+if (require.main === module) {
+  const args = process.argv.slice(2);
+  const command = args[0];
 
-if (!command || command === 'help') {
-  console.log(`
-AUTO SCHEDULER - Tu dong len lich dang bai Facebook
+  if (!command || command === 'help') {
+    console.log(`
+  AUTO SCHEDULER - Tu dong len lich dang bai Facebook
 
-Lenh:
-  status        Xem trang thai (bai da dang / chua dang)
-  verify        Kiem tra token Facebook
-  post          Dang ngay tat ca bai chua dang
-  schedule      Len lich tat ca bai theo ngay/gio
-  reset         Reset progress (dang lai tu dau)
-  help          Hien thi huong dan
+  Lenh:
+    status        Xem trang thai (bai da dang / chua dang)
+    verify        Kiem tra token Facebook
+    post          Dang ngay tat ca bai chua dang
+    schedule      Len lich tat ca bai theo ngay/gio
+    reset         Reset progress (dang lai tu dau)
+    help          Hien thi huong dan
 
-Ví du:
-  node src/auto-scheduler.js status
-  node src/auto-scheduler.js verify
-  node src/auto-scheduler.js post
-  node src/auto-scheduler.js schedule
-  `);
-} else if (command === 'status') {
-  showStatus();
-} else if (command === 'verify') {
-  verifyToken();
-} else if (command === 'post') {
-  postNow();
-} else if (command === 'schedule') {
-  scheduleAll();
-} else if (command === 'reset') {
-  resetProgress();
-} else {
-  console.error('Lenh khong hop le. Chay "node src/auto-scheduler.js help"');
-  process.exit(1);
+  Ví du:
+    node src/auto-scheduler.js status
+    node src/auto-scheduler.js verify
+    node src/auto-scheduler.js post
+    node src/auto-scheduler.js schedule
+    `);
+  } else if (command === 'status') {
+    showStatus();
+  } else if (command === 'verify') {
+    verifyToken();
+  } else if (command === 'post') {
+    postNow();
+  } else if (command === 'schedule') {
+    scheduleAll();
+  } else if (command === 'reset') {
+    resetProgress();
+  } else {
+    console.error('Lenh khong hop le. Chay "node src/auto-scheduler.js help"');
+    process.exit(1);
+  }
 }
+
+module.exports = {
+  loadProgress,
+  saveProgress,
+  scanContent,
+  resetProgress,
+  FacebookAPI,
+  scheduleAll
+};
