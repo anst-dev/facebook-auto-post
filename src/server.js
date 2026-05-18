@@ -14,7 +14,9 @@ const {
   saveProgress, 
   scheduleWithImage, 
   scheduleTextPost, 
-  appendLog: appendToFBlog 
+  appendLog: appendToFBlog,
+  initPageConfig,
+  CONTENT_DIR
 } = require('./auto-scheduler');
 
 const app = express();
@@ -34,23 +36,44 @@ function appendLog(message) {
   console.log(logLine);
 }
 
+// Helper: Scan folders inside content/ directory as separate Pages
+function getPagesList() {
+  if (!fs.existsSync(CONTENT_DIR)) return ['Gen Z Book Reviews'];
+  
+  const folders = fs.readdirSync(CONTENT_DIR).filter(file => {
+    return fs.statSync(path.join(CONTENT_DIR, file)).isDirectory();
+  });
+  
+  if (folders.length === 0) {
+    return ['Gen Z Book Reviews'];
+  }
+  return folders;
+}
+
 // 1. Get Status API
 app.get('/api/status', async (req, res) => {
   try {
+    // Dynamically retrieve active page settings
+    const activePage = initPageConfig();
+    const configPath = path.join(__dirname, '..', 'pages-config.json');
+    const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+    const pageConfig = config.pages[activePage] || { pageId: '', accessToken: '' };
+
     const progress = loadProgress();
     const posts = scanContent();
+    const pagesList = getPagesList();
     
     // Check if token is valid
     const axios = require('axios');
     let fbStatus = { valid: false, name: 'Chưa kết nối', error: null };
     
-    if (process.env.FACEBOOK_ACCESS_TOKEN && process.env.FACEBOOK_PAGE_ID) {
+    if (pageConfig.accessToken && pageConfig.pageId) {
       try {
-        const url = `https://graph.facebook.com/v21.0/${process.env.FACEBOOK_PAGE_ID}`;
+        const url = `https://graph.facebook.com/v21.0/${pageConfig.pageId}`;
         const response = await axios.get(url, {
           params: {
             fields: 'name',
-            access_token: process.env.FACEBOOK_ACCESS_TOKEN
+            access_token: pageConfig.accessToken
           }
         });
         fbStatus = { valid: true, name: response.data.name, error: null };
@@ -59,8 +82,9 @@ app.get('/api/status', async (req, res) => {
       }
     }
 
-    // Read post logs to get actual scheduled time
-    const logFile = path.join(__dirname, '..', 'post-log.json');
+    // Read post logs of the ACTIVE PAGE to get actual scheduled time
+    const pageDir = path.join(CONTENT_DIR, activePage);
+    const logFile = path.join(pageDir, 'post-log.json');
     const fblogs = fs.existsSync(logFile) ? JSON.parse(fs.readFileSync(logFile, 'utf8')) : [];
 
     // Detail of posts
@@ -134,9 +158,11 @@ app.get('/api/status', async (req, res) => {
 
     res.json({
       success: true,
+      activePage,
+      pagesList,
       config: {
-        pageId: process.env.FACEBOOK_PAGE_ID || '',
-        accessToken: process.env.FACEBOOK_ACCESS_TOKEN ? `${process.env.FACEBOOK_ACCESS_TOKEN.substring(0, 15)}...` : ''
+        pageId: pageConfig.pageId || '',
+        accessToken: pageConfig.accessToken ? `${pageConfig.accessToken.substring(0, 15)}...` : ''
       },
       fbStatus,
       progress: {
@@ -177,7 +203,7 @@ app.post('/api/save-caption', (req, res) => {
   }
 });
 
-// 3. Save Config API
+// 3. Save Config API (Multi-page saved directly in pages-config.json)
 app.post('/api/save-config', (req, res) => {
   const { pageId, accessToken } = req.body;
   if (!pageId || !accessToken) {
@@ -185,38 +211,64 @@ app.post('/api/save-config', (req, res) => {
   }
 
   try {
-    let envContent = '';
-    if (fs.existsSync(dotenvPath)) {
-      envContent = fs.readFileSync(dotenvPath, 'utf8');
+    const configPath = path.join(__dirname, '..', 'pages-config.json');
+    if (!fs.existsSync(configPath)) {
+      return res.status(400).json({ success: false, error: 'Chưa khởi tạo file cấu hình trang!' });
     }
 
-    // Update keys
-    const updateOrAddKey = (content, key, val) => {
-      const regex = new RegExp(`^${key}=.*$`, 'm');
-      if (regex.test(content)) {
-        return content.replace(regex, `${key}=${val}`);
-      } else {
-        return content + (content.endsWith('\n') ? '' : '\n') + `${key}=${val}\n`;
-      }
-    };
+    const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+    const activePage = config.activePage || 'Gen Z Book Reviews';
 
-    envContent = updateOrAddKey(envContent, 'FACEBOOK_PAGE_ID', pageId);
-    // Only update access token if it's not the masked placeholder
+    if (!config.pages[activePage]) {
+      config.pages[activePage] = {};
+    }
+
+    config.pages[activePage].pageId = pageId;
     if (!accessToken.includes('...')) {
-      envContent = updateOrAddKey(envContent, 'FACEBOOK_ACCESS_TOKEN', accessToken);
+      config.pages[activePage].accessToken = accessToken;
     }
 
-    fs.writeFileSync(dotenvPath, envContent, 'utf8');
+    fs.writeFileSync(configPath, JSON.stringify(config, null, 2), 'utf8');
     
-    // Reload dotenv
-    dotenv.config({ path: dotenvPath });
+    // Dynamically override runtime environment settings
     process.env.FACEBOOK_PAGE_ID = pageId;
     if (!accessToken.includes('...')) {
       process.env.FACEBOOK_ACCESS_TOKEN = accessToken;
     }
 
-    appendLog('Đã cập nhật thông tin cấu hình Facebook API (.env)');
-    res.json({ success: true, message: 'Đã lưu cấu hình thành công!' });
+    appendLog(`Đã cập nhật cấu hình Facebook API cho Page: ${activePage}`);
+    res.json({ success: true, message: `Đã lưu cấu hình Page ${activePage} thành công!` });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// 4. Switch Active Page API
+app.post('/api/action/switch-page', (req, res) => {
+  const { pageName } = req.body;
+  if (!pageName) {
+    return res.status(400).json({ success: false, error: 'Thiếu tên Page muốn chuyển đổi' });
+  }
+
+  try {
+    const configPath = path.join(__dirname, '..', 'pages-config.json');
+    let config = { activePage: pageName, pages: {} };
+    if (fs.existsSync(configPath)) {
+      config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+    }
+
+    config.activePage = pageName;
+    if (!config.pages[pageName]) {
+      config.pages[pageName] = { pageId: '', accessToken: '' };
+    }
+
+    fs.writeFileSync(configPath, JSON.stringify(config, null, 2), 'utf8');
+    
+    // Reload local configurations
+    initPageConfig();
+
+    appendLog(`Đã chuyển đổi Page hoạt động sang: ${pageName}`);
+    res.json({ success: true, message: `Đã chuyển đổi sang Page ${pageName} thành công!` });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
@@ -257,7 +309,7 @@ function runSubprocess(scriptPath, args = []) {
   return { success: true };
 }
 
-// 4. Action: Schedule
+// 5. Action: Schedule
 app.post('/api/action/schedule', (req, res) => {
   const result = runSubprocess('src/auto-scheduler.js', ['schedule']);
   if (result.success) {
@@ -267,7 +319,7 @@ app.post('/api/action/schedule', (req, res) => {
   }
 });
 
-// 5. Action: Stop
+// 6. Action: Stop
 app.post('/api/action/stop', (req, res) => {
   if (!activeProcess) {
     return res.status(400).json({ success: false, error: 'Không có tiến trình nào đang chạy!' });
@@ -283,7 +335,7 @@ app.post('/api/action/stop', (req, res) => {
   }
 });
 
-// 6. Action: Reset Progress
+// 7. Action: Reset Progress
 app.post('/api/action/reset', (req, res) => {
   const result = runSubprocess('src/auto-scheduler.js', ['reset']);
   if (result.success) {
@@ -293,7 +345,7 @@ app.post('/api/action/reset', (req, res) => {
   }
 });
 
-// 7. Action: Delete Facebook Schedule
+// 8. Action: Delete Facebook Schedule
 app.post('/api/action/delete-scheduled', (req, res) => {
   const result = runSubprocess('scripts/delete-scheduled.js');
   if (result.success) {
@@ -303,7 +355,7 @@ app.post('/api/action/delete-scheduled', (req, res) => {
   }
 });
 
-// 8. Action: Schedule Single Post manually
+// 9. Action: Schedule Single Post manually
 app.post('/api/action/schedule-single', async (req, res) => {
   const { id, caption, scheduledTime } = req.body;
   if (!id || !scheduledTime) {

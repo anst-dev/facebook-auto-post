@@ -75,6 +75,16 @@
       <!-- Left Column: Controls & Config -->
       <aside class="left-sidebar">
         
+        <!-- Page Selection Panel -->
+        <div class="glass-panel panel-page-selector" style="margin-bottom: 20px; border: 1px solid rgba(165, 94, 234, 0.25); background: rgba(165, 94, 234, 0.03);">
+          <h2 style="color: #a55eea;"><i class="fa-solid fa-folder-open"></i> Chọn thư mục Page</h2>
+          <div class="form-group" style="margin-bottom: 0; margin-top: 10px;">
+            <select id="active-page-select" onchange="switchActivePage()" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); border-radius: 8px; color: #fff; font-family: inherit; font-size: 14px; cursor: pointer; outline: none; transition: all 0.2s;">
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+        </div>
+
         <!-- Controls Panel -->
         <div class="glass-panel panel-controls">
           <h2><i class="fa-solid fa-sliders"></i> Bảng điều khiển</h2>

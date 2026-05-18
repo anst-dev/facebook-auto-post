@@ -24,6 +24,25 @@ async function fetchStatus() {
     const data = await res.json();
     if (!data.success) return;
 
+    // Render Page Selector
+    const select = document.getElementById('active-page-select');
+    if (select) {
+      if (select.options.length !== data.pagesList.length || !select.innerHTML) {
+        select.innerHTML = '';
+        data.pagesList.forEach(page => {
+          const opt = document.createElement('option');
+          opt.value = page;
+          opt.innerText = page;
+          if (page === data.activePage) {
+            opt.selected = true;
+          }
+          select.appendChild(opt);
+        });
+      } else if (select.value !== data.activePage) {
+        select.value = data.activePage;
+      }
+    }
+
     // Update Stats
     document.getElementById('stat-total').innerText = data.progress.total;
     document.getElementById('stat-published').innerText = data.progress.published;
@@ -423,5 +442,27 @@ function togglePasswordVisibility() {
   } else {
     input.type = 'password';
     eye.className = 'fa-solid fa-eye';
+  }
+}
+
+// 8. Multi-page switcher
+async function switchActivePage() {
+  const select = document.getElementById('active-page-select');
+  const pageName = select.value;
+  
+  try {
+    const res = await fetch('/api/action/switch-page', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pageName })
+    });
+    const data = await res.json();
+    if (data.success) {
+      window.location.reload(); // Reload page to reload new posts list & settings
+    } else {
+      alert(`Lỗi chuyển page: ${data.error}`);
+    }
+  } catch (err) {
+    alert(`Lỗi kết nối máy chủ: ${err.message}`);
   }
 }

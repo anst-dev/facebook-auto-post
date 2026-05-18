@@ -6,8 +6,61 @@ const path = require('path');
 const FormData = require('form-data');
 
 const CONTENT_DIR = path.join(__dirname, '..', 'content');
-const PROGRESS_FILE = path.join(CONTENT_DIR, 'progress.json');
-const LOG_FILE = path.join(__dirname, '..', 'post-log.json');
+
+// Helper to initialize multi-page configuration dynamics
+function initPageConfig() {
+  const CONFIG_FILE = path.join(__dirname, '..', 'pages-config.json');
+  let activePage = 'Gen Z Book Reviews';
+  let pageId = process.env.FACEBOOK_PAGE_ID || '';
+  let accessToken = process.env.FACEBOOK_ACCESS_TOKEN || '';
+
+  if (fs.existsSync(CONFIG_FILE)) {
+    const config = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
+    activePage = config.activePage || 'Gen Z Book Reviews';
+    if (config.pages && config.pages[activePage]) {
+      pageId = config.pages[activePage].pageId || pageId;
+      accessToken = config.pages[activePage].accessToken || accessToken;
+    }
+  } else {
+    // Generate initial multi-page configuration based on legacy .env
+    const config = {
+      activePage,
+      pages: {
+        [activePage]: { pageId, accessToken }
+      }
+    };
+    fs.writeFileSync(CONFIG_FILE, JSON.stringify(config, null, 2), 'utf8');
+  }
+
+  // Override process env values dynamically
+  process.env.FACEBOOK_PAGE_ID = pageId;
+  process.env.FACEBOOK_ACCESS_TOKEN = accessToken;
+  
+  return activePage;
+}
+
+const ACTIVE_PAGE = initPageConfig();
+const PAGE_DIR = path.join(CONTENT_DIR, ACTIVE_PAGE);
+if (!fs.existsSync(PAGE_DIR)) {
+  fs.mkdirSync(PAGE_DIR, { recursive: true });
+}
+
+const PROGRESS_FILE = path.join(PAGE_DIR, 'progress.json');
+const LOG_FILE = path.join(PAGE_DIR, 'post-log.json');
+
+// Legacy migration helper to secure historical data
+if (!fs.existsSync(PROGRESS_FILE)) {
+  const legacyProgressFile = path.join(CONTENT_DIR, 'progress.json');
+  if (fs.existsSync(legacyProgressFile) && ACTIVE_PAGE === 'Gen Z Book Reviews') {
+    try { fs.copyFileSync(legacyProgressFile, PROGRESS_FILE); } catch(e){}
+  }
+}
+if (!fs.existsSync(LOG_FILE)) {
+  const legacyLogFile = path.join(__dirname, '..', 'post-log.json');
+  if (fs.existsSync(legacyLogFile) && ACTIVE_PAGE === 'Gen Z Book Reviews') {
+    try { fs.copyFileSync(legacyLogFile, LOG_FILE); } catch(e){}
+  }
+}
 
 // === CONFIG ===
 const GRAPH_API_VERSION = 'v21.0';
@@ -67,7 +120,7 @@ function findImage(dir) {
 
 function scanContent() {
   const posts = [];
-  const base = path.join(CONTENT_DIR, 'Gen Z Book Reviews');
+  const base = path.join(CONTENT_DIR, ACTIVE_PAGE);
   if (!fs.existsSync(base)) return posts;
 
   const dates = fs.readdirSync(base)
@@ -441,5 +494,8 @@ module.exports = {
   scheduleAll,
   scheduleWithImage,
   scheduleTextPost,
-  appendLog
+  appendLog,
+  ACTIVE_PAGE,
+  initPageConfig,
+  CONTENT_DIR
 };
