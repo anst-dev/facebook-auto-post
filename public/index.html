@@ -137,16 +137,23 @@
     <section class="posts-section glass-panel">
       <div class="posts-section-header">
         <h2><i class="fa-solid fa-newspaper"></i> Quản lý nội dung bài đăng</h2>
-        <div class="filters">
-          <span class="filter-badge active" onclick="filterPosts('all')">Tất cả</span>
-          <span class="filter-badge" onclick="filterPosts('pending')">Đang chờ</span>
-          <span class="filter-badge" onclick="filterPosts('completed')">Đã đăng</span>
-          <span class="filter-badge" onclick="filterPosts('failed')">Lỗi</span>
+        <div class="controls-wrapper" style="display: flex; gap: 16px; align-items: center;">
+          <div class="filters">
+            <span class="filter-badge active" onclick="filterPosts('all')">Tất cả</span>
+            <span class="filter-badge" onclick="filterPosts('pending')">Đang chờ</span>
+            <span class="filter-badge" onclick="filterPosts('completed')">Đã đăng</span>
+            <span class="filter-badge" onclick="filterPosts('failed')">Lỗi</span>
+          </div>
+          
+          <div class="view-switcher" style="display: flex; background: rgba(255,255,255,0.05); padding: 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+            <button class="view-btn active" id="btn-view-grid" onclick="switchView('grid')" title="Xem dạng lưới" style="background: none; border: none; padding: 6px 10px; border-radius: 6px; color: #fff; cursor: pointer; transition: all 0.2s;"><i class="fa-solid fa-table-cells"></i></button>
+            <button class="view-btn" id="btn-view-table" onclick="switchView('table')" title="Xem dạng bảng" style="background: none; border: none; padding: 6px 10px; border-radius: 6px; color: var(--text-secondary); cursor: pointer; transition: all 0.2s;"><i class="fa-solid fa-table-list"></i></button>
+          </div>
         </div>
       </div>
 
-      <div class="posts-grid" id="posts-container">
-        <!-- Dynanmic injection -->
+      <div id="posts-container">
+        <!-- Dynamic injection (grid card layout or responsive table layout) -->
       </div>
     </section>
   </div>

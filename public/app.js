@@ -1,5 +1,6 @@
 let allPosts = [];
 let activeFilter = 'all';
+let currentView = 'grid'; // 'grid' or 'table'
 
 // Fetch data initially and start polling
 document.addEventListener('DOMContentLoaded', () => {
@@ -106,7 +107,7 @@ async function fetchStatus() {
   }
 }
 
-// 2. Render Posts Grid
+// 2. Render Posts Grid or Table view
 function renderPosts() {
   const container = document.getElementById('posts-container');
   container.innerHTML = '';
@@ -117,55 +118,142 @@ function renderPosts() {
   });
 
   if (filtered.length === 0) {
-    container.innerHTML = `<div class="glass-panel w-full text-center" style="grid-column: 1/-1; color: var(--text-secondary);">Không có bài đăng nào thuộc trạng thái này.</div>`;
+    container.className = 'glass-panel w-full text-center';
+    container.innerHTML = `<div style="color: var(--text-secondary); padding: 40px 0;">Không có bài đăng nào thuộc trạng thái này.</div>`;
     return;
   }
 
-  filtered.forEach(p => {
-    const card = document.createElement('div');
-    card.className = 'post-card';
-    card.onclick = () => openModal(p);
+  const typeIcons = {
+    'infographic': '<i class="fa-solid fa-chart-pie"></i>',
+    'slide-deck': '<i class="fa-solid fa-file-powerpoint"></i>',
+    'mind-map': '<i class="fa-solid fa-network-wired"></i>',
+    'quiz': '<i class="fa-solid fa-circle-question"></i>',
+    'flashcards': '<i class="fa-solid fa-copy"></i>',
+    'report': '<i class="fa-solid fa-file-invoice"></i>',
+    'data-table': '<i class="fa-solid fa-table"></i>'
+  };
 
-    const typeIcons = {
-      'infographic': '<i class="fa-solid fa-chart-pie"></i>',
-      'slide-deck': '<i class="fa-solid fa-file-powerpoint"></i>',
-      'mind-map': '<i class="fa-solid fa-network-wired"></i>',
-      'quiz': '<i class="fa-solid fa-circle-question"></i>',
-      'flashcards': '<i class="fa-solid fa-copy"></i>',
-      'report': '<i class="fa-solid fa-file-invoice"></i>',
-      'data-table': '<i class="fa-solid fa-table"></i>'
-    };
+  const statusLabels = {
+    'completed': 'Đã đăng/lịch',
+    'failed': 'Lỗi',
+    'pending': 'Đang chờ'
+  };
 
-    const statusLabels = {
-      'completed': 'Đã đăng/lịch',
-      'failed': 'Lỗi',
-      'pending': 'Đang chờ'
-    };
+  if (currentView === 'grid') {
+    container.className = 'posts-grid';
+    
+    filtered.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'post-card';
+      card.onclick = () => openModal(p);
 
-    let timeLabel = '';
-    if (p.scheduledFor) {
-      const parts = p.scheduledFor.split(' ');
-      const justTime = parts[0]; // "11:46"
-      timeLabel = `<span class="time-tag"><i class="fa-solid fa-clock"></i> Lịch: ${justTime}</span>`;
-    }
+      let timeLabel = '';
+      if (p.scheduledFor) {
+        const parts = p.scheduledFor.split(' ');
+        const justTime = parts[0]; // "11:46"
+        timeLabel = `<span class="time-tag"><i class="fa-solid fa-clock"></i> Lịch: ${justTime}</span>`;
+      }
 
-    card.innerHTML = `
-      <div class="post-card-header">
-        <span class="post-id-tag">${p.id}</span>
-        <span class="status-badge ${p.status}">${statusLabels[p.status]}</span>
-      </div>
-      <div class="post-card-body">
-        <h4>${typeIcons[p.type] || '<i class="fa-solid fa-newspaper"></i>'} ${p.type}</h4>
-        <p>${p.captionSnippet || 'Chưa có nội dung...'}</p>
-      </div>
-      <div class="post-card-footer">
-        <span><i class="fa-solid fa-calendar-day"></i> ${p.date} ${timeLabel}</span>
-        <span>${p.hasImage ? '<i class="fa-solid fa-image" style="color: #20bf6b;"></i> Có ảnh' : '<i class="fa-solid fa-font"></i> Chữ'}</span>
-      </div>
+      card.innerHTML = `
+        <div class="post-card-header">
+          <span class="post-id-tag">${p.id}</span>
+          <span class="status-badge ${p.status}">${statusLabels[p.status]}</span>
+        </div>
+        <div class="post-card-body">
+          <h4>${typeIcons[p.type] || '<i class="fa-solid fa-newspaper"></i>'} ${p.type}</h4>
+          <p>${p.captionSnippet || 'Chưa có nội dung...'}</p>
+        </div>
+        <div class="post-card-footer">
+          <span><i class="fa-solid fa-calendar-day"></i> ${p.date} ${timeLabel}</span>
+          <span>${p.hasImage ? '<i class="fa-solid fa-image" style="color: #20bf6b;"></i> Có ảnh' : '<i class="fa-solid fa-font"></i> Chữ'}</span>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  } else {
+    // Render Table View
+    container.className = 'table-responsive';
+    
+    const table = document.createElement('table');
+    table.className = 'posts-table';
+    
+    table.innerHTML = `
+      <thead>
+        <tr>
+          <th style="width: 80px;">ID</th>
+          <th style="width: 110px;">Ngày đăng</th>
+          <th style="width: 140px;">Thể loại</th>
+          <th>Nội dung caption tóm tắt</th>
+          <th style="width: 100px; text-align: center;">Đính kèm</th>
+          <th style="width: 120px; text-align: center;">Lịch đăng FB</th>
+          <th style="width: 130px; text-align: center;">Trạng thái</th>
+          <th style="width: 80px; text-align: center;">Thao tác</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+      </tbody>
     `;
+    
+    container.appendChild(table);
+    const tbody = document.getElementById('table-body');
+    
+    filtered.forEach(p => {
+      const tr = document.createElement('tr');
+      
+      const imgIcon = p.hasImage 
+        ? '<i class="fa-solid fa-image" style="color: #20bf6b; font-size: 16px;" title="Bài đăng có hình ảnh"></i>' 
+        : '<i class="fa-solid fa-font" style="color: var(--text-secondary); font-size: 14px;" title="Bài đăng thuần văn bản"></i>';
+        
+      const justTime = p.scheduledFor ? p.scheduledFor.split(' ')[0] : '—';
+      const timeTag = p.scheduledFor 
+        ? `<span class="time-tag" style="margin-left: 0; font-size: 11px;"><i class="fa-solid fa-clock"></i> ${justTime}</span>`
+        : '<span style="color: var(--text-secondary)">Chưa xếp lịch</span>';
 
-    container.appendChild(card);
-  });
+      tr.innerHTML = `
+        <td><span class="post-id-tag" style="color: #a55eea; cursor: pointer;" onclick="openModalById('${p.id}')">${p.id}</span></td>
+        <td><i class="fa-solid fa-calendar-day" style="color: var(--text-secondary); margin-right: 6px;"></i>${p.date}</td>
+        <td><span class="type-cell">${typeIcons[p.type] || '<i class="fa-solid fa-newspaper"></i>'} ${p.type}</span></td>
+        <td><div class="caption-cell-text" title="${p.captionFull.replace(/"/g, '&quot;')}">${p.captionSnippet || 'Chưa có nội dung...'}</div></td>
+        <td style="text-align: center;">${imgIcon}</td>
+        <td style="text-align: center;">${timeTag}</td>
+        <td style="text-align: center;"><span class="status-badge ${p.status}" style="font-size: 10px; padding: 2px 6px;">${statusLabels[p.status]}</span></td>
+        <td style="text-align: center;">
+          <button class="btn-action-edit" onclick="openModalById('${p.id}')" title="Chỉnh sửa nội dung & lên lịch">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+}
+
+// Helper to open modal by post ID
+function openModalById(id) {
+  const post = allPosts.find(p => p.id === id);
+  if (post) openModal(post);
+}
+
+// Switch between grid and table view
+function switchView(view) {
+  currentView = view;
+  
+  const btnGrid = document.getElementById('btn-view-grid');
+  const btnTable = document.getElementById('btn-view-table');
+  
+  if (view === 'grid') {
+    btnGrid.classList.add('active');
+    btnGrid.style.color = '#fff';
+    btnTable.classList.remove('active');
+    btnTable.style.color = 'var(--text-secondary)';
+  } else {
+    btnTable.classList.add('active');
+    btnTable.style.color = '#fff';
+    btnGrid.classList.remove('active');
+    btnGrid.style.color = 'var(--text-secondary)';
+  }
+  
+  renderPosts();
 }
 
 // 3. Filter badges handle
