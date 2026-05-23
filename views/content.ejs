@@ -1,0 +1,42 @@
+<h1 class="page-title">Noi dung</h1>
+
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-value"><%= contentStats.total %></div>
+    <div class="stat-label">Tong bai viet</div>
+  </div>
+  <div class="stat-card green">
+    <div class="stat-value"><%= contentStats.completed %></div>
+    <div class="stat-label">Da dang</div>
+  </div>
+  <div class="stat-card orange">
+    <div class="stat-value"><%= contentStats.pending %></div>
+    <div class="stat-label">Chua dang</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span>Cay thu muc noi dung</span>
+  </div>
+  <div class="card-body">
+    <% if (tree.length === 0) { %>
+      <div class="empty-state">
+        <div class="empty-icon">&#128193;</div>
+        <p>Chua co noi dung nao trong thu muc content/</p>
+      </div>
+    <% } else { %>
+      <div class="content-tree">
+        <% tree.forEach(function(item) { %>
+          <div class="tree-item" style="padding-left:<%= (item.depth * 24 + 12) %>px">
+            <span class="tree-icon"><%= item.icon %></span>
+            <span><%= item.name %></span>
+            <% if (item.status === 'ready') { %><span class="badge badge-success">San sang</span><% } %>
+            <% if (item.status === 'posted') { %><span class="badge badge-info">Da dang</span><% } %>
+            <% if (item.status === 'empty') { %><span class="badge badge-warning">Trong</span><% } %>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
+</div>

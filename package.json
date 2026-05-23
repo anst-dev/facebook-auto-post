@@ -20,12 +20,15 @@
     "comment:once": "node src/comment-reply.js once",
     "comment:status": "node src/comment-reply.js status",
     "comment:test": "node src/comment-reply.js test",
-    "comment:reset": "node src/comment-reply.js reset"
+    "comment:reset": "node src/comment-reply.js reset",
+    "web": "node src/server.js"
   },
   "dependencies": {
     "axios": "^1.7.9",
     "cheerio": "^1.0.0",
     "dotenv": "^16.4.7",
+    "ejs": "^5.0.2",
+    "express": "^5.2.1",
     "form-data": "^4.0.5"
   }
 }

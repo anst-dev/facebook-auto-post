@@ -1,0 +1,88 @@
+<h1 class="page-title">Dashboard</h1>
+
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-value"><%= stats.totalPosts %></div>
+    <div class="stat-label">Bai da dang</div>
+  </div>
+  <div class="stat-card orange">
+    <div class="stat-value"><%= stats.pendingPosts %></div>
+    <div class="stat-label">Chua dang</div>
+  </div>
+  <div class="stat-card green">
+    <div class="stat-value"><%= stats.totalReplies %></div>
+    <div class="stat-label">Comment replied</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value"><%= stats.totalDMs %></div>
+    <div class="stat-label">DM da gui</div>
+  </div>
+</div>
+
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-value"><%= stats.keywords %></div>
+    <div class="stat-label">Tu khoa active</div>
+  </div>
+  <div class="stat-card <%= stats.polling ? 'green' : '' %>">
+    <div class="stat-value">
+      <span class="status-dot <%= stats.polling ? 'active' : 'inactive' %>"></span>
+      <%= stats.polling ? 'Dang chay' : 'Dung' %>
+    </div>
+    <div class="stat-label">Polling status</div>
+  </div>
+  <div class="stat-card orange">
+    <div class="stat-value"><%= stats.dmFailed %></div>
+    <div class="stat-label">DM loi</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value"><%= stats.lastPoll ? stats.lastPoll : 'Chua chay' %></div>
+    <div class="stat-label">Lan quet cuoi</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span>Log gan day</span>
+    <span style="font-size:12px;color:#65676b"><%= recentLogs.length %> muc</span>
+  </div>
+  <div class="card-body">
+    <% if (recentLogs.length === 0) { %>
+      <div class="empty-state">
+        <div class="empty-icon">&#128203;</div>
+        <p>Chua co log nao</p>
+      </div>
+    <% } else { %>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Thoi gian</th>
+              <th>Hanh dong</th>
+              <th>Tu khoa</th>
+              <th>User</th>
+              <th>Trang thai</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% recentLogs.forEach(function(log) { %>
+            <tr>
+              <td class="log-time"><%= new Date(log.timestamp).toLocaleString('vi-VN') %></td>
+              <td>
+                <% if (log.action === 'reply') { %><span class="badge badge-info">Reply</span><% } %>
+                <% if (log.action === 'dm') { %><span class="badge badge-warning">DM</span><% } %>
+                <% if (log.action === 'post' || log.action === 'schedule') { %><span class="badge badge-info"><%= log.action %></span><% } %>
+              </td>
+              <td><%= log.keyword || '-' %></td>
+              <td><%= log.userName || '-' %></td>
+              <td>
+                <% if (log.status === 'success') { %><span class="badge badge-success">OK</span><% } else { %><span class="badge badge-danger">Loi</span><% } %>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+</div>

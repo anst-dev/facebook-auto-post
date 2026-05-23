@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> - Facebook Auto Post</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <h1>FB Auto Post</h1>
+      <span>Quan ly tu dong</span>
+    </div>
+    <nav>
+      <a href="/" class="<%= page === 'dashboard' ? 'active' : '' %>">
+        <span class="icon">&#9632;</span><span>Dashboard</span>
+      </a>
+      <a href="/posts" class="<%= page === 'posts' ? 'active' : '' %>">
+        <span class="icon">&#9998;</span><span>Bai dang</span>
+      </a>
+      <a href="/comments" class="<%= page === 'comments' ? 'active' : '' %>">
+        <span class="icon">&#128172;</span><span>Comment Reply</span>
+      </a>
+      <a href="/content" class="<%= page === 'content' ? 'active' : '' %>">
+        <span class="icon">&#128193;</span><span>Noi dung</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      Facebook Auto Post v1.0
+    </div>
+  </aside>
+
+  <main class="main">
+    <%- body %>
+  </main>
+</body>
+</html>
