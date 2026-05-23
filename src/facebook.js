@@ -261,6 +261,83 @@ class FacebookAPI {
       return { success: false, error: err.response?.data || err.message };
     }
   }
+
+  // === COMMENT & MESSAGING FUNCTIONS ===
+
+  async getPublishedPosts(limit = 10) {
+    try {
+      const res = await axios.get(this._url(`/${this.pageId}/published_posts`), {
+        params: {
+          access_token: this.accessToken,
+          fields: 'id,message,created_time',
+          limit
+        }
+      });
+      return { success: true, data: res.data.data };
+    } catch (err) {
+      return { success: false, error: err.response?.data || err.message };
+    }
+  }
+
+  async getComments(postId, options = {}) {
+    try {
+      const params = {
+        access_token: this.accessToken,
+        fields: 'id,message,from,created_time',
+        order: 'reverse_chronological',
+        limit: options.limit || 50
+      };
+      if (options.since) {
+        params.since = options.since;
+      }
+      const res = await axios.get(this._url(`/${postId}/comments`), { params });
+      return { success: true, data: res.data.data };
+    } catch (err) {
+      return { success: false, error: err.response?.data || err.message };
+    }
+  }
+
+  async replyToComment(commentId, message, attachmentUrl = null) {
+    try {
+      const body = {
+        message,
+        access_token: this.accessToken
+      };
+      if (attachmentUrl) {
+        body.attachment_url = attachmentUrl;
+      }
+      const res = await axios.post(this._url(`/${commentId}/comments`), body);
+      return { success: true, commentId: res.data.id };
+    } catch (err) {
+      return { success: false, error: err.response?.data || err.message };
+    }
+  }
+
+  async sendPrivateMessage(psid, message) {
+    try {
+      const res = await axios.post(this._url(`/${this.pageId}/messages`), {
+        recipient: { id: psid },
+        message: { text: message },
+        access_token: this.accessToken
+      });
+      return { success: true, messageId: res.data.message_id };
+    } catch (err) {
+      return { success: false, error: err.response?.data || err.message };
+    }
+  }
+
+  async sendPrivateReply(commentId, message) {
+    try {
+      const res = await axios.post(this._url(`/${this.pageId}/messages`), {
+        recipient: { comment_id: commentId },
+        message: { text: message },
+        access_token: this.accessToken
+      });
+      return { success: true, messageId: res.data.message_id };
+    } catch (err) {
+      return { success: false, error: err.response?.data || err.message };
+    }
+  }
 }
 
 module.exports = FacebookAPI;

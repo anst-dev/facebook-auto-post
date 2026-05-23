@@ -19,3 +19,7 @@ pnpm-debug.log*
 # System Files
 .DS_Store
 Thumbs.db
+
+# Comment reply state & logs
+comment-reply-state.json
+comment-reply-log.json

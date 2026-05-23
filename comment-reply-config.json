@@ -1,0 +1,19 @@
+{
+  "pollIntervalMinutes": 5,
+  "postLimit": 10,
+  "enabled": true,
+  "keywords": [
+    {
+      "keyword": "KHOAHOC",
+      "replyComment": "Cảm ơn bạn đã quan tâm! Kiểm tra inbox nha, mình gửi thông tin khoá học cho bạn.",
+      "replyCommentAttachmentUrl": "",
+      "privateMessage": "Chào bạn! Đây là thông tin chi tiết khoá học:\n\n- Tên khoá: ...\n- Giá: ...\n- Link đăng ký: ...\n\nCâu hỏi vui lòng reply tin nhắn này nhé!"
+    },
+    {
+      "keyword": "TU VAN",
+      "replyComment": "Bạn muốn tư vấn? Kiểm tra inbox nha!",
+      "replyCommentAttachmentUrl": "",
+      "privateMessage": "Chào bạn! Bạn muốn tư vấn về vấn đề gì? Mình sẵn sàng hỗ trợ.\n\nCác dịch vụ tư vấn:\n1. ...\n2. ...\n\nVui lòng cho biết bạn quan tâm đến dịch vụ nào nhé!"
+    }
+  ]
+}
