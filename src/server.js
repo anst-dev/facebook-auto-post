@@ -1,5 +1,6 @@
 require('dotenv').config({ path: require('path').join(__dirname, '..', '.env') });
 const express = require('express');
+const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
 
@@ -8,6 +9,8 @@ const PORT = process.env.DASHBOARD_PORT || 3000;
 
 // Paths
 const ROOT = path.join(__dirname, '..');
+const ENV_FILE = path.join(ROOT, '.env');
+const PAGES_FILE = path.join(ROOT, 'saved-pages.json');
 const CONTENT_DIR = path.join(ROOT, 'content');
 const PROGRESS_FILE = path.join(CONTENT_DIR, 'progress.json');
 const POST_LOG_FILE = path.join(ROOT, 'post-log.json');
@@ -107,7 +110,8 @@ function renderPage(req, res, page, title, data) {
     dashboard: 'dashboard',
     posts: 'posts',
     comments: 'comments',
-    content: 'content'
+    content: 'content',
+    settings: 'settings'
   };
   const body = require('ejs').render(
     fs.readFileSync(path.join(ROOT, 'views', `${templateMap[page]}.ejs`), 'utf8'),
@@ -207,6 +211,153 @@ app.get('/content', (req, res) => {
     contentStats: { total, completed, pending: total - completed },
     tree
   });
+});
+
+// === SETTINGS HELPERS ===
+
+function readEnvFile() {
+  const result = {};
+  if (!fs.existsSync(ENV_FILE)) return result;
+  const content = fs.readFileSync(ENV_FILE, 'utf8');
+  for (const line of content.split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const eqIndex = trimmed.indexOf('=');
+    if (eqIndex > 0) {
+      result[trimmed.substring(0, eqIndex)] = trimmed.substring(eqIndex + 1);
+    }
+  }
+  return result;
+}
+
+function writeEnvFile(data) {
+  const lines = [
+    '# Facebook API Credentials',
+    `FACEBOOK_PAGE_ID=${data.FACEBOOK_PAGE_ID || ''}`,
+    `FACEBOOK_ACCESS_TOKEN=${data.FACEBOOK_ACCESS_TOKEN || ''}`,
+    '',
+    '# Optional: Default topic for auto-posting',
+    `DEFAULT_TOPIC=${data.DEFAULT_TOPIC || 'technology news today'}`
+  ];
+  fs.writeFileSync(ENV_FILE, lines.join('\n') + '\n', 'utf8');
+  // Update process.env for current session
+  if (data.FACEBOOK_PAGE_ID) process.env.FACEBOOK_PAGE_ID = data.FACEBOOK_PAGE_ID;
+  if (data.FACEBOOK_ACCESS_TOKEN) process.env.FACEBOOK_ACCESS_TOKEN = data.FACEBOOK_ACCESS_TOKEN;
+}
+
+function readSavedPages() {
+  return readJson(PAGES_FILE, []);
+}
+
+function saveSavedPages(pages) {
+  fs.writeFileSync(PAGES_FILE, JSON.stringify(pages, null, 2), 'utf8');
+}
+
+async function verifyToken(pageId, accessToken) {
+  try {
+    const res = await axios.get('https://graph.facebook.com/v21.0/me', {
+      params: { access_token: accessToken, fields: 'id,name' }
+    });
+    return { valid: true, id: res.data.id, name: res.data.name };
+  } catch (err) {
+    return { valid: false, error: err.response?.data?.error?.message || err.message };
+  }
+}
+
+// === SETTINGS ROUTES ===
+
+app.get('/settings', async (req, res) => {
+  try {
+    const envData = readEnvFile();
+    let tokenInfo = null;
+    let flash = null;
+    try {
+      flash = req.query.flash ? JSON.parse(Buffer.from(req.query.flash, 'base64').toString()) : null;
+    } catch {}
+
+    if (envData.FACEBOOK_ACCESS_TOKEN) {
+      const verify = await verifyToken(envData.FACEBOOK_PAGE_ID, envData.FACEBOOK_ACCESS_TOKEN);
+      tokenInfo = {
+        valid: verify.valid,
+        id: verify.id || envData.FACEBOOK_PAGE_ID,
+        name: verify.name || '-',
+        tokenLength: envData.FACEBOOK_ACCESS_TOKEN.length
+      };
+      if (!verify.valid) tokenInfo.error = verify.error;
+    }
+
+    const savedPages = readSavedPages();
+    for (const p of savedPages) {
+      if (p.accessToken) {
+        const v = await verifyToken(p.pageId, p.accessToken);
+        p.valid = v.valid;
+        if (v.name) p.name = v.name;
+      } else {
+        p.valid = false;
+      }
+    }
+
+    renderPage(req, res, 'settings', 'Cai dat', {
+      tokenInfo,
+      currentEnv: envData,
+      savedPages,
+      flash
+    });
+  } catch (err) {
+    console.error('Settings error:', err);
+    res.status(500).send('Error loading settings: ' + err.message);
+  }
+});
+
+app.post('/settings/token', async (req, res) => {
+  const { pageId, accessToken } = req.body;
+  const envData = readEnvFile();
+  envData.FACEBOOK_PAGE_ID = (pageId || '').trim();
+  envData.FACEBOOK_ACCESS_TOKEN = (accessToken || '').trim();
+  writeEnvFile(envData);
+
+  const verify = await verifyToken(envData.FACEBOOK_PAGE_ID, envData.FACEBOOK_ACCESS_TOKEN);
+
+  // Auto-save to saved pages
+  if (verify.valid) {
+    const pages = readSavedPages();
+    const existing = pages.findIndex(p => p.pageId === envData.FACEBOOK_PAGE_ID);
+    const entry = { pageId: envData.FACEBOOK_PAGE_ID, accessToken: envData.FACEBOOK_ACCESS_TOKEN, name: verify.name, valid: true };
+    if (existing >= 0) pages[existing] = entry;
+    else pages.push(entry);
+    saveSavedPages(pages);
+  }
+
+  const flash = verify.valid
+    ? { type: 'success', message: `Token hop le! Page: ${verify.name}` }
+    : { type: 'error', message: `Token khong hop le: ${verify.error}` };
+
+  res.redirect('/settings?flash=' + Buffer.from(JSON.stringify(flash)).toString('base64'));
+});
+
+app.post('/settings/switch', async (req, res) => {
+  const { pageId } = req.body;
+  const pages = readSavedPages();
+  const page = pages.find(p => p.pageId === pageId);
+  if (page) {
+    const envData = readEnvFile();
+    envData.FACEBOOK_PAGE_ID = page.pageId;
+    envData.FACEBOOK_ACCESS_TOKEN = page.accessToken;
+    writeEnvFile(envData);
+
+    const flash = { type: 'success', message: `Da chuyen sang Page: ${page.name}` };
+    res.redirect('/settings?flash=' + Buffer.from(JSON.stringify(flash)).toString('base64'));
+  } else {
+    res.redirect('/settings');
+  }
+});
+
+app.post('/settings/delete', (req, res) => {
+  const { pageId } = req.body;
+  let pages = readSavedPages();
+  pages = pages.filter(p => p.pageId !== pageId);
+  saveSavedPages(pages);
+  res.redirect('/settings');
 });
 
 // === START ===

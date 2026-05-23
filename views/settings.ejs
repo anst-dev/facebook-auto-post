@@ -1,0 +1,119 @@
+<h1 class="page-title">Cai dat Token</h1>
+
+<% if (flash) { %>
+<div class="card" style="margin-bottom:16px;border-color:<%= flash.type === 'success' ? '#2ecc71' : '#e74c3c' %>">
+  <div class="card-body" style="padding:12px 16px;color:<%= flash.type === 'success' ? '#1a7f37' : '#cf222e' %>">
+    <%= flash.message %>
+  </div>
+</div>
+<% } %>
+
+<!-- Current token info -->
+<div class="card">
+  <div class="card-header">
+    <span>Thong tin Page hien tai</span>
+  </div>
+  <div class="card-body">
+    <% if (tokenInfo) { %>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" style="font-size:18px"><%= tokenInfo.name || '-' %></div>
+          <div class="stat-label">Ten Page</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="font-size:14px"><%= tokenInfo.id || '-' %></div>
+          <div class="stat-label">Page ID</div>
+        </div>
+        <div class="stat-card <%= tokenInfo.valid ? 'green' : 'red' %>">
+          <div class="stat-value">
+            <span class="status-dot <%= tokenInfo.valid ? 'active' : 'inactive' %>"></span>
+            <%= tokenInfo.valid ? 'Hop le' : 'Het han' %>
+          </div>
+          <div class="stat-label">Token</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="font-size:14px"><%= tokenInfo.tokenLength || 0 %> ky tu</div>
+          <div class="stat-label">Do dai token</div>
+        </div>
+      </div>
+    <% } else { %>
+      <div class="empty-state">
+        <div class="empty-icon">&#128274;</div>
+        <p>Chua co token. Nhap token ben duoi de bat dau.</p>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<!-- Update token form -->
+<div class="card">
+  <div class="card-header"><span>Cap nhat Token</span></div>
+  <div class="card-body">
+    <form method="POST" action="/settings/token">
+      <div class="form-group">
+        <label>Page ID</label>
+        <input type="text" name="pageId" value="<%= currentEnv.FACEBOOK_PAGE_ID || '' %>" placeholder="VD: 1864460076999002">
+      </div>
+      <div class="form-group">
+        <label>Access Token</label>
+        <textarea name="accessToken" rows="4" placeholder="Dan Page Access Token vao day..."><%= currentEnv.FACEBOOK_ACCESS_TOKEN || '' %></textarea>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button type="submit" class="btn btn-primary">Luu & Kiem tra</button>
+        <a href="/settings" class="btn btn-outline">Huy</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Quick connect guide -->
+<div class="card">
+  <div class="card-header"><span>Huong dan lay Token nhanh</span></div>
+  <div class="card-body" style="font-size:13px;color:#444;line-height:1.8">
+    <p><strong>Buoc 1:</strong> Vao <a href="https://developers.facebook.com/tools/explorer/" target="_blank" style="color:#1877f2">Graph API Explorer</a></p>
+    <p><strong>Buoc 2:</strong> Chon Facebook App → Chon Page tu dropdown "User or Page"</p>
+    <p><strong>Buoc 3:</strong> Them cac quyen: <code>pages_manage_posts</code>, <code>pages_read_engagement</code>, <code>pages_read_user_content</code>, <code>pages_manage_engagement</code>, <code>pages_messaging</code></p>
+    <p><strong>Buoc 4:</strong> Click "Generate Access Token" → Copy token → Dan vao form tren</p>
+    <p><strong>Buoc 5:</strong> Tim Page ID tai <a href="https://www.facebook.com/settings" target="_blank" style="color:#1877f2">Page Settings</a> → Page Info → Page ID</p>
+  </div>
+</div>
+
+<!-- Multiple pages -->
+<% if (savedPages && savedPages.length > 0) { %>
+<div class="card">
+  <div class="card-header"><span>Page da luu</span></div>
+  <div class="card-body">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Ten Page</th>
+            <th>Page ID</th>
+            <th>Token</th>
+            <th>Hanh dong</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% savedPages.forEach(function(p) { %>
+          <tr>
+            <td><%= p.name %></td>
+            <td><%= p.pageId %></td>
+            <td><span class="badge <%= p.valid ? 'badge-success' : 'badge-danger' %>"><%= p.valid ? 'Hop le' : 'Het han' %></span></td>
+            <td>
+              <form method="POST" action="/settings/switch" style="display:inline">
+                <input type="hidden" name="pageId" value="<%= p.pageId %>">
+                <button type="submit" class="btn btn-sm btn-primary">Su dung</button>
+              </form>
+              <form method="POST" action="/settings/delete" style="display:inline">
+                <input type="hidden" name="pageId" value="<%= p.pageId %>">
+                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Xoa page nay?')">Xoa</button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<% } %>

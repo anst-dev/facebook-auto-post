@@ -23,3 +23,6 @@ Thumbs.db
 # Comment reply state & logs
 comment-reply-state.json
 comment-reply-log.json
+
+# Saved pages (contains tokens)
+saved-pages.json
