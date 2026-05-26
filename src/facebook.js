@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const GRAPH_API_VERSION = 'v21.0';
+const GRAPH_API_VERSION = 'v25.0';
 const BASE_URL = `https://graph.facebook.com/${GRAPH_API_VERSION}`;
 
 class FacebookAPI {

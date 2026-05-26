@@ -92,7 +92,7 @@ async function postWithImage(imagePath, captionPath) {
 
   try {
     const res = await axios.post(
-      `https://graph.facebook.com/v21.0/${process.env.FACEBOOK_PAGE_ID}/photos`,
+      `https://graph.facebook.com/v25.0/${process.env.FACEBOOK_PAGE_ID}/photos`,
       formData,
       {
         params: { access_token: process.env.FACEBOOK_ACCESS_TOKEN },

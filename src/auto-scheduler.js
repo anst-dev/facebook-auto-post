@@ -10,7 +10,7 @@ const PROGRESS_FILE = path.join(CONTENT_DIR, 'progress.json');
 const LOG_FILE = path.join(__dirname, '..', 'post-log.json');
 
 // === CONFIG ===
-const GRAPH_API_VERSION = 'v21.0';
+const GRAPH_API_VERSION = 'v25.0';
 const BASE_URL = `https://graph.facebook.com/${GRAPH_API_VERSION}`;
 
 // Schedule times for posts each day (Vietnam time)

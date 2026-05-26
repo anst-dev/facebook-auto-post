@@ -74,7 +74,7 @@ async function testMultiPhoto() {
       formData.append('published', 'false');
 
       const res = await axios.post(
-        `https://graph.facebook.com/v21.0/${process.env.FACEBOOK_PAGE_ID}/photos`,
+        `https://graph.facebook.com/v25.0/${process.env.FACEBOOK_PAGE_ID}/photos`,
         formData,
         {
           params: { access_token: process.env.FACEBOOK_ACCESS_TOKEN },
@@ -102,7 +102,7 @@ async function testMultiPhoto() {
     const attachedMedia = photoIds.map(id => ({ media_fbid: id }));
 
     const res = await axios.post(
-      `https://graph.facebook.com/v21.0/${process.env.FACEBOOK_PAGE_ID}/feed`,
+      `https://graph.facebook.com/v25.0/${process.env.FACEBOOK_PAGE_ID}/feed`,
       {
         message: CAPTION,
         attached_media: JSON.stringify(attachedMedia),

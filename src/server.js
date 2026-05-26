@@ -1,11 +1,22 @@
 require('dotenv').config({ path: require('path').join(__dirname, '..', '.env') });
 const express = require('express');
 const axios = require('axios');
+const crypto = require('crypto');
 const path = require('path');
 const fs = require('fs');
 
+const FacebookAPI = require('./facebook');
+
 const app = express();
 const PORT = process.env.DASHBOARD_PORT || 3000;
+
+// Webhook config
+const WEBHOOK_VERIFY_TOKEN = process.env.WEBHOOK_VERIFY_TOKEN || 'my_secret_verify_token_2026';
+const FB_APP_SECRET = process.env.FB_APP_SECRET || '';
+
+// Parse JSON body for webhook - capture raw body for signature verification
+app.use('/webhook', express.json({ verify: (req, res, buf) => { req.rawBody = buf.toString(); } }));
+app.use(express.urlencoded({ extended: true }));
 
 // Paths
 const ROOT = path.join(__dirname, '..');
@@ -31,6 +42,15 @@ function readJson(file, fallback) {
     if (fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, 'utf8'));
   } catch {}
   return fallback;
+}
+
+function appendLog(entry) {
+  let log = [];
+  if (fs.existsSync(COMMENT_LOG_FILE)) {
+    log = JSON.parse(fs.readFileSync(COMMENT_LOG_FILE, 'utf8'));
+  }
+  log.push({ ...entry, timestamp: new Date().toISOString() });
+  fs.writeFileSync(COMMENT_LOG_FILE, JSON.stringify(log, null, 2), 'utf8');
 }
 
 function readCommentConfig() {
@@ -237,12 +257,18 @@ function writeEnvFile(data) {
     `FACEBOOK_ACCESS_TOKEN=${data.FACEBOOK_ACCESS_TOKEN || ''}`,
     '',
     '# Optional: Default topic for auto-posting',
-    `DEFAULT_TOPIC=${data.DEFAULT_TOPIC || 'technology news today'}`
+    `DEFAULT_TOPIC=${data.DEFAULT_TOPIC || 'technology news today'}`,
+    '',
+    '# Webhook Config',
+    `WEBHOOK_VERIFY_TOKEN=${data.WEBHOOK_VERIFY_TOKEN || ''}`,
+    `FB_APP_SECRET=${data.FB_APP_SECRET || ''}`
   ];
   fs.writeFileSync(ENV_FILE, lines.join('\n') + '\n', 'utf8');
   // Update process.env for current session
   if (data.FACEBOOK_PAGE_ID) process.env.FACEBOOK_PAGE_ID = data.FACEBOOK_PAGE_ID;
   if (data.FACEBOOK_ACCESS_TOKEN) process.env.FACEBOOK_ACCESS_TOKEN = data.FACEBOOK_ACCESS_TOKEN;
+  if (data.WEBHOOK_VERIFY_TOKEN) process.env.WEBHOOK_VERIFY_TOKEN = data.WEBHOOK_VERIFY_TOKEN;
+  if (data.FB_APP_SECRET) process.env.FB_APP_SECRET = data.FB_APP_SECRET;
 }
 
 function readSavedPages() {
@@ -255,7 +281,7 @@ function saveSavedPages(pages) {
 
 async function verifyToken(pageId, accessToken) {
   try {
-    const res = await axios.get('https://graph.facebook.com/v21.0/me', {
+    const res = await axios.get('https://graph.facebook.com/v25.0/me', {
       params: { access_token: accessToken, fields: 'id,name' }
     });
     return { valid: true, id: res.data.id, name: res.data.name };
@@ -360,8 +386,297 @@ app.post('/settings/delete', (req, res) => {
   res.redirect('/settings');
 });
 
+// === FACEBOOK WEBHOOK ===
+
+// Webhook verification (Facebook calls this to verify)
+app.get('/webhook', (req, res) => {
+  const mode = req.query['hub.mode'];
+  const token = req.query['hub.verify_token'];
+  const challenge = req.query['hub.challenge'];
+
+  if (mode === 'subscribe' && token === WEBHOOK_VERIFY_TOKEN) {
+    console.log('[Webhook] Verified OK');
+    res.status(200).send(challenge);
+  } else {
+    console.warn('[Webhook] Verification FAILED', { mode, token });
+    res.sendStatus(403);
+  }
+});
+
+// Verify Facebook webhook signature (supports both SHA1 and SHA256)
+// Reference: https://github.com/fbsamples/original-coast-clothing/blob/main/app.js
+function verifySignature(req) {
+  if (!FB_APP_SECRET) return true; // Skip if no app secret configured
+  
+  const signature = req.headers['x-hub-signature-256'] || req.headers['x-hub-signature'];
+  if (!signature) {
+    console.error('[Webhook] No signature header found');
+    return false;
+  }
+  
+  const [method, signatureHash] = signature.split('=');
+  let expectedHash;
+  
+  if (method === 'sha256') {
+    expectedHash = crypto.createHmac('sha256', FB_APP_SECRET).update(req.rawBody).digest('hex');
+  } else if (method === 'sha1') {
+    expectedHash = crypto.createHmac('sha1', FB_APP_SECRET).update(req.rawBody).digest('hex');
+  } else {
+    console.error('[Webhook] Unknown signature method:', method);
+    return false;
+  }
+  
+  // Use timing-safe comparison to prevent timing attacks
+  try {
+    return crypto.timingSafeEqual(Buffer.from(signatureHash), Buffer.from(expectedHash));
+  } catch {
+    return false;
+  }
+}
+
+// Webhook event receiver (following Facebook official pattern)
+app.post('/webhook', async (req, res) => {
+  // Verify signature first
+  if (!verifySignature(req)) {
+    console.warn('[Webhook] Invalid signature');
+    return res.sendStatus(403);
+  }
+
+  const body = req.body;
+
+  // Log full payload for debugging
+  console.log('📩 Received webhook:');
+  console.dir(body, { depth: null });
+
+  // Check this is a page subscription
+  if (body.object !== 'page') {
+    return res.sendStatus(404);
+  }
+
+  // Acknowledge immediately (Facebook expects "EVENT_RECEIVED")
+  res.status(200).send('EVENT_RECEIVED');
+
+  // Process each entry (may be batched)
+  for (const entry of body.entry) {
+    // Handle Page feed changes (comments, posts)
+    if (entry.changes) {
+      for (const change of entry.changes) {
+        if (change.field === 'feed') {
+          const value = change.value;
+          switch (value.item) {
+            case 'comment':
+              await handleCommentEvent(value);
+              break;
+            case 'post':
+              console.log(`[Webhook] New post event: ${value.post_id}`);
+              break;
+            default:
+              console.warn('[Webhook] Unsupported feed item:', value.item);
+          }
+        }
+      }
+    }
+
+    // Handle messaging events (DMs via Messenger)
+    if (entry.messaging) {
+      for (const event of entry.messaging) {
+        // Skip read/delivery/echo events
+        if ('read' in event) {
+          console.log('[Webhook] Read event');
+          continue;
+        }
+        if ('delivery' in event) {
+          console.log('[Webhook] Delivery event');
+          continue;
+        }
+        if (event.message?.is_echo) {
+          console.log('[Webhook] Echo event, mid = ' + event.message.mid);
+          continue;
+        }
+        await handleDMEvent(event);
+      }
+    }
+  }
+});
+
+// Handle incoming comment
+async function handleCommentEvent(value) {
+  const config = readCommentConfig();
+  if (!config.enabled) return;
+
+  const commentId = value.comment_id;
+  const commentText = value.message || '';
+  const senderName = value.sender_name || 'Unknown';
+  const postId = value.post_id || '';
+  const senderId = value.sender_id || '';
+  const pageId = process.env.FACEBOOK_PAGE_ID;
+
+  // Skip own page comments
+  if (senderId === pageId) return;
+
+  // Check already processed
+  const state = readCommentState();
+  if (state.processedComments[commentId]) return;
+
+  console.log(`[Webhook] New comment from "${senderName}": "${commentText.substring(0, 50)}..."`);
+
+  // Match keyword
+  const matched = matchKeywordWebhook(commentText, config.keywords);
+  if (!matched) {
+    console.log(`[Webhook] No keyword match, skipping.`);
+    return;
+  }
+
+  console.log(`[Webhook] Matched keyword "${matched.keyword}"`);
+
+  const fb = new FacebookAPI(pageId, process.env.FACEBOOK_ACCESS_TOKEN);
+
+  // Reply to comment
+  const replyResult = await fb.replyToComment(
+    commentId,
+    matched.replyComment,
+    matched.replyCommentAttachmentUrl || null
+  );
+
+  if (replyResult.success) {
+    console.log(`[Webhook] Reply OK: ${replyResult.commentId}`);
+    state.stats.totalReplies++;
+    appendLog({
+      commentId, postId, keyword: matched.keyword,
+      action: 'reply', status: 'success', userName: senderName, replyId: replyResult.commentId
+    });
+  } else {
+    console.error(`[Webhook] Reply FAILED:`, JSON.stringify(replyResult.error));
+    appendLog({
+      commentId, postId, keyword: matched.keyword,
+      action: 'reply', status: 'failed', userName: senderName, error: replyResult.error
+    });
+  }
+
+  // Send DM if configured
+  if (matched.privateMessage) {
+    let dmResult;
+    if (senderId) {
+      dmResult = await fb.sendPrivateMessage(senderId, matched.privateMessage);
+    } else {
+      dmResult = await fb.sendPrivateReply(commentId, matched.privateMessage);
+    }
+
+    if (dmResult.success) {
+      console.log(`[Webhook] DM OK`);
+      state.stats.totalDMs++;
+      appendLog({ commentId, postId, keyword: matched.keyword, action: 'dm', status: 'success', userName: senderName });
+    } else {
+      console.warn(`[Webhook] DM FAILED:`, JSON.stringify(dmResult.error));
+      state.stats.totalDMFailed++;
+      appendLog({ commentId, postId, keyword: matched.keyword, action: 'dm', status: 'failed', userName: senderName, error: dmResult.error });
+    }
+  }
+
+  // Mark processed
+  state.processedComments[commentId] = {
+    postId, keyword: matched.keyword,
+    repliedAt: new Date().toISOString(),
+    dmSent: !!matched.privateMessage,
+    userName: senderName
+  };
+  state.stats.totalProcessed++;
+  state.stats.byKeyword[matched.keyword] = (state.stats.byKeyword[matched.keyword] || 0) + 1;
+  fs.writeFileSync(COMMENT_STATE_FILE, JSON.stringify(state, null, 2), 'utf8');
+}
+
+// Handle incoming DM
+async function handleDMEvent(event) {
+  console.log(`[Webhook] DM from ${event.sender?.id}: ${(event.message?.text || '').substring(0, 50)}`);
+  // Future: auto-reply to DMs
+}
+
+// Vietnamese text normalization (same as comment-reply.js)
+function normalizeVietnamese(text) {
+  if (!text) return '';
+  let s = text.toUpperCase();
+  s = s.replace(/[ÁÀẢÃẠĂẮẰẲẴẶÂẤẦẨẪẬ]/g, 'A');
+  s = s.replace(/[ÉÈẺẼẸÊẾỀỂỄỆ]/g, 'E');
+  s = s.replace(/[ÍÌỈĨỊ]/g, 'I');
+  s = s.replace(/[ÓÒỎÕỌƠỚỜỞỠỢÔỐỒỔỖỘ]/g, 'O');
+  s = s.replace(/[ÚÙỦŨỤƯỨỪỬỮỰ]/g, 'U');
+  s = s.replace(/[ÝỲỶỸỴ]/g, 'Y');
+  s = s.replace(/Đ/g, 'D');
+  s = s.replace(/[^\w\s]/g, ' ');
+  s = s.replace(/\s+/g, ' ').trim();
+  return s;
+}
+
+function matchKeywordWebhook(commentText, keywords) {
+  const normalized = normalizeVietnamese(commentText);
+  for (const kw of keywords) {
+    const normalizedKw = normalizeVietnamese(kw.keyword);
+    const pattern = new RegExp(`\\b${escapeRegexWebhook(normalizedKw)}\\b`, 'i');
+    if (pattern.test(normalized)) return kw;
+  }
+  return null;
+}
+
+function escapeRegexWebhook(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// === PROFILE SETUP ENDPOINT (Facebook official pattern) ===
+// Usage: GET /profile?mode=all&verify_token=<your_token>
+// Modes: webhook, private-reply, all
+app.get('/profile', async (req, res) => {
+  const token = req.query['verify_token'];
+  const mode = req.query['mode'];
+
+  if (token !== WEBHOOK_VERIFY_TOKEN) {
+    return res.sendStatus(403);
+  }
+
+  const pageId = process.env.FACEBOOK_PAGE_ID;
+  const accessToken = process.env.FACEBOOK_ACCESS_TOKEN;
+  const webhookUrl = `https://unsupercilious-leonarda-unreaving.ngrok-free.dev/webhook`;
+
+  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+
+  if (mode === 'webhook' || mode === 'all') {
+    // Subscribe app to page events via Graph API
+    try {
+      const result = await axios.post(
+        `https://graph.facebook.com/v25.0/${pageId}/subscribed_apps`,
+        { subscribed_fields: 'feed,messages' },
+        { params: { access_token: accessToken } }
+      );
+      res.write(`<p>✅ Subscribed app to page ${pageId} (feed + messages)</p>`);
+      console.log('[Profile] Subscribed to page events:', result.data);
+    } catch (err) {
+      res.write(`<p>❌ Subscribe failed: ${err.response?.data?.error?.message || err.message}</p>`);
+      console.error('[Profile] Subscribe failed:', err.response?.data || err.message);
+    }
+  }
+
+  if (mode === 'private-reply' || mode === 'all') {
+    // Enable private replies for page comments
+    try {
+      const result = await axios.post(
+        `https://graph.facebook.com/v25.0/${pageId}/subscribed_apps`,
+        { subscribed_fields: 'feed' },
+        { params: { access_token: accessToken } }
+      );
+      res.write(`<p>✅ Private reply webhook set for page ${pageId}</p>`);
+    } catch (err) {
+      res.write(`<p>❌ Private reply setup failed: ${err.response?.data?.error?.message || err.message}</p>`);
+    }
+  }
+
+  res.write(`<hr><p>Webhook URL: <code>${webhookUrl}</code></p>`);
+  res.write(`<p>Page ID: <code>${pageId}</code></p>`);
+  res.end();
+});
+
 // === START ===
 
 app.listen(PORT, () => {
   console.log(`Dashboard: http://localhost:${PORT}`);
+  console.log(`Webhook: http://localhost:${PORT}/webhook`);
+  console.log(`Webhook URL: https://unsupercilious-leonarda-unreaving.ngrok-free.dev/webhook`);
 });
