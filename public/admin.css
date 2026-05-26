@@ -1,0 +1,8 @@
+/* Admin standalone pages — kept minimal */
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-base, #0a0a1a);
+  color: #e4e4f0;
+  margin: 0;
+  padding: 20px;
+}

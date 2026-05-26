@@ -35,6 +35,12 @@ app.set('views', path.join(ROOT, 'views'));
 app.use(express.static(path.join(ROOT, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
+// Mount admin routes
+try {
+  const adminRouter = require('./routes/admin');
+  app.use('/admin', adminRouter);
+} catch (e) { console.warn('Admin routes not present'); }
+
 // === DATA HELPERS ===
 
 function readJson(file, fallback) {

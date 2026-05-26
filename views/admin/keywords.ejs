@@ -1,0 +1,103 @@
+<div class="page-header">
+  <div class="page-header-row">
+    <div>
+      <h1 class="page-title">Quản lý Từ khóa</h1>
+      <p class="page-subtitle">Cấu hình phản hồi tự động theo từ khóa comment</p>
+    </div>
+    <button class="btn btn-primary" onclick="openModal()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Thêm từ khóa
+    </button>
+  </div>
+</div>
+
+<!-- Stats bar -->
+<div class="stats-grid stats-grid-sm" id="kwStats">
+  <div class="stat-mini">
+    <div class="stat-mini-icon">🏷️</div>
+    <div class="stat-mini-info">
+      <span class="stat-mini-value" id="kwCount">0</span>
+      <span class="stat-mini-label">Từ khóa</span>
+    </div>
+  </div>
+  <div class="stat-mini">
+    <div class="stat-mini-icon">✅</div>
+    <div class="stat-mini-info">
+      <span class="stat-mini-value" id="kwEnabled">0</span>
+      <span class="stat-mini-label">Đang bật</span>
+    </div>
+  </div>
+  <div class="stat-mini">
+    <div class="stat-mini-icon">💬</div>
+    <div class="stat-mini-info">
+      <span class="stat-mini-value" id="kwReplies">0</span>
+      <span class="stat-mini-label">Có phản hồi</span>
+    </div>
+  </div>
+  <div class="stat-mini">
+    <div class="stat-mini-icon">✉️</div>
+    <div class="stat-mini-info">
+      <span class="stat-mini-value" id="kwDMs">0</span>
+      <span class="stat-mini-label">Có DM</span>
+    </div>
+  </div>
+</div>
+
+<!-- Search -->
+<div class="search-bar">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  <input type="text" id="kwSearch" placeholder="Tìm từ khóa… (Ctrl+K)" oninput="filterKeywords()">
+</div>
+
+<!-- Keywords grid -->
+<div id="kwGrid" class="kw-grid">
+  <!-- Loaded via JS -->
+</div>
+
+<!-- Empty state -->
+<div id="kwEmpty" class="empty-state" style="display:none">
+  <div class="empty-icon">
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+  </div>
+  <h3>Chưa có từ khóa nào</h3>
+  <p>Nhấn "Thêm từ khóa" để bắt đầu cấu hình phản hồi tự động</p>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="kwModal" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h2 id="modalTitle">Thêm từ khóa mới</h2>
+      <button class="icon-btn" onclick="closeModal()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <form id="kwForm" onsubmit="saveKeyword(event)" style="padding:24px">
+      <input type="hidden" id="kwId">
+      <div class="form-group">
+        <label>Từ khóa <span class="required">*</span></label>
+        <input type="text" id="kwKeyword" placeholder="VD: KHOAHOC, SACHHAY" required>
+        <span class="form-hint">Comment chứa từ khóa này sẽ trigger phản hồi</span>
+      </div>
+      <div class="form-group">
+        <label>Phản hồi công khai</label>
+        <textarea id="kwReply" rows="3" placeholder="Nội dung reply comment công khai…"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Tin nhắn riêng (DM)</label>
+        <textarea id="kwDM" rows="3" placeholder="Nội dung gửi tin nhắn riêng…"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="toggle-label">
+          <input type="checkbox" id="kwEnabled" checked>
+          <span class="toggle-switch"></span>
+          Đang bật
+        </label>
+      </div>
+      <div class="modal-footer" style="padding:16px 0 0;border:0;margin-top:4px">
+        <button type="button" class="btn btn-ghost" onclick="closeModal()">Hủy</button>
+        <button type="submit" class="btn btn-primary" id="kwSaveBtn">Thêm</button>
+      </div>
+    </form>
+  </div>
+</div>

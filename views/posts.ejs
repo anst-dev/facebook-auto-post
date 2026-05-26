@@ -1,37 +1,50 @@
-<h1 class="page-title">Bai dang</h1>
+<div class="page-header">
+  <h1 class="page-title">Bài đăng</h1>
+  <p class="page-subtitle">Lịch sử các bài viết đã đăng tự động</p>
+</div>
 
 <div class="card">
   <div class="card-header">
-    <span>Danh sach bai viet</span>
-    <span style="font-size:12px;color:#65676b"><%= posts.length %> bai</span>
+    <div class="card-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      Danh sách
+    </div>
+    <span class="badge badge-ghost"><%= posts.length %> bài</span>
   </div>
   <div class="card-body">
     <% if (posts.length === 0) { %>
       <div class="empty-state">
-        <div class="empty-icon">&#128196;</div>
-        <p>Chua co bai dang nao</p>
+        <div class="empty-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <p>Chưa có bài đăng nào</p>
+        <p class="empty-hint">Bài viết sẽ xuất hiện ở đây sau khi được đăng</p>
       </div>
     <% } else { %>
       <div class="table-wrap">
-        <table>
+        <table class="table">
           <thead>
             <tr>
-              <th>Thoi gian</th>
-              <th>Noi dung</th>
-              <th>Hanh dong</th>
-              <th>Trang thai</th>
+              <th>Thời gian</th>
+              <th>Nội dung</th>
+              <th>Hành động</th>
+              <th>Trạng thái</th>
             </tr>
           </thead>
           <tbody>
             <% posts.forEach(function(p) { %>
             <tr>
-              <td class="log-time"><%= new Date(p.timestamp).toLocaleString('vi-VN') %></td>
+              <td class="text-muted"><%= new Date(p.timestamp).toLocaleString('vi-VN') %></td>
               <td style="max-width:400px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
                 <%= p.contentId || p.postId || '-' %>
               </td>
-              <td><span class="badge badge-info"><%= p.action %></span></td>
+              <td><span class="badge badge-purple"><%= p.action %></span></td>
               <td>
-                <% if (p.status === 'success') { %><span class="badge badge-success">OK</span><% } else { %><span class="badge badge-danger">Loi</span><% } %>
+                <% if (p.status === 'success') { %>
+                  <span class="badge badge-green">✓ OK</span>
+                <% } else { %>
+                  <span class="badge badge-red">✗ Lỗi</span>
+                <% } %>
               </td>
             </tr>
             <% }) %>

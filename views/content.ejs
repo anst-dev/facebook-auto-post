@@ -1,39 +1,57 @@
-<h1 class="page-title">Noi dung</h1>
+<div class="page-header">
+  <h1 class="page-title">Nội dung</h1>
+  <p class="page-subtitle">Quản lý kho nội dung bài viết</p>
+</div>
 
 <div class="stats-grid">
-  <div class="stat-card">
-    <div class="stat-value"><%= contentStats.total %></div>
-    <div class="stat-label">Tong bai viet</div>
+  <div class="stat-card gradient-purple">
+    <div class="stat-icon">📁</div>
+    <div class="stat-info">
+      <div class="stat-value"><%= contentStats.total %></div>
+      <div class="stat-label">Tổng bài</div>
+    </div>
   </div>
-  <div class="stat-card green">
-    <div class="stat-value"><%= contentStats.completed %></div>
-    <div class="stat-label">Da dang</div>
+  <div class="stat-card gradient-green">
+    <div class="stat-icon">✅</div>
+    <div class="stat-info">
+      <div class="stat-value"><%= contentStats.completed %></div>
+      <div class="stat-label">Đã đăng</div>
+    </div>
   </div>
-  <div class="stat-card orange">
-    <div class="stat-value"><%= contentStats.pending %></div>
-    <div class="stat-label">Chua dang</div>
+  <div class="stat-card gradient-orange">
+    <div class="stat-icon">⏳</div>
+    <div class="stat-info">
+      <div class="stat-value"><%= contentStats.pending %></div>
+      <div class="stat-label">Chưa đăng</div>
+    </div>
   </div>
 </div>
 
 <div class="card">
   <div class="card-header">
-    <span>Cay thu muc noi dung</span>
+    <div class="card-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+      Cây thư mục
+    </div>
   </div>
   <div class="card-body">
     <% if (tree.length === 0) { %>
       <div class="empty-state">
-        <div class="empty-icon">&#128193;</div>
-        <p>Chua co noi dung nao trong thu muc content/</p>
+        <div class="empty-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <p>Chưa có nội dung</p>
+        <p class="empty-hint">Thêm file vào thư mục content/ để hiển thị ở đây</p>
       </div>
     <% } else { %>
       <div class="content-tree">
         <% tree.forEach(function(item) { %>
-          <div class="tree-item" style="padding-left:<%= (item.depth * 24 + 12) %>px">
+          <div class="tree-item depth-<%= item.depth %>">
             <span class="tree-icon"><%= item.icon %></span>
-            <span><%= item.name %></span>
-            <% if (item.status === 'ready') { %><span class="badge badge-success">San sang</span><% } %>
-            <% if (item.status === 'posted') { %><span class="badge badge-info">Da dang</span><% } %>
-            <% if (item.status === 'empty') { %><span class="badge badge-warning">Trong</span><% } %>
+            <span class="tree-name"><%= item.name %></span>
+            <% if (item.status === 'ready') { %><span class="badge badge-green">Sẵn sàng</span><% } %>
+            <% if (item.status === 'posted') { %><span class="badge badge-blue">Đã đăng</span><% } %>
+            <% if (item.status === 'empty') { %><span class="badge badge-orange">Trống</span><% } %>
           </div>
         <% }) %>
       </div>

@@ -3,39 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %> - Facebook Auto Post</title>
+  <title><%= title %> · FB Auto Post</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <aside class="sidebar">
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
     <div class="sidebar-logo">
-      <h1>FB Auto Post</h1>
-      <span>Quan ly tu dong</span>
+      <div class="logo-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </div>
+      <div class="logo-text">
+        <h1>FB Auto Post</h1>
+        <span>Quản lý tự động</span>
+      </div>
     </div>
-    <nav>
-      <a href="/" class="<%= page === 'dashboard' ? 'active' : '' %>">
-        <span class="icon">&#9632;</span><span>Dashboard</span>
+
+    <nav class="sidebar-nav">
+      <a href="/" class="nav-item <%= page === 'dashboard' ? 'active' : '' %>">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+        <span>Dashboard</span>
       </a>
-      <a href="/posts" class="<%= page === 'posts' ? 'active' : '' %>">
-        <span class="icon">&#9998;</span><span>Bai dang</span>
+      <a href="/admin/keywords" class="nav-item <%= page === 'keywords' ? 'active' : '' %>">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        <span>Từ khóa</span>
       </a>
-      <a href="/comments" class="<%= page === 'comments' ? 'active' : '' %>">
-        <span class="icon">&#128172;</span><span>Comment Reply</span>
+      <a href="/comments" class="nav-item <%= page === 'comments' ? 'active' : '' %>">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span>Phản hồi</span>
       </a>
-      <a href="/content" class="<%= page === 'content' ? 'active' : '' %>">
-        <span class="icon">&#128193;</span><span>Noi dung</span>
+      <a href="/content" class="nav-item <%= page === 'content' ? 'active' : '' %>">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        <span>Nội dung</span>
       </a>
-      <a href="/settings" class="<%= page === 'settings' ? 'active' : '' %>">
-        <span class="icon">&#9881;</span><span>Cai dat</span>
+      <a href="/posts" class="nav-item <%= page === 'posts' ? 'active' : '' %>">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        <span>Bài đăng</span>
+      </a>
+      <a href="/settings" class="nav-item <%= page === 'settings' ? 'active' : '' %>">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <span>Cài đặt</span>
       </a>
     </nav>
+
     <div class="sidebar-footer">
-      Facebook Auto Post v1.0
+      <div class="status-indicator">
+        <span class="status-dot active"></span>
+        <span>Webhook đang chạy</span>
+      </div>
+      <div class="footer-version">v2.1 · Hermes</div>
     </div>
   </aside>
 
-  <main class="main">
-    <%- body %>
+  <main class="main" id="mainContent">
+    <header class="topbar">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="topbar-title"><%= title %></div>
+      <div class="topbar-right">
+        <button class="icon-btn" onclick="location.reload()" title="Tải lại">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+      <%- body %>
+    </div>
   </main>
+
+  <div id="toastContainer"></div>
+
+  <script src="/admin.js"></script>
 </body>
 </html>
